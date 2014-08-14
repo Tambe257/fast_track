@@ -1,0 +1,74 @@
+@import 'bootstrap';
+
+.dropdown {
+  height: 50px;
+}
+
+.dropdown a {
+  display: inline-block;
+  width: 110px;
+  margin-left: 15px;
+}
+
+.dropdown_menu {
+ width: 115px;
+}
+
+.dropdown-menu ul li {
+  padding: 1px;
+  width: 50px;
+ }
+
+.dropdown-menu li {
+  text-align: center;
+  padding: 5px;
+}
+
+.footer{
+  position: fixed;
+  bottom: 0pt;
+  left: 0pt;
+  height:100px; 
+  width: 100%; 
+  background-color: #326d92;
+  background-repeat: repeat;
+  background-attachment: scroll;
+  background-position: 0% 0%;
+  font-size: 150%;
+  padding-left: 15px;
+  padding-top: 10px;
+  color: #999;
+  a{
+      color: #428bca;
+  }
+}
+
+.footer p{
+  position: relative;
+  margin-left: 10px;
+  float: left;
+}
+.header_logo {
+	text-align: center;
+	width: auto;
+	position: relative;
+}
+
+.header_row2 {
+	margin-top: -35px;
+}
+
+.navbar {
+	margin-bottom: 0px;
+}
+
+.welcome_section {
+	border-top: #326d92 5px solid;
+	height: 450px;
+	background: url('main_image_large.jpg') no-repeat;
+}
+
+.welcome_text {
+	text-align: right;
+}
+
