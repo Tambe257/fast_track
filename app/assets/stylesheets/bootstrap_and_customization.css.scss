@@ -25,7 +25,6 @@
 }
 
 .footer{
-  position: fixed;
   bottom: 0pt;
   left: 0pt;
   height:100px; 
@@ -48,6 +47,12 @@
   margin-left: 10px;
   float: left;
 }
+
+.form_heading {
+  text-decoration: underline;
+  font-weight: bold;
+  }
+
 .header_logo {
 	text-align: center;
 	width: auto;
@@ -60,6 +65,10 @@
 
 .navbar {
 	margin-bottom: 0px;
+}
+
+.profile_panel {
+  margin-top: 10px;
 }
 
 .welcome_section {

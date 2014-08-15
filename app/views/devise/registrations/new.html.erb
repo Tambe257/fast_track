@@ -1,4 +1,4 @@
-<div class="panel panel-default">		
+<div class="panel panel-default profile_panel">		
 	<div class="panel-heading">
 		<h2>Sign up</h2>
 	</div>
@@ -6,22 +6,22 @@
 		<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 		  <%= devise_error_messages! %>
 			
-			<div><%= f.label :firstname %><br />
+			<div class="form-group" ><%= f.label :firstname %><br />
 		  <%= f.text_field :firstname, autofocus: true %></div>
 
-		  <div><%= f.label :lastname %><br />
+		  <div class="form-group" ><%= f.label :lastname %><br />
 		  <%= f.text_field :lastname, autofocus: true %></div>
 
-		  <div><%= f.label :email %><br />
+		  <div class="form-group" ><%= f.label :email %><br />
 		  <%= f.email_field :email, autofocus: true %></div>
 
-		  <div><%= f.label :password %><br />
+		  <div class="form-group" ><%= f.label :password %><br />
 		    <%= f.password_field :password, autocomplete: "off" %></div>
 
-		  <div><%= f.label :password_confirmation %><br />
+		  <div class="form-group" ><%= f.label :password_confirmation %><br />
 		    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
 
-		  <div><%= f.submit "Sign up", class: "btn btn-primary" %></div>
+		  <div class="form-actions" ><%= f.submit "Sign up", class: "btn btn-primary" %></div>
 		<% end %>
 
 		<%= render "devise/shared/links" %>
