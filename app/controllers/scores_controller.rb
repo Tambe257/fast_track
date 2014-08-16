@@ -47,6 +47,10 @@ class ScoresController < ApplicationController
     end
   end
   	
+  def edit
+  	@score = Score.find(params[:id])
+  end
+
   def destroy
     @score.destroy
     respond_to do |format|
