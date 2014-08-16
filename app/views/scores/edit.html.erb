@@ -5,6 +5,11 @@
 		</div>	
 		<div class="panel-body">	
 			<%= render 'form' %>
+
+			<%= link_to @score, method: :delete, data: { confirm: 'Are you sure?' } do %>
+          <span class="glyphicon glyphicon-trash"></span>
+              Delete
+      <% end %>        
 		</div>	
 
 		<div class="panel-footer pin_edit">

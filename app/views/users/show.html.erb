@@ -10,6 +10,7 @@
 		   <tr>
 		    <th>Type</th>
 		    <th>Name</th>
+		    <th colspan="2" class="center">Date</th>
 		    <th></th>
 		   </tr>	
 		    <% @scores.each do |score| %>
@@ -19,6 +20,14 @@
 		    	
 		    	<td>
 		      	<%= score.name %>
+		    	</td>
+					
+					<td>
+		      	<%= score.month %>
+		    	</td>
+
+		    	<td>
+		      	<%= score.year %>
 		    	</td>
 
 		    	<td>

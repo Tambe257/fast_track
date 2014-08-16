@@ -21,10 +21,11 @@ class ScoresController < ApplicationController
 
 	def create
     @score = current_user.scores.new(params[:score])
+    @user = current_user
 
     respond_to do |format|
       if @score.save
-        format.html { redirect_to root_path, notice: 'Post was successfully created.' }
+        format.html { redirect_to @score.user, notice: 'Score was successfully created.' }
         format.json { render json: @score, status: :created, location: @score }
       else
         format.html { render action: 'new' }
@@ -38,7 +39,7 @@ class ScoresController < ApplicationController
 
     respond_to do |format|
       if @score.update(params[:score])
-        format.html { redirect_to @score, notice: 'Score was successfully updated.' }
+        format.html { redirect_to @score.user, notice: 'Score was successfully updated.' }
         format.json { render action: 'show', status: :ok, location: @score }
       else
         format.html { render action: 'edit' }
@@ -52,10 +53,11 @@ class ScoresController < ApplicationController
   end
 
   def destroy
-    @score.destroy
-    respond_to do |format|
-      format.html { redirect_to root_path }
-      format.json { head :no_content }
+    @score = Score.find(params[:id])
+    if @score.present?
+      @score.destroy
     end
-  end
+    redirect_to @score.user
+  end  
+
 end
