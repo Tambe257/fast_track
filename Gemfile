@@ -10,6 +10,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'devise', '~> 3.2.4'
 gem 'protected_attributes'
+gem 'simple_form'
 
 group :development, :test do
 	gem 'sqlite3'

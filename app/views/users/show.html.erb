@@ -1,2 +1,33 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h3><%= @user.firstname%> <%= @user.lastname%> is signed in!</h3>
+
+<%= link_to 'Add Score',  new_score_path %>
+
+<div>
+	<h1>Tests Taken:</h1>
+	<table class="table-striped table-condensed table-hover">
+	  <tbody>
+		  <tr>
+		   <tr>
+		    <th>Type</th>
+		    <th>Name</th>
+		    <th></th>
+		   </tr>	
+		    <% @scores.each do |score| %>
+		    	<td>
+		      	<%= score.test_type %>
+		    	</td>
+		    	
+		    	<td>
+		      	<%= score.name %>
+		    	</td>
+
+		    	<td>
+		      	
+		    	</td>
+		    </tr>	    
+		  <% end %>
+		</tbody>    
+	</table>
+</div>
+
+
