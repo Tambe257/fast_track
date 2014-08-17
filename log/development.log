@@ -23912,3 +23912,404 @@ Completed 200 OK in 19ms (Views: 17.3ms | ActiveRecord: 0.3ms)
 
 
 Started GET "/assets/main_image_large.jpg" for 127.0.0.1 at 2014-08-17 13:59:56 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddEssayToScores (20140817174957)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.2ms)[0m  [1mCREATE TEMPORARY TABLE "ascores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "test_type" boolean(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "user_id" integer, "month" varchar(255), "year" varchar(255), "math" integer, "reading" integer, "writing" integer, "english" integer, "science" integer, "essay" integer) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "scores"
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "ascores" ("id","test_type","name","created_at","updated_at","user_id","month","year","math","reading","writing","english","science","essay") VALUES (11, 'SAT', 'SAT', '2014-08-16 17:43:37.717445', '2014-08-16 22:38:32.854293', 1, 'March', '2013', NULL, NULL, NULL, NULL, NULL, NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "ascores" ("id","test_type","name","created_at","updated_at","user_id","month","year","math","reading","writing","english","science","essay") VALUES (12, 'f', 'SAT', '2014-08-17 17:59:35.315129', '2014-08-17 17:59:35.315129', 1, 'May', '2012', 400, NULL, NULL, NULL, NULL, NULL)
+  [1m[36m (0.4ms)[0m  [1mDROP TABLE "scores"[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "scores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "test_type" boolean(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "user_id" integer, "month" varchar(255), "year" varchar(255), "math" integer, "reading" integer, "writing" integer, "english" integer, "science" integer) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "ascores"[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "scores" ("id","test_type","name","created_at","updated_at","user_id","month","year","math","reading","writing","english","science") VALUES (11, 'SAT', 'SAT', '2014-08-16 17:43:37.717445', '2014-08-16 22:38:32.854293', 1, 'March', '2013', NULL, NULL, NULL, NULL, NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "scores" ("id","test_type","name","created_at","updated_at","user_id","month","year","math","reading","writing","english","science") VALUES (12, 'f', 'SAT', '2014-08-17 17:59:35.315129', '2014-08-17 17:59:35.315129', 1, 'May', '2012', 400, NULL, NULL, NULL, NULL)[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "ascores"
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20140817174957'[0m
+  [1m[35m (30.1ms)[0m  commit transaction
+Migrating to AddScienceToScores (20140817174932)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TEMPORARY TABLE "ascores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "test_type" boolean(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "user_id" integer, "month" varchar(255), "year" varchar(255), "math" integer, "reading" integer, "writing" integer, "english" integer, "science" integer) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "scores"[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "ascores" ("id","test_type","name","created_at","updated_at","user_id","month","year","math","reading","writing","english","science") VALUES (11, 'SAT', 'SAT', '2014-08-16 17:43:37.717445', '2014-08-16 22:38:32.854293', 1, 'March', '2013', NULL, NULL, NULL, NULL, NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "ascores" ("id","test_type","name","created_at","updated_at","user_id","month","year","math","reading","writing","english","science") VALUES (12, 'f', 'SAT', '2014-08-17 17:59:35.315129', '2014-08-17 17:59:35.315129', 1, 'May', '2012', 400, NULL, NULL, NULL, NULL)[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "scores"
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "scores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "test_type" boolean(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "user_id" integer, "month" varchar(255), "year" varchar(255), "math" integer, "reading" integer, "writing" integer, "english" integer) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "ascores"
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "scores" ("id","test_type","name","created_at","updated_at","user_id","month","year","math","reading","writing","english") VALUES (11, 'SAT', 'SAT', '2014-08-16 17:43:37.717445', '2014-08-16 22:38:32.854293', 1, 'March', '2013', NULL, NULL, NULL, NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "scores" ("id","test_type","name","created_at","updated_at","user_id","month","year","math","reading","writing","english") VALUES (12, 'f', 'SAT', '2014-08-17 17:59:35.315129', '2014-08-17 17:59:35.315129', 1, 'May', '2012', 400, NULL, NULL, NULL)
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE "ascores"[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20140817174932'
+  [1m[36m (2.1ms)[0m  [1mcommit transaction[0m
+Migrating to AddEnglishToScores (20140817174903)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mCREATE TEMPORARY TABLE "ascores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "test_type" boolean(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "user_id" integer, "month" varchar(255), "year" varchar(255), "math" integer, "reading" integer, "writing" integer, "english" integer) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "scores"
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "ascores" ("id","test_type","name","created_at","updated_at","user_id","month","year","math","reading","writing","english") VALUES (11, 'SAT', 'SAT', '2014-08-16 17:43:37.717445', '2014-08-16 22:38:32.854293', 1, 'March', '2013', NULL, NULL, NULL, NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "ascores" ("id","test_type","name","created_at","updated_at","user_id","month","year","math","reading","writing","english") VALUES (12, 'f', 'SAT', '2014-08-17 17:59:35.315129', '2014-08-17 17:59:35.315129', 1, 'May', '2012', 400, NULL, NULL, NULL)
+  [1m[36m (0.3ms)[0m  [1mDROP TABLE "scores"[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "scores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "test_type" boolean(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "user_id" integer, "month" varchar(255), "year" varchar(255), "math" integer, "reading" integer, "writing" integer) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "ascores"[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "scores" ("id","test_type","name","created_at","updated_at","user_id","month","year","math","reading","writing") VALUES (11, 'SAT', 'SAT', '2014-08-16 17:43:37.717445', '2014-08-16 22:38:32.854293', 1, 'March', '2013', NULL, NULL, NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "scores" ("id","test_type","name","created_at","updated_at","user_id","month","year","math","reading","writing") VALUES (12, 'f', 'SAT', '2014-08-17 17:59:35.315129', '2014-08-17 17:59:35.315129', 1, 'May', '2012', 400, NULL, NULL)[0m
+  [1m[35m (0.1ms)[0m  DROP TABLE "ascores"
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20140817174903'[0m
+  [1m[35m (1.5ms)[0m  commit transaction
+Migrating to AddWritingToScores (20140817174827)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TEMPORARY TABLE "ascores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "test_type" boolean(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "user_id" integer, "month" varchar(255), "year" varchar(255), "math" integer, "reading" integer, "writing" integer) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "scores"[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "ascores" ("id","test_type","name","created_at","updated_at","user_id","month","year","math","reading","writing") VALUES (11, 'SAT', 'SAT', '2014-08-16 17:43:37.717445', '2014-08-16 22:38:32.854293', 1, 'March', '2013', NULL, NULL, NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "ascores" ("id","test_type","name","created_at","updated_at","user_id","month","year","math","reading","writing") VALUES (12, 'f', 'SAT', '2014-08-17 17:59:35.315129', '2014-08-17 17:59:35.315129', 1, 'May', '2012', 400, NULL, NULL)[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "scores"
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "scores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "test_type" boolean(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "user_id" integer, "month" varchar(255), "year" varchar(255), "math" integer, "reading" integer) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "ascores"
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "scores" ("id","test_type","name","created_at","updated_at","user_id","month","year","math","reading") VALUES (11, 'SAT', 'SAT', '2014-08-16 17:43:37.717445', '2014-08-16 22:38:32.854293', 1, 'March', '2013', NULL, NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "scores" ("id","test_type","name","created_at","updated_at","user_id","month","year","math","reading") VALUES (12, 'f', 'SAT', '2014-08-17 17:59:35.315129', '2014-08-17 17:59:35.315129', 1, 'May', '2012', 400, NULL)
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE "ascores"[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20140817174827'
+  [1m[36m (2.2ms)[0m  [1mcommit transaction[0m
+Migrating to AddReadingToScores (20140817174744)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mCREATE TEMPORARY TABLE "ascores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "test_type" boolean(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "user_id" integer, "month" varchar(255), "year" varchar(255), "math" integer, "reading" integer) [0m
+  [1m[35m (0.2ms)[0m  SELECT * FROM "scores"
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "ascores" ("id","test_type","name","created_at","updated_at","user_id","month","year","math","reading") VALUES (11, 'SAT', 'SAT', '2014-08-16 17:43:37.717445', '2014-08-16 22:38:32.854293', 1, 'March', '2013', NULL, NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "ascores" ("id","test_type","name","created_at","updated_at","user_id","month","year","math","reading") VALUES (12, 'f', 'SAT', '2014-08-17 17:59:35.315129', '2014-08-17 17:59:35.315129', 1, 'May', '2012', 400, NULL)
+  [1m[36m (0.3ms)[0m  [1mDROP TABLE "scores"[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "scores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "test_type" boolean(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "user_id" integer, "month" varchar(255), "year" varchar(255), "math" integer) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "ascores"[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "scores" ("id","test_type","name","created_at","updated_at","user_id","month","year","math") VALUES (11, 'SAT', 'SAT', '2014-08-16 17:43:37.717445', '2014-08-16 22:38:32.854293', 1, 'March', '2013', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "scores" ("id","test_type","name","created_at","updated_at","user_id","month","year","math") VALUES (12, 'f', 'SAT', '2014-08-17 17:59:35.315129', '2014-08-17 17:59:35.315129', 1, 'May', '2012', 400)[0m
+  [1m[35m (0.1ms)[0m  DROP TABLE "ascores"
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20140817174744'[0m
+  [1m[35m (2.3ms)[0m  commit transaction
+Migrating to AddMathToScores (20140817174607)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TEMPORARY TABLE "ascores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "test_type" boolean(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "user_id" integer, "month" varchar(255), "year" varchar(255), "math" integer) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "scores"[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "ascores" ("id","test_type","name","created_at","updated_at","user_id","month","year","math") VALUES (11, 'SAT', 'SAT', '2014-08-16 17:43:37.717445', '2014-08-16 22:38:32.854293', 1, 'March', '2013', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "ascores" ("id","test_type","name","created_at","updated_at","user_id","month","year","math") VALUES (12, 'f', 'SAT', '2014-08-17 17:59:35.315129', '2014-08-17 17:59:35.315129', 1, 'May', '2012', 400)[0m
+  [1m[35m (0.5ms)[0m  DROP TABLE "scores"
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "scores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "test_type" boolean(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "user_id" integer, "month" varchar(255), "year" varchar(255)) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "ascores"
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "scores" ("id","test_type","name","created_at","updated_at","user_id","month","year") VALUES (11, 'SAT', 'SAT', '2014-08-16 17:43:37.717445', '2014-08-16 22:38:32.854293', 1, 'March', '2013')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "scores" ("id","test_type","name","created_at","updated_at","user_id","month","year") VALUES (12, 'f', 'SAT', '2014-08-17 17:59:35.315129', '2014-08-17 17:59:35.315129', 1, 'May', '2012')
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE "ascores"[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20140817174607'
+  [1m[36m (2.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-17 16:19:46 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered pages/home.html.erb within layouts/application (17.4ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 94ms (Views: 88.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-17 16:19:47 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-17 16:19:47 -0400
+
+
+Started GET "/assets/bootstrap_and_customization.css?body=1" for 127.0.0.1 at 2014-08-17 16:19:47 -0400
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-17 16:19:47 -0400
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-08-17 16:19:47 -0400
+
+
+Started GET "/assets/scores.css?body=1" for 127.0.0.1 at 2014-08-17 16:19:47 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-17 16:19:47 -0400
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2014-08-17 16:19:47 -0400
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2014-08-17 16:19:47 -0400
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2014-08-17 16:19:47 -0400
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2014-08-17 16:19:47 -0400
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2014-08-17 16:19:47 -0400
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2014-08-17 16:19:47 -0400
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2014-08-17 16:19:47 -0400
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2014-08-17 16:19:47 -0400
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2014-08-17 16:19:47 -0400
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2014-08-17 16:19:47 -0400
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2014-08-17 16:19:47 -0400
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2014-08-17 16:19:47 -0400
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-08-17 16:19:47 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-17 16:19:47 -0400
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-08-17 16:19:47 -0400
+
+
+Started GET "/assets/scores.js?body=1" for 127.0.0.1 at 2014-08-17 16:19:47 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-17 16:19:47 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-17 16:19:47 -0400
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2014-08-17 16:19:47 -0400
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular.woff" for 127.0.0.1 at 2014-08-17 16:19:47 -0400
+
+
+Started GET "/assets/main_image_large.jpg" for 127.0.0.1 at 2014-08-17 16:19:47 -0400
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-08-17 16:19:49 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mScore Load (0.2ms)[0m  [1mSELECT "scores".* FROM "scores" WHERE "scores"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (8.8ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered layouts/_header.html.erb (1.8ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 83ms (Views: 21.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/scores/new" for 127.0.0.1 at 2014-08-17 16:19:50 -0400
+Processing by ScoresController#new as HTML
+  Rendered scores/_form.html.erb (26.3ms)
+  Rendered scores/new.html.erb within layouts/application (27.6ms)
+Completed 500 Internal Server Error in 44ms
+
+ActionView::Template::Error (undefined method `math' for #<Score:0x00000103745028>):
+    16:     </div>
+    17: 
+    18:     <div class="form-group"> 
+    19:       <%= f.input :math, as: :integer, input_html: { rows: "2", :class => "form-control" }, label: "Math:" %>
+    20:     </div>
+    21:     
+    22:     <%= f.button :submit, "Post Score", class: "btn btn-primary" %>
+  app/views/scores/_form.html.erb:19:in `block in _app_views_scores__form_html_erb___3455122147884150697_2163467860'
+  app/views/scores/_form.html.erb:2:in `_app_views_scores__form_html_erb___3455122147884150697_2163467860'
+  app/views/scores/new.html.erb:7:in `_app_views_scores_new_html_erb___1745015668879301527_2161591760'
+
+
+  Rendered /Users/tambe257/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /Users/tambe257/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /Users/tambe257/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (25.4ms)
+
+
+Started GET "/scores/new" for 127.0.0.1 at 2014-08-17 16:19:51 -0400
+Processing by ScoresController#new as HTML
+  Rendered scores/_form.html.erb (6.1ms)
+  Rendered scores/new.html.erb within layouts/application (6.7ms)
+Completed 500 Internal Server Error in 10ms
+
+ActionView::Template::Error (undefined method `math' for #<Score:0x0000010294d6c8>):
+    16:     </div>
+    17: 
+    18:     <div class="form-group"> 
+    19:       <%= f.input :math, as: :integer, input_html: { rows: "2", :class => "form-control" }, label: "Math:" %>
+    20:     </div>
+    21:     
+    22:     <%= f.button :submit, "Post Score", class: "btn btn-primary" %>
+  app/views/scores/_form.html.erb:19:in `block in _app_views_scores__form_html_erb___3455122147884150697_2176726020'
+  app/views/scores/_form.html.erb:2:in `_app_views_scores__form_html_erb___3455122147884150697_2176726020'
+  app/views/scores/new.html.erb:7:in `_app_views_scores_new_html_erb___1745015668879301527_2176674320'
+
+
+  Rendered /Users/tambe257/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /Users/tambe257/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/tambe257/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddMathToScores (20140817174607)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "scores" ADD "math" integer[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140817174607"]]
+  [1m[36m (2.1ms)[0m  [1mcommit transaction[0m
+Migrating to AddReadingToScores (20140817174744)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "scores" ADD "reading" integer[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140817174744"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+Migrating to AddWritingToScores (20140817174827)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "scores" ADD "writing" integer[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140817174827"]]
+  [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+Migrating to AddEnglishToScores (20140817174903)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "scores" ADD "english" integer[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140817174903"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+Migrating to AddScienceToScores (20140817174932)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "scores" ADD "science" integer[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140817174932"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+Migrating to AddEssayToScores (20140817174957)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "scores" ADD "essay" integer[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140817174957"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-08-17 16:21:09 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mScore Load (2.2ms)[0m  [1mSELECT "scores".* FROM "scores" WHERE "scores"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (21.6ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered layouts/_header.html.erb (17.8ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 963ms (Views: 791.2ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/scores/new" for 127.0.0.1 at 2014-08-17 16:21:12 -0400
+Processing by ScoresController#new as HTML
+  Rendered scores/_form.html.erb (543.6ms)
+  Rendered scores/new.html.erb within layouts/application (545.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered layouts/_header.html.erb (1.9ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 562ms (Views: 560.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/scores" for 127.0.0.1 at 2014-08-17 16:21:22 -0400
+Processing by ScoresController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9O9ctSGDCMlNRPnpkh03KTsmNOgU9Ma8dR2vwZtx1Tk=", "score"=>{"test_type"=>"Practice", "name"=>"ACT", "month"=>"March", "year"=>"2013", "math"=>"400"}, "commit"=>"Post Score"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (44.1ms)[0m  INSERT INTO "scores" ("created_at", "math", "month", "name", "test_type", "updated_at", "user_id", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Sun, 17 Aug 2014 20:21:22 UTC +00:00], ["math", 400], ["month", "March"], ["name", "ACT"], ["test_type", false], ["updated_at", Sun, 17 Aug 2014 20:21:22 UTC +00:00], ["user_id", 1], ["year", "2013"]]
+  [1m[36m (2.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 88ms (ActiveRecord: 47.4ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-08-17 16:21:22 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mScore Load (0.1ms)[0m  SELECT "scores".* FROM "scores" WHERE "scores"."user_id" = ?  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (2.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered layouts/_header.html.erb (2.5ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 17ms (Views: 14.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap_and_customization.css?body=1" for 127.0.0.1 at 2014-08-17 16:21:22 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-17 16:21:22 -0400
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-08-17 16:21:23 -0400
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-17 16:21:23 -0400
+
+
+Started GET "/assets/scores.css?body=1" for 127.0.0.1 at 2014-08-17 16:21:23 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-17 16:21:23 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-17 16:21:23 -0400
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2014-08-17 16:21:23 -0400
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2014-08-17 16:21:23 -0400
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2014-08-17 16:21:23 -0400
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2014-08-17 16:21:23 -0400
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2014-08-17 16:21:23 -0400
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2014-08-17 16:21:23 -0400
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2014-08-17 16:21:23 -0400
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2014-08-17 16:21:23 -0400
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2014-08-17 16:21:23 -0400
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2014-08-17 16:21:23 -0400
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2014-08-17 16:21:23 -0400
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2014-08-17 16:21:23 -0400
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-08-17 16:21:23 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-17 16:21:23 -0400
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-08-17 16:21:23 -0400
+
+
+Started GET "/assets/scores.js?body=1" for 127.0.0.1 at 2014-08-17 16:21:23 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-17 16:21:23 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-17 16:21:23 -0400
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2014-08-17 16:21:23 -0400
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular.woff" for 127.0.0.1 at 2014-08-17 16:21:23 -0400
