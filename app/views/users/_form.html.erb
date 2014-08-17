@@ -7,6 +7,10 @@
     <div class="form-group"> 
       <%= f.input :name, as: :text, input_html: { rows: "2", :class => "form-control" }, label: "Test Name" %>
     </div>
+
+    <div class="form-group"> 
+      <%= f.input :math, as: :integer, input_html: { rows: "2", :class => "form-control" }, label: "Math:" %>
+    </div>
     
     <%= f.button :submit, "Post Score", class: "btn btn-primary" %>
   <% end %>
