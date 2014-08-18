@@ -11,11 +11,22 @@
 		    <th>Type</th>
 		    <th>Name</th>
 		    <th colspan="2" class="center">Date</th>
+		    <th>Math</th>
+		    <th>Reading</th>
+		    <th>Writing</th>
+		    <th>English</th>
+		    <th>Science</th>
+		    <th>Essay</th>
 		    <th></th>
+
 		   </tr>	
 		    <% @scores.each do |score| %>
 		    	<td>
-		      	<%= score.test_type %>
+		      	<% if score.test_type == true %>
+		      		<%= 'Practice' %>
+		      	<% else %>
+		      		<%= 'Actual' %>
+		      	<% end %>		
 		    	</td>
 		    	
 		    	<td>
@@ -28,6 +39,30 @@
 
 		    	<td>
 		      	<%= score.year %>
+		    	</td>
+
+					<td>
+		      	<%= score.math %>
+		    	</td>
+
+		    	<td>
+		      	<%= score.reading %>
+		    	</td>
+
+		    	<td>
+		      	<%= score.writing %>
+		    	</td>
+
+		    	<td>
+		      	<%= score.english %>
+		    	</td>
+
+		    	<td>
+		      	<%= score.science %>
+		    	</td>
+					
+					<td>
+		      	<%= score.essay %>
 		    	</td>
 
 		    	<td>
