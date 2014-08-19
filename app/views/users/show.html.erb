@@ -10,13 +10,14 @@
 		   <tr>
 		    <th>Type</th>
 		    <th>Name</th>
-		    <th colspan="2" class="center">Date</th>
+		    <th colspan="3" class="center">Date</th>
 		    <th>Math</th>
 		    <th>Reading</th>
 		    <th>Writing</th>
 		    <th>English</th>
 		    <th>Science</th>
 		    <th>Essay</th>
+		    <th>Comment:</th>
 		    <th></th>
 		    <th></th>
 
@@ -43,6 +44,16 @@
 		    	</td>
 
 					<td>
+		      	<% if score.day == true %>
+		      		<%= 'Wednesday' %>
+		      	<% elsif score.day == false %>
+		      		<%= 'Saturday' %>
+		      	<% else %>
+		      		<%= '' %>	
+		      	<% end %>	
+		    	</td>
+
+					<td>
 		      	<%= score.math %>
 		    	</td>
 
@@ -64,6 +75,10 @@
 					
 					<td>
 		      	<%= score.essay %>
+		    	</td>
+					
+					<td>
+		      	<%= score.comment %>
 		    	</td>
 
 		    	<td>
