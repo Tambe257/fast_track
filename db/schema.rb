@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140818174018) do
+ActiveRecord::Schema.define(version: 20140820172908) do
 
   create_table "scores", force: true do |t|
     t.boolean  "test_type",  limit: 255
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20140818174018) do
     t.integer  "essay"
     t.text     "comment"
     t.boolean  "day"
+    t.date     "taken_date"
   end
 
   create_table "users", force: true do |t|
