@@ -67,13 +67,14 @@
     </div>
   </div>
 <% end %>  
+
 <!-- PSAT FORM -->
 <% if @score.name == nil || @score.name == 'PSAT' %>
   <div class="well">
     <div class="panel-body">
       <%= simple_form_for(@score, html: { class: "form-horizontal"}) do |f| %>
         <%= f.error_notification %>
-        
+      <div class="row form_list">  
         <div class="form_heading"><h3>P.S.A.T.</h3></div>
         <div class="row form_list">
           <ul>
@@ -139,6 +140,7 @@
     <% end %>
   </div>
 <% end %>
+
 <!-- ACT FORM -->
 <% if @score.name == nil || @score.name == 'ACT' %>
   <div class="well">

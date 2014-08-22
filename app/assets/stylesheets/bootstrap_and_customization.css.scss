@@ -62,6 +62,10 @@
   margin: 0px;
 }
 
+.form_page {
+  margin-top: 15px;
+}
+
 .header_logo {
 	text-align: center;
 	width: auto;
@@ -88,8 +92,26 @@
   margin-top: 10px;
 }
 
+.score_table {
+  margin: 10px;
+}
+
+.score_table td {
+  max-width: 300px;
+}
+
+.score_table th {
+  text-align: center;
+  background: #428bca;
+}
+
 .score_table tr {
   text-align: center;
+}
+
+.score_table tbody {
+  border-style: solid;
+  border-width: 1px;
 }
 
 .welcome_section {
