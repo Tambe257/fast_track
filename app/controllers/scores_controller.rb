@@ -19,8 +19,13 @@ class ScoresController < ApplicationController
   end
 
 	def create
-    @score = current_user.scores.new(params[:score])
-    @user = current_user
+    #@score = current_user.scores.new(params[:score])
+    #@user = current_user
+    if current_user.admin?
+      @score = Score.new(params[:score])
+    elsif current_user.id != @score.user_id
+      @score.errors.add(:user_id, "You're not allowed to create scores for other users")
+    end  
 
     respond_to do |format|
       if @score.save

@@ -26,6 +26,7 @@ FastTrack::Application.routes.draw do
 
   get 'about' => 'pages#about'
 
+  get 'students' => 'pages#students'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

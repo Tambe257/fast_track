@@ -1,0 +1,21 @@
+<div class="user_table">
+
+<table class="table-striped table-condensed table-hover">
+	<tbody>
+		<tr>
+			<th><h3>Student:</h3></th>
+			<th><h3>Tests Taken:</h3></th>
+		</tr>	
+		<% @users.each do |user| %>
+			<tr>
+				<td>
+					<h3><%= link_to "#{user.firstname} #{user.lastname}", user %></h3>
+				</td>
+				<td>
+					<h3><%= user.scores.count %></h3>
+				</td>
+			</tr>	
+		<% end %>
+	</tbody>	
+</table>
+</div>

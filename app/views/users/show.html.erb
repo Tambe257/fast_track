@@ -1,6 +1,4 @@
-<h3><%= @user.firstname%> <%= @user.lastname%> is signed in!</h3>
-
-<%= link_to 'Add Score',  new_score_path %>
+<h3><%= @user.firstname%> <%= @user.lastname%>'s scores</h3>
 
 <div class="score_table">
 	<h1>Tests Taken:</h1>
@@ -8,6 +6,7 @@
 	  <tbody>
 		  <tr>
 		   <tr>
+		   	<th>Student</th>
 		    <th>Type</th>
 		    <th>Name</th>
 		    <th colspan="3" class="center">Date</th>
@@ -24,6 +23,10 @@
 
 		   </tr>	
 		    <% @scores.each do |score| %>
+		    	<td>
+		    		<%= score.user.firstname %> <%= score.user.lastname %>
+					</td>
+
 		    	<td>
 		      	<% if score.test_type == true %>
 		      		<%= 'Practice' %>

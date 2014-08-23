@@ -105,11 +105,41 @@
   background: #428bca;
 }
 
+.score_table th:hover {
+  background: #428bca;
+}
+
 .score_table tr {
   text-align: center;
 }
 
 .score_table tbody {
+  border-style: solid;
+  border-width: 1px;
+}
+
+.user_table {
+  margin: 10px;
+}
+
+.user_table td {
+  max-width: 300px;
+}
+
+.user_table th {
+  text-align: center;
+  background: #428bca;
+}
+
+.user_table th:hover {
+  background: #428bca;
+}
+
+.user_table tr {
+  text-align: center;
+}
+
+.user_table tbody {
   border-style: solid;
   border-width: 1px;
 }
