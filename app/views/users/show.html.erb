@@ -1,105 +1,176 @@
-<h3><%= @user.firstname%> <%= @user.lastname%>'s scores</h3>
+<div class="well user_show">
+	<h3 class="center"><%= @user.firstname%> <%= @user.lastname%>'s scores</h3>
+	<hr>
 
-<div class="score_table">
-	<h1>Tests Taken:</h1>
-	<table class="table-striped table-condensed table-hover">
-	  <tbody>
-		  <tr>
-		   <tr>
-		   	<th>Student</th>
-		    <th>Type</th>
-		    <th>Name</th>
-		    <th colspan="3" class="center">Date</th>
-		    <th>Math</th>
-		    <th>Reading</th>
-		    <th>Writing</th>
-		    <th>English</th>
-		    <th>Science</th>
-		    <th>Essay</th>
-		    <th>Comment:</th>
-		    <th>Taken On:</th>
-		    <th></th>
-		    <th></th>
+	<div class="score_table">
+		<h4 class="center">S.A.T. & P.S.A.T.</h4>
+		<table>
+		  <tbody>
+			  <tr>
+			   <tr>
+			    <th>Type</th>
+			    <th>Name</th>
+			    <th colspan="2" class="center">Date</th>
+			    <th>Math</th>
+			    <th>Reading</th>
+			    <th>Writing</th>
+			    <th>Essay</th>
+			    <th>Comment:</th>
+			    <th>Taken On:</th>
+			    <th></th>
+			    <th></th>
 
-		   </tr>	
-		    <% @scores.each do |score| %>
-		    	<td>
-		    		<%= score.user.firstname %> <%= score.user.lastname %>
-					</td>
+			   </tr>	
+			    <% @scores.where.not(:name => 'ACT').each do |score| %>
 
-		    	<td>
-		      	<% if score.test_type == true %>
-		      		<%= 'Practice' %>
-		      	<% else %>
-		      		<%= 'Actual' %>
-		      	<% end %>		
-		    	</td>
-		    	
-		    	<td>
-		      	<%= score.name %>
-		    	</td>
-					
-					<td>
-		      	<%= score.month %>
-		    	</td>
+			    	<td>
+			      	<% if score.test_type == true %>
+			      		<%= 'Practice' %>
+			      	<% else %>
+			      		<%= 'Actual' %>
+			      	<% end %>		
+			    	</td>
+			    	
+			    	<td>
+			      	<%= score.name %>
+			    	</td>
+						
+						<td>
+			      	<%= score.month %>
+			    	</td>
 
-		    	<td>
-		      	<%= score.year %>
-		    	</td>
+			    	<td>
+			      	<%= score.year %>
+			    	</td>
 
-					<td>
-		      	<% if score.day == true %>
-		      		<%= 'Wednesday' %>
-		      	<% elsif score.day == false %>
-		      		<%= 'Saturday' %>
-		      	<% else %>
-		      		<%= '' %>	
-		      	<% end %>	
-		    	</td>
+						<td>
+			      	<%= score.math %>
+			    	</td>
 
-					<td>
-		      	<%= score.math %>
-		    	</td>
+			    	<td>
+			      	<%= score.reading %>
+			    	</td>
 
-		    	<td>
-		      	<%= score.reading %>
-		    	</td>
+			    	<td>
+			      	<%= score.writing %>
+			    	</td>
+						
+						<td>
+			      	<%= score.essay %>
+			    	</td>
+						
+						<td>
+			      	<%= truncate(score.comment, lengtd: 50) %>
+			    	</td>
+						
+						<td>
+			      	<%= score.taken_date %>
+			    	</td>
+			    	
+			    	<td>
+			      	<%= link_to 'Edit', edit_score_path(score) %> 
+			    	</td>
 
-		    	<td>
-		      	<%= score.writing %>
-		    	</td>
+			    	<td>
+			      	<%= link_to 'Show', score %> 
+			    	</td>
+			    </tr>	    
+			  <% end %>
+			</tbody>    
+		</table>
+	</div>
 
-		    	<td>
-		      	<%= score.english %>
-		    	</td>
+	<div class="score_table">
+		<h4 class="center">A.C.T.</h4>
+		<table>
+		  <tbody>
+			  <tr>
+			   <tr>
+			    <th>Type</th>
+			    <th>Name</th>
+			    <th colspan="3" class="center">Date</th>
+			    <th>Math</th>
+			    <th>Reading</th>
+			    <th>English</th>
+			    <th>Science</th>
+			    <th>Essay</th>
+			    <th>Comment:</th>
+			    <th>Taken On:</th>
+			    <th></th>
+			    <th></th>
 
-		    	<td>
-		      	<%= score.science %>
-		    	</td>
-					
-					<td>
-		      	<%= score.essay %>
-		    	</td>
-					
-					<td>
-		      	<%= truncate(score.comment, length: 50) %>
-		    	</td>
-					
-					<td>
-		      	<%= score.taken_date %>
-		    	</td>
-		    	
-		    	<td>
-		      	<%= link_to 'Edit', edit_score_path(score) %> 
-		    	</td>
+			   </tr>	
+			    <% @scores.where(:name => 'ACT').each do |score| %>
 
-		    	<td>
-		      	<%= link_to 'Show', score %> 
-		    	</td>
-		    </tr>	    
-		  <% end %>
-		</tbody>    
-	</table>
+			    	<td>
+			      	<% if score.test_type == true %>
+			      		<%= 'Practice' %>
+			      	<% else %>
+			      		<%= 'Actual' %>
+			      	<% end %>		
+			    	</td>
+			    	
+			    	<td>
+			      	<%= score.name %>
+			    	</td>
+						
+						<td>
+			      	<%= score.month %>
+			    	</td>
+
+			    	<td>
+			      	<%= score.year %>
+			    	</td>
+
+						<td>
+			      	<% if score.day == true %>
+			      		<%= 'Wednesday' %>
+			      	<% elsif score.day == false %>
+			      		<%= 'Saturday' %>
+			      	<% else %>
+			      		<%= '' %>	
+			      	<% end %>	
+			    	</td>
+
+						<td>
+			      	<%= score.math %>
+			    	</td>
+
+			    	<td>
+			      	<%= score.reading %>
+			    	</td>
+
+			    	<td>
+			      	<%= score.english %>
+			    	</td>
+
+			    	<td>
+			      	<%= score.science %>
+			    	</td>
+						
+						<td>
+			      	<%= score.essay %>
+			    	</td>
+						
+						<td>
+			      	<%= truncate(score.comment, lengtd: 50) %>
+			    	</td>
+						
+						<td>
+			      	<%= score.taken_date %>
+			    	</td>
+			    	
+			    	<td>
+			      	<%= link_to 'Edit', edit_score_path(score) %> 
+			    	</td>
+
+			    	<td>
+			      	<%= link_to 'Show', score %> 
+			    	</td>
+			    </tr>	    
+			  <% end %>
+			</tbody>    
+		</table>
+	</div>
+
 </div>
-
-
