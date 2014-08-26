@@ -22,7 +22,7 @@
             </li>
             <li class="col-sm-3">
               <div class="form-group"> 
-                <%= f.input :name, collection: ['SAT', 'ACT', 'PSAT'], :include_blank => false, label: "Which Test Did You Take? " %>
+                <%= f.input :name, collection: ['SAT', 'ACT', 'PSAT'], :include_blank => false, label: "Which Test? " %>
               </div>
             </li>
             <li class="col-sm-3">
@@ -83,6 +83,12 @@
         <%= f.error_notification %>
       <div class="row form_list">  
         <div class="form_heading"><h3>P.S.A.T.</h3></div>
+          <% if current_user.admin? %>
+            <%= f.collection_select(:user_id, User.all, :id, :firstname, :prompt => true) %>
+          <% else %>
+            <%= f.hidden_field :user_id, value: current_user.id %>
+          <% end %>
+
         <div class="row form_list">
           <ul>
             <li class="col-sm-2">
@@ -92,7 +98,7 @@
             </li>
             <li class="col-sm-2">
               <div class="form-group"> 
-                <%= f.input :name, collection: ['SAT', 'ACT', 'PSAT'], :include_blank => false, label: "Which Test Did You Take? " %>
+                <%= f.input :name, collection: ['PSAT', 'SAT', 'ACT' ], :include_blank => false, label: "Which Test? " %>
               </div>
             </li>
             <li class="col-sm-2">
@@ -146,6 +152,7 @@
       <%= f.button :submit, "Post Score", class: "btn btn-primary" %>
     <% end %>
   </div>
+  </div>
 <% end %>
 
 <!-- ACT FORM -->
@@ -158,6 +165,12 @@
         <div class="row form_list">
 
           <div class="form_heading"><h3>A.C.T.</h3></div>
+          <% if current_user.admin? %>
+            <%= f.collection_select(:user_id, User.all, :id, :firstname, :prompt => true) %>
+          <% else %>
+            <%= f.hidden_field :user_id, value: current_user.id %>
+          <% end %>
+
           <ul>
             <li class="col-sm-3">
               <div class="form-group"> 
@@ -166,7 +179,7 @@
             </li>
             <li class="col-sm-3">
               <div class="form-group"> 
-                <%= f.input :name, collection: ['SAT', 'ACT', 'PSAT'], :include_blank => false, label: "Which Test Did You Take? " %>
+                <%= f.input :name, collection: ['ACT', 'SAT', 'PSAT'], :include_blank => false, label: "Which Test? " %>
               </div>
             </li>
             <li class="col-sm-3">
