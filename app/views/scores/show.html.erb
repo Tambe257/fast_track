@@ -1,73 +1,182 @@
 <div class="row">
-	<div class="well center score_show">
+	<div class="well score_show">
  		<div>
   		<h2><%= @score.user.firstname %> <%= @score.user.lastname %></h2>
 		</div>
 		
 		<div><h3><%= @score.name %></h3></div>
-  	
-		<div>
-    	<% if @score.test_type == true %>
-    		<h4><%= 'Practice Test' %></h4>
-    	<% else %>
-    		<h4><%= 'Actual Test' %></h4>
-    	<% end %>		
-  	
-			<h4>From: <%= @score.month %> <%= @score.year %> 
-				<% if @score.day == true %>
-    			<%= 'Wednesday' %>
-    		<% elsif @score.day == false %>
-    			<%= 'Saturday' %>
-    		<% else %>
-    			<%= '' %>	
-    		<% end %>	
-    		Taken On: <%= @score.taken_date %>
-  		</h4>
-  	</div>
-		   
-		<div>
-			<table>
-				<tr>
-					<th>
-						Math: 
-					</th>
+<!-- SAT -->
+  	<% if @score.name == 'SAT' %>
+			<div>
+	    	<% if @score.test_type == true %>
+	    		<h4><%= 'Practice Test' %></h4>
+	    	<% else %>
+	    		<h4><%= 'Actual Test' %></h4>
+	    	<% end %>		
+	  	
+				<h4>From: <%= @score.month %> <%= @score.year %> 
+					
+	    		Taken On: <%= @score.taken_date %>
+	  		</h4>
+	  	</div>
+			   
+			<div class="score_show_table col-md-12">
+				<table class="col-md-12">
+					<tr>
+						<th>
+							Math: 
+						</th>
 
-					<th>
-						Reading: 
-					</th>
+						<th>
+							Reading: 
+						</th>
 
-					<th>
-						Writing: 
-					</th>
+						<th>
+							Writing: 
+						</th>
 
-					<th>
-						English: 
-					</th>
+						<th>
+							Cumulative: 
+						</th>
 
-					<th>
-						Science: 
-					</th>
+						<th>
+							Essay: 
+						</th>
+					</tr>
+					<tr>
+						<td><%= @score.math %></td>
+						<td><%= @score.reading %></td>
+						<td><%= @score.writing %></td>
+						<td><%= @score.math + @score.reading + @score.writing %></td>
+						<td><%= @score.essay %></td>	
+					</tr>	
+				</table>	
+			</div>		
+			      	
+			<div>
+				<h3>Comments:</h3>
+				<%= @score.comment %>
+			</div>
+			<div>
+		  	<%= link_to 'Edit', edit_score_path(@score) %> | <%= link_to 'Back', current_user %>
+			</div>
+<!-- PSAT -->
+		<% elsif @score.name == 'PSAT' %>
+			<div>
+	    	<% if @score.test_type == true %>
+	    		<h4><%= 'Practice Test' %></h4>
+	    	<% else %>
+	    		<h4><%= 'Actual Test' %></h4>
+	    	<% end %>		
+	  	
+				<h4>From: <%= @score.month %> <%= @score.year %> 
+					<% if @score.day == true %>
+	    			<%= 'Wednesday' %>
+	    		<% elsif @score.day == false %>
+	    			<%= 'Saturday' %>
+	    		<% else %>
+	    			<%= '' %>	
+	    		<% end %>	
+	    		Taken On: <%= @score.taken_date %>
+	  		</h4>
+	  	</div>
+			   
+			<div class="score_show_table col-md-12">
+				<table class="col-md-12">
+					<tr>
+						<th>
+							Math: 
+						</th>
 
-					<th>
-						Essay: 
-					</th>
-				</tr>
-				<tr>
-					<td><%= @score.math %></td>
-					<td><%= @score.reading %></td>
-					<td><%= @score.writing %></td>
-					<td><%= @score.english %></td>
-					<td><%= @score.science %></td>
-					<td><%= @score.essay %></td>	
-				</tr>	
-		</div>		
-		      	<%= @score.comment %>
+						<th>
+							Reading: 
+						</th>
 
-		      	
+						<th>
+							Writing: 
+						</th>
 
-		      	<%= link_to 'Edit', edit_score_path(@score) %> 
+						<th>
+							Cumulative: 
+						</th>
 
-		      	<%= link_to 'Back', current_user %> 
+					</tr>
+					<tr>
+						<td><%= @score.math %></td>
+						<td><%= @score.reading %></td>
+						<td><%= @score.writing %></td>
+						<td><%= @score.math + @score.reading + @score.writing %></td>	
+					</tr>	
+				</table>	
+			</div>		
+			      	
+			<div>
+				<h3>Comments:</h3>
+				<%= @score.comment %>
+			</div>
+			<div>
+		  	<%= link_to 'Edit', edit_score_path(@score) %> | <%= link_to 'Back', current_user %>
+			</div>
+		<% else %>
+<!-- ACT -->		
+			<div>
+	    	<% if @score.test_type == true %>
+	    		<h4><%= 'Practice Test' %></h4>
+	    	<% else %>
+	    		<h4><%= 'Actual Test' %></h4>
+	    	<% end %>		
+	  	
+				<h4>From: <%= @score.month %> <%= @score.year %> 
 
-	</div>
-</div>
+	    		Taken On: <%= @score.taken_date %>
+	  		</h4>
+	  	</div>
+			   
+			<div class="score_show_table col-md-12">
+				<table class="col-md-12">
+					<tr>
+						<th>
+							Math: 
+						</th>
+
+						<th>
+							Reading: 
+						</th>
+
+						<th>
+							English: 
+						</th>
+
+						<th>
+							Science: 
+						</th>
+						
+						<th>
+							Average: 
+						</th>
+
+						<th>
+							Essay: 
+						</th>
+					</tr>
+					<tr>
+						<td><%= @score.math %></td>
+						<td><%= @score.reading %></td>
+						<td><%= @score.english %></td>
+						<td><%= @score.science %></td>
+						<td><%= (@score.math + @score.reading + @score.english + @score.science)/4 %></td>
+						<td><%= @score.essay %></td>	
+					</tr>	
+				</table>	
+			</div>		
+			      	
+			<div>
+				<h3>Comments:</h3>
+				<%= @score.comment %>
+			</div>
+			<div>
+		  	<%= link_to 'Edit', edit_score_path(@score) %> | <%= link_to 'Back', current_user %>
+			</div>	
+		<% end %>	
+	</div><!-- well -->
+</div><!-- row -->
