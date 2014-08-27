@@ -9,7 +9,7 @@
         <div class="row form_list">
           <div class="form_heading"><h3>S.A.T.</h3></div>
           <% if current_user.admin? %>
-            <%= f.collection_select(:user_id, User.all, :id, :firstname, :prompt => true) %>
+            <%= f.collection_select(:user_id, User.all, :id, :full_name, :prompt => true) %>
           <% else %>
             <%= f.hidden_field :user_id, value: current_user.id %>
           <% end %>
