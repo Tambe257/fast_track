@@ -175,4 +175,7 @@
 			</table>
 		</div>
 	<% end %>
+	<h3>SAT Math Scores</h3>
+	<%= bar_chart @score_sat.group(:taken_date).sum(:math) %>
+
 </div>

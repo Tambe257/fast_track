@@ -7,13 +7,14 @@
 
 
         <div class="row form_list">
-          <div class="form_heading"><h3>S.A.T.</h3></div>
+          <div class="form_heading">
+            <h3>S.A.T.</h3></div>
           <% if current_user.admin? %>
-            <%= f.collection_select(:user_id, User.all, :id, :full_name, :prompt => true) %>
+            Student: <%= f.collection_select(:user_id, User.all, :id, :full_name, :prompt => true) %>
           <% else %>
             <%= f.hidden_field :user_id, value: current_user.id %>
           <% end %>
-
+          <br />
           <ul>
             <li class="col-sm-3">
               <div class="form-group"> 
@@ -84,7 +85,7 @@
       <div class="row form_list">  
         <div class="form_heading"><h3>P.S.A.T.</h3></div>
           <% if current_user.admin? %>
-            <%= f.collection_select(:user_id, User.all, :id, :firstname, :prompt => true) %>
+            Student: <%= f.collection_select(:user_id, User.all, :id, :firstname, :prompt => true) %>
           <% else %>
             <%= f.hidden_field :user_id, value: current_user.id %>
           <% end %>
@@ -166,7 +167,7 @@
 
           <div class="form_heading"><h3>A.C.T.</h3></div>
           <% if current_user.admin? %>
-            <%= f.collection_select(:user_id, User.all, :id, :firstname, :prompt => true) %>
+            Student: <%= f.collection_select(:user_id, User.all, :id, :firstname, :prompt => true) %>
           <% else %>
             <%= f.hidden_field :user_id, value: current_user.id %>
           <% end %>
@@ -201,26 +202,26 @@
 
             <div class="row form_list">
           <ul> 
-            <li class="col-sm-3">
+            <li class="col-sm-2">
               <div class="form-group"> 
                 <%= f.input :english, as: :integer, input_html: { rows: "1", :class => "form-control score_form_input" }, label: "English:" %>
               </div>
-              
+            <li class="col-sm-2">  
               <div class="form-group"> 
                 <%= f.input :math, as: :integer, input_html: { rows: "1", :class => "form-control score_form_input" }, label: "Math:" %>
               </div>
             </li>  
-            <li class="col-sm-3">
+            <li class="col-sm-2">
               <div class="form-group"> 
                 <%= f.input :reading, as: :integer, input_html: { rows: "1", :class => "form-control score_form_input" }, label: "Reading:" %>
               </div>
             </li>  
-            <li class="col-sm-3">
+            <li class="col-sm-2">
               <div class="form-group"> 
                 <%= f.input :science, as: :integer, input_html: { rows: "1", :class => "form-control score_form_input" }, label: "Science:" %>
               </div>
             </li> 
-            <li class="col-sm-3">   
+            <li class="col-sm-2">   
               <div class="form-group"> 
                 <%= f.input :essay, as: :integer, input_html: { rows: "1", :class => "form-control score_form_input" }, label: "Essay:" %>
               </div>
