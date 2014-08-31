@@ -22,7 +22,7 @@
 				    <th></th>
 
 				   </tr>	
-				    <% @scores.where.not(:name => 'ACT').each do |score| %>
+				    <% @scores.order('taken_date').where.not(:name => 'ACT').each do |score| %>
 				    	<td>
 				      	<% if score.test_type == true %>
 				      		<%= 'Practice' %>
@@ -101,7 +101,7 @@
 				    <th></th>
 
 				   </tr>	
-				    <% @scores.where(:name => 'ACT').each do |score| %>
+				    <% @scores.order('taken_date').where(:name => 'ACT').each do |score| %>
 						
 				    	<td>
 				      	<% if score.test_type == true %>
@@ -175,7 +175,22 @@
 			</table>
 		</div>
 	<% end %>
-	<h3>SAT Math Scores</h3>
-	<%= bar_chart @score_sat.group(:taken_date).sum(:math) %>
-
+	<div class="col-md-4">
+		<Div class="score_chart">
+			<h3>SAT Math Scores</h3>
+			<%= column_chart @score_sat.group(:taken_date).sum(:math) %>
+		</div>
+	</div>	
+	<div class="col-md-4">
+		<Div class="score_chart">
+			<h3>SAT Writing Scores</h3>
+			<%= column_chart @score_sat.group(:taken_date).sum(:writing) %>
+		</div>
+	</div>	
+	<div class="col-md-4">
+		<Div class="score_chart">
+			<h3>SAT Reading Scores</h3>
+			<%= column_chart @score_sat.group(:taken_date).sum(:reading) %>
+		</div>
+	</div>	
 </div>

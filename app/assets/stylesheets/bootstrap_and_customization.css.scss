@@ -92,6 +92,11 @@ hr {
   width: 75px;
 }
 
+.score_chart {
+  width: 400px;
+  padding-top: 5px;
+}
+
 .score_show {
   margin-top: 10px;
 }
@@ -121,7 +126,7 @@ hr {
   width:100%;
   box-shadow: 10px 10px 5px #888888;
   border:1px solid #000000;
-  
+  overflow: hidden;
   -moz-border-radius-bottomleft:5px;
   -webkit-border-bottom-left-radius:5px;
   border-bottom-left-radius:5px;
