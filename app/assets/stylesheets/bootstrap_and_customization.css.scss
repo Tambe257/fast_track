@@ -1,5 +1,14 @@
 @import 'bootstrap';
 
+.arrow-down {     
+  width: 0;     
+  height: 0;     
+  border-left: 15px solid transparent;     
+  border-right: 15px solid transparent;     
+  border-top: 15px solid #B7EDFF;     
+  margin: 0 0 0 25px; 
+} 
+
 .center {
   text-align: center;
 }
@@ -28,28 +37,55 @@
   padding: 5px;
 }
 
-.footer{
-  bottom: 0pt;
-  left: 0pt;
-  height:100px; 
-  width: 100%; 
-  background-color: #326d92;
-  background-repeat: repeat;
-  background-attachment: scroll;
-  background-position: 0% 0%;
+.footer {
+  bottom: 0px;
+  left: 0px;
+  width: 1200px;
+  clear: both;
   font-size: 150%;
-  padding-left: 15px;
-  padding-top: 10px;
   color: #999;
   a{
-      color: #428bca;
+      color: white;
   }
 }
-
 .footer p{
   position: relative;
   margin-left: 10px;
   float: left;
+}
+
+.footer_info1 {
+  width: 400px;
+  height: 200px;
+  float:left;
+  padding: 10px;
+  box-shadow: inset -25px 0px 25px -25px rgba(0,0,0,0.9);
+  background-color: #326d92;
+}
+
+.footer_info2 {
+  text-align: center;
+  height: 200px;
+  width: 400px;
+  background-color: #3EA4DE;
+  float:left;
+  padding: 10px;
+  font: 23px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: Helvetica, arial, freesans, clean, sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+
+.footer_info3 {
+  width: 400px;
+  height: 200px;
+  float:left;
+  padding: 10px;
+  box-shadow: inset 25px 0px 25px -25px  rgba(0,0,0,0.9);
+  background-color: #326d92;
+}
+
+.footer_list {
+  list-style-type: none;
+  font-size: 20px;
 }
 
 .form_heading {
@@ -74,10 +110,15 @@
 
 .header_row2 {
 	margin-top: -35px;
+  border-bottom: #326d92 2px solid;
 }
 
 hr {
-  border-top: 1px solid black;
+  border-top: 1px solid #326d92;
+}
+
+.left {
+  float: left;
 }
 
 .navbar {
@@ -86,6 +127,10 @@ hr {
 
 .profile_panel {
   margin-top: 10px;
+}
+
+.right {
+  float: right;
 }
 
 .score_form_input {
@@ -218,47 +263,6 @@ hr {
   border-width:0px 0px 1px 1px;
 }
 
-.user_show {
-  margin: 10px 0 10px 0;
-}
-
-.user_table {
-  margin: 10px;
-}
-
-.user_table td {
-  max-width: 300px;
-}
-
-.user_table th {
-  text-align: center;
-  background: #428bca;
-}
-
-.user_table th:hover {
-  background: #428bca;
-}
-
-.user_table tr {
-  text-align: center;
-}
-
-.user_table tbody {
-  border-style: solid;
-  border-width: 1px;
-}
-
-.welcome_section {
-	border-top: #326d92 5px solid;
-	height: 450px;
-	background: url('main_image_large.jpg') no-repeat;
-  position: relative;
-}
-
-.welcome_text {
-	text-align: right;
-}
-
 .testimonial { 
   margin: 0; 
   background: #B7EDFF;     
@@ -292,17 +296,8 @@ hr {
   bottom: -0.5em; 
 } 
 
-.arrow-down {     
-  width: 0;     
-  height: 0;     
-  border-left: 15px solid transparent;     
-  border-right: 15px solid transparent;     
-  border-top: 15px solid #B7EDFF;     
-  margin: 0 0 0 25px; 
-} 
-
 .testimonial-author {     
-  margin: 0 0 0 25px;     
+  margin: 0 0 10px 25px;     
   font-family: Arial, Helvetica, sans-serif;     
   color: #999;     
   text-align:left; 
@@ -312,3 +307,46 @@ hr {
   font-size: 12px;     
   color: #666; 
 }
+
+.user_show {
+  margin: 10px 0 10px 0;
+}
+
+.user_table {
+  margin: 10px;
+}
+
+.user_table td {
+  max-width: 300px;
+}
+
+.user_table th {
+  text-align: center;
+  background: #428bca;
+}
+
+.user_table th:hover {
+  background: #428bca;
+}
+
+.user_table tr {
+  text-align: center;
+}
+
+.user_table tbody {
+  border-style: solid;
+  border-width: 1px;
+}
+
+.welcome_section {
+	height: 450px;
+	background: url('main_image_large.jpg') no-repeat;
+  position: relative;
+}
+
+.welcome_text {
+	text-align: right;
+}
+
+
+
