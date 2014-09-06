@@ -2,7 +2,7 @@
 	<h3 class="center"><%= @user.firstname%> <%= @user.lastname%>'s scores</h3>
 	<hr>
 	
-	<% if @score_sat != nil || @score_psat != nil %>
+	<% if @scores.where(:name => 'SAT').count > 0 || @scores.where(:name => 'PSAT').count > 0 %>
 		<div class="score_table">
 			<h4 class="center">S.A.T. & P.S.A.T.</h4>
 			<table>
@@ -80,7 +80,7 @@
 			</table>
 		</div>
 	<% end %>
-	<% if @score_act != nil %>
+	<% if @scores.where(:name => 'ACT').count > 0 %>
 		<div class="score_table">
 			<h4 class="center">A.C.T.</h4>
 			<table>
@@ -175,22 +175,63 @@
 			</table>
 		</div>
 	<% end %>
-	<div class="col-md-4">
-		<Div class="score_chart">
-			<h3>SAT Math Scores</h3>
-			<%= column_chart @score_sat.group(:taken_date).sum(:math) %>
+	<% if @scores.where(:name => 'SAT').count > 0 %>
+		<div class="row center">
+			<Div class="score_chart">
+				<h3>SAT Math Scores</h3>
+				<%= column_chart @score_sat.group(:taken_date).sum(:math) %>
+			</div>
+			<Div class="score_chart">
+				<h3>SAT Writing Scores</h3>
+				<%= column_chart @score_sat.group(:taken_date).sum(:writing) %>
+			</div>
+			<Div class="score_chart">
+				<h3>SAT Reading Scores</h3>
+				<%= column_chart @score_sat.group(:taken_date).sum(:reading) %>
+			</div>
 		</div>
-	</div>	
-	<div class="col-md-4">
-		<Div class="score_chart">
-			<h3>SAT Writing Scores</h3>
-			<%= column_chart @score_sat.group(:taken_date).sum(:writing) %>
-		</div>
-	</div>	
-	<div class="col-md-4">
-		<Div class="score_chart">
-			<h3>SAT Reading Scores</h3>
-			<%= column_chart @score_sat.group(:taken_date).sum(:reading) %>
-		</div>
-	</div>	
+	<% end %>	
+	
+	<% if @scores.where(:name => 'PSAT').count > 0 %>
+		<div class="row center">
+			<Div class="score_chart">
+				<h3>PSAT Math Scores</h3>
+				<%= column_chart @score_psat.group(:taken_date).sum(:math) %>
+			</div>
+
+			<Div class="score_chart">
+				<h3>PSAT Writing Scores</h3>
+				<%= column_chart @score_psat.group(:taken_date).sum(:writing) %>
+			</div>
+
+			<Div class="score_chart">
+				<h3>PSAT Reading Scores</h3>
+				<%= column_chart @score_psat.group(:taken_date).sum(:reading) %>
+			</div>	
+		</div>	
+	<% end %>
+
+	<% if @scores.where(:name => 'ACT').count > 0 %>
+		<div class="row center">
+			<Div class="score_chart">
+				<h3>ACT Math Scores</h3>
+				<%= column_chart @score_act.group(:taken_date).sum(:math) %>
+			</div>
+
+			<Div class="score_chart">
+				<h3>ACT Reading Scores</h3>
+				<%= column_chart @score_act.group(:taken_date).sum(:reading) %>
+			</div>
+
+			<Div class="score_chart">
+				<h3>ACT English Scores</h3>
+				<%= column_chart @score_act.group(:taken_date).sum(:english) %>
+			</div>		
+
+			<Div class="score_chart">
+				<h3>ACT Science Scores</h3>
+				<%= column_chart @score_act.group(:taken_date).sum(:science) %>
+			</div>	
+		</div>	
+	<% end %>	
 </div>

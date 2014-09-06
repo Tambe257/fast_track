@@ -13,6 +13,10 @@
   text-align: center;
 }
 
+.chart-margin {
+  margin-right: 30px;
+}
+
 .dropdown {
   height: 50px;
 }
@@ -40,12 +44,16 @@
 .footer {
   bottom: 0px;
   left: 0px;
-  width: 1200px;
+  width: 100%;
+  height: 200px;
+  padding: 20px 10px 0px 0px;
   clear: both;
   font-size: 150%;
-  color: #999;
+  background-color: #90D1F9;
+  border-top: #3366CC 1px solid;
+  color: black;
   a{
-      color: white;
+      color: black;
   }
 }
 .footer p{
@@ -54,38 +62,15 @@
   float: left;
 }
 
-.footer_info1 {
-  width: 400px;
-  height: 200px;
-  float:left;
-  padding: 10px;
-  box-shadow: inset -25px 0px 25px -25px rgba(0,0,0,0.9);
-  background-color: #326d92;
-}
-
-.footer_info2 {
-  text-align: center;
-  height: 200px;
-  width: 400px;
-  background-color: #3EA4DE;
-  float:left;
-  padding: 10px;
-  font: 23px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
-  font-family: Helvetica, arial, freesans, clean, sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol';
-}
-
-.footer_info3 {
-  width: 400px;
-  height: 200px;
-  float:left;
-  padding: 10px;
-  box-shadow: inset 25px 0px 25px -25px  rgba(0,0,0,0.9);
-  background-color: #326d92;
+.footer_info {
+  list-style-type: none;
+  float: left;
 }
 
 .footer_list {
   list-style-type: none;
   font-size: 20px;
+  float: right;
 }
 
 .form_heading {
@@ -110,11 +95,11 @@
 
 .header_row2 {
 	margin-top: -35px;
-  border-bottom: #326d92 2px solid;
+  border-bottom: #3366CC 1px solid;
 }
 
 hr {
-  border-top: 1px solid #326d92;
+  border-top: 1px solid #3366CC;
 }
 
 .left {
@@ -138,8 +123,10 @@ hr {
 }
 
 .score_chart {
-  width: 400px;
+  width: 330px;
   padding-top: 5px;
+  margin: 0 20px 0 18px;
+  float: left;
 }
 
 .score_show {
