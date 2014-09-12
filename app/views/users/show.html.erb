@@ -175,63 +175,35 @@
 			</table>
 		</div>
 	<% end %>
+
 	<% if @scores.where(:name => 'SAT').count > 0 %>
 		<div class="row center">
-			<Div class="score_chart">
-				<h3>SAT Math Scores</h3>
-				<%= column_chart @score_sat.group(:taken_date).sum(:math) %>
-			</div>
-			<Div class="score_chart">
-				<h3>SAT Writing Scores</h3>
-				<%= column_chart @score_sat.group(:taken_date).sum(:writing) %>
-			</div>
-			<Div class="score_chart">
-				<h3>SAT Reading Scores</h3>
-				<%= column_chart @score_sat.group(:taken_date).sum(:reading) %>
-			</div>
+			<h3>SAT Scores</h3>
+			<%= column_chart [
+				{name: "Math", data: @score_sat.map{|t| [t.taken_date, t.math] }},
+  			{name: "Writing", data: @score_sat.map{|t| [t.taken_date, t.writing] }},
+  			{name: "Reading", data: @score_sat.map{|t| [t.taken_date, t.reading] }}] %> 
 		</div>
 	<% end %>	
 	
 	<% if @scores.where(:name => 'PSAT').count > 0 %>
 		<div class="row center">
-			<Div class="score_chart">
-				<h3>PSAT Math Scores</h3>
-				<%= column_chart @score_psat.group(:taken_date).sum(:math) %>
-			</div>
-
-			<Div class="score_chart">
-				<h3>PSAT Writing Scores</h3>
-				<%= column_chart @score_psat.group(:taken_date).sum(:writing) %>
-			</div>
-
-			<Div class="score_chart">
-				<h3>PSAT Reading Scores</h3>
-				<%= column_chart @score_psat.group(:taken_date).sum(:reading) %>
-			</div>	
+			<h3>PSAT Scores</h3>
+			<%= column_chart [
+				{name: "Math", data: @score_psat.map{|t| [t.taken_date, t.math] }},
+  			{name: "Writing", data: @score_psat.map{|t| [t.taken_date, t.writing] }},
+  			{name: "Reading", data: @score_psat.map{|t| [t.taken_date, t.reading] }}] %> 
 		</div>	
 	<% end %>
 
 	<% if @scores.where(:name => 'ACT').count > 0 %>
 		<div class="row center">
-			<Div class="score_chart">
-				<h3>ACT Math Scores</h3>
-				<%= column_chart @score_act.group(:taken_date).sum(:math) %>
-			</div>
-
-			<Div class="score_chart">
-				<h3>ACT Reading Scores</h3>
-				<%= column_chart @score_act.group(:taken_date).sum(:reading) %>
-			</div>
-
-			<Div class="score_chart">
-				<h3>ACT English Scores</h3>
-				<%= column_chart @score_act.group(:taken_date).sum(:english) %>
-			</div>		
-
-			<Div class="score_chart">
-				<h3>ACT Science Scores</h3>
-				<%= column_chart @score_act.group(:taken_date).sum(:science) %>
-			</div>	
+			<h3>ACT Scores</h3>
+			<%= column_chart [
+				{name: "Math", data: @score_act.map{|t| [t.taken_date, t.math] }},
+  			{name: "English", data: @score_act.map{|t| [t.taken_date, t.english] }},
+  			{name: "Reading", data: @score_act.map{|t| [t.taken_date, t.reading] }},
+  			{name: "Science", data: @score_act.map{|t| [t.taken_date, t.science] }}] %> 
 		</div>	
 	<% end %>	
 </div>
