@@ -5,7 +5,7 @@
 	<% if @scores.where(:name => 'SAT').count > 0 || @scores.where(:name => 'PSAT').count > 0 %>
 		<div class="score_table">
 			<h4 class="center">S.A.T. & P.S.A.T.</h4>
-			<table>
+			<table id="scores">
 			  <tbody>
 				  <tr>
 				   <tr>
@@ -195,7 +195,7 @@
 				{name: "Math", data: @score_act.map{|t| [t.taken_date, t.math] }},
   			{name: "English", data: @score_act.map{|t| [t.taken_date, t.english] }},
   			{name: "Reading", data: @score_act.map{|t| [t.taken_date, t.reading] }},
-  			{name: "Science", data: @score_act.map{|t| [t.taken_date, t.science] }}], min: 0, max: 80 %> 
+  			{name: "Science", data: @score_act.map{|t| [t.taken_date, t.science] }}], min: 0, max: 40 %> 
 		</div>	
 	<% end %>	
 </div>

@@ -205,11 +205,15 @@ hr {
 }.score_table tr:hover td{
   
 }
-.score_table tr:nth-child(odd){ background-color:#c4e3f3; }
-.score_table tr:nth-child(even)    { background-color:#ffffff; }.score_table td{
+
+/*.score_table tr:nth-child(odd){ background-color:#c4e3f3; }
+.score_table tr:nth-child(even)    { background-color:#ffffff; }
+*/
+.score_table_color {
+  background-color: #c4e3f3;
+}
+.score_table td{
   vertical-align:middle;
-  
-  
   border:1px solid #000000;
   border-width:0px 1px 1px 0px;
   text-align:center;
