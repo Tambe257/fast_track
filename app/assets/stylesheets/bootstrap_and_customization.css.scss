@@ -88,7 +88,7 @@
 }
 
 .header_logo {
-	float: left;
+  float:left;
 	width: auto;
 	position: relative;
 }
@@ -157,7 +157,7 @@ hr {
  
 }
 .score_table {
-  margin-top: 15px;
+  margin: 15px 0 15px 0;
   padding:0px;
   width:100%;
   box-shadow: 10px 10px 5px #888888;
@@ -205,7 +205,7 @@ hr {
 }.score_table tr:hover td{
   
 }
-.score_table tr:nth-child(odd){ background-color:#90d1f9; }
+.score_table tr:nth-child(odd){ background-color:#c4e3f3; }
 .score_table tr:nth-child(even)    { background-color:#ffffff; }.score_table td{
   vertical-align:middle;
   

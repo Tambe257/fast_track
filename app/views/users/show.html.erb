@@ -11,14 +11,13 @@
 				   <tr>
 				    <th>Type</th>
 				    <th>Name</th>
-				    <th colspan="2" class="center">Date</th>
-				    <th>Math</th>
+				    <th>Date</th>
 				    <th>Reading</th>
+				    <th>Math</th>				    
 				    <th>Writing</th>
+				    <th>Cummulative:</th>
 				    <th>Essay</th>
-				    <th>Comment:</th>
 				    <th>Taken On:</th>
-				    <th></th>
 				    <th></th>
 
 				   </tr>	
@@ -32,23 +31,19 @@
 				    	</td>
 				    	
 				    	<td>
-				      	<%= score.name %>
+				      	<%= score.name %> 
 				    	</td>
 							
 							<td>
-				      	<%= score.month %>
-				    	</td>
-
-				    	<td>
-				      	<%= score.year %>
+				      	<%= score.month %> <%= score.year %>
 				    	</td>
 
 							<td>
-				      	<%= score.math %>
+				      	<%= score.reading %>
 				    	</td>
 
 				    	<td>
-				      	<%= score.reading %>
+				      	<%= score.math %>
 				    	</td>
 
 				    	<td>
@@ -56,11 +51,11 @@
 				    	</td>
 							
 							<td>
-				      	<%= score.essay %>
+				      	<%= score.math + score.reading + score.writing %>
 				    	</td>
 							
 							<td>
-				      	<%= truncate(score.comment, lengtd: 50) %>
+				      	<%= score.essay %>
 				    	</td>
 							
 							<td>
@@ -68,12 +63,9 @@
 				    	</td>
 				    	
 				    	<td>
-				      	<%= link_to 'Edit', edit_score_path(score) %> 
+				      	<%= link_to 'Edit', edit_score_path(score) %> | <%= link_to 'Show', score %> 
 				    	</td>
 
-				    	<td>
-				      	<%= link_to 'Show', score %> 
-				    	</td>
 				    </tr>	    
 				  <% end %>
 				</tbody>    
@@ -182,7 +174,7 @@
 			<%= column_chart [
 				{name: "Math", data: @score_sat.map{|t| [t.taken_date, t.math] }},
   			{name: "Writing", data: @score_sat.map{|t| [t.taken_date, t.writing] }},
-  			{name: "Reading", data: @score_sat.map{|t| [t.taken_date, t.reading] }}] %> 
+  			{name: "Reading", data: @score_sat.map{|t| [t.taken_date, t.reading] }}], min: 200, max: 900 %> 
 		</div>
 	<% end %>	
 	
@@ -203,7 +195,7 @@
 				{name: "Math", data: @score_act.map{|t| [t.taken_date, t.math] }},
   			{name: "English", data: @score_act.map{|t| [t.taken_date, t.english] }},
   			{name: "Reading", data: @score_act.map{|t| [t.taken_date, t.reading] }},
-  			{name: "Science", data: @score_act.map{|t| [t.taken_date, t.science] }}] %> 
+  			{name: "Science", data: @score_act.map{|t| [t.taken_date, t.science] }}], min: 0, max: 80 %> 
 		</div>	
 	<% end %>	
 </div>
