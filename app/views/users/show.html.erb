@@ -7,7 +7,7 @@
 			<h4 class="center">S.A.T. & P.S.A.T.</h4>
 			<table id="scores">
 			  <tbody>
-				  <tr>
+				  <tr class="scores_row">
 				   <tr>
 				    <th>Type</th>
 				    <th>Name</th>
@@ -195,7 +195,7 @@
 				{name: "Math", data: @score_act.map{|t| [t.taken_date, t.math] }},
   			{name: "English", data: @score_act.map{|t| [t.taken_date, t.english] }},
   			{name: "Reading", data: @score_act.map{|t| [t.taken_date, t.reading] }},
-  			{name: "Science", data: @score_act.map{|t| [t.taken_date, t.science] }}], min: 0, max: 40 %> 
+  			{name: "Science", data: @score_act.map{|t| [t.taken_date, t.science] }}], min: 0, max: 36 %> 
 		</div>	
 	<% end %>	
 </div>

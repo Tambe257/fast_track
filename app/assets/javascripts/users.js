@@ -6,7 +6,7 @@
 $(function(){
     $("#scores tr").ready(function() {
       var textValue = $(this).val();
-      if(textValue === 'Practice'){
+      if(textValue == false){
         // add css class or any manipulation to your dom.
         $("#scores tr").addClass("score_table_color");
       }
