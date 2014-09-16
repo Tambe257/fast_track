@@ -3,12 +3,12 @@
 // You can use CoffeeScript in this file: http://coffeescript.org/
 
 
-$(function(){
-    $("#scores tr").ready(function() {
-      var textValue = $(this).val();
-      if(textValue == false){
-        // add css class or any manipulation to your dom.
-        $("#scores tr").addClass("score_table_color");
-      }
-    });
-});
+//$(function(){
+//    $("#scores tr").ready(function() {
+//      var textValue = $(this).val();
+//      if(textValue == false){
+//        // add css class or any manipulation to your dom.
+//        $("#scores tr").addClass("score_table_color");
+//      }
+//    });
+//});
