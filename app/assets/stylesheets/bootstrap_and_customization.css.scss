@@ -114,6 +114,11 @@ hr {
   margin-top: 10px;
 }
 
+@media (max-width:767px) {
+  .nav_clear {
+    clear:both;
+  }
+}
 .profile_panel {
   margin-top: 10px;
 }
