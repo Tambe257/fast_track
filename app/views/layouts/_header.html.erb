@@ -14,9 +14,10 @@
     <div class="container">
       <div class="collapse navbar-collapse" id="fasttracknav"> 
         <div class="header_logo">
-              <%= link_to image_tag('logo2.png'), root_path %>
+              <%= link_to image_tag('logo3.png'), root_path %>
         </div>
-        <ul class="nav navbar-nav navbar-left nav_clear">   
+        
+        <ul class="nav navbar-nav navbar-right nav_clear">
           <li>    
             <%= link_to 'About',  about_path, class: "header_text" %>
           </li>
@@ -25,8 +26,7 @@
               <li><%= link_to 'Students',  students_path %></li>
             <% end %>
           <% end %>  
-        </ul>  
-        <ul class="nav navbar-nav navbar-right">
+
           <% if user_signed_in? %>
             <% if current_user.admin? %>
               <li><%= link_to 'Add Score',  new_score_path %></li>
