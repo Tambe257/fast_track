@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @sitting.comment %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @sitting.date %>
+</p>
+
+<%= link_to 'Edit', edit_sitting_path(@sitting) %> |
+<%= link_to 'Back', sittings_path %>

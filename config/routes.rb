@@ -1,4 +1,5 @@
-FastTrack::Application.routes.draw do
+FastTrack::Application.routes.draw do  
+
   get "users/show"
   devise_for :users
   
@@ -10,12 +11,16 @@ FastTrack::Application.routes.draw do
 
   resources :users do
     resources :scores
+    resources :sittings
   end 
-
+    
   resources :scores do
     resources :users
   end  
 
+  resources :sittings do
+    resources :users
+  end  
 
   get "pages/home"
   # The priority is based upon order of creation: first created -> highest priority.
