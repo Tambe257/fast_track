@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140924173311) do
+ActiveRecord::Schema.define(version: 20140924173609) do
+
+  create_table "hints", force: true do |t|
+    t.text     "body"
+    t.text     "explanation"
+    t.integer  "rule_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "questions", force: true do |t|
+    t.text     "body"
+    t.text     "answer"
+    t.integer  "rule_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "rules", force: true do |t|
     t.string   "name"
