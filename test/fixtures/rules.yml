@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  subject: MyString
+  session_id: 1
+  hint_id: 1
+  question_id: 1
+  trigger_id: 1
+
+two:
+  subject: MyString
+  session_id: 1
+  hint_id: 1
+  question_id: 1
+  trigger_id: 1

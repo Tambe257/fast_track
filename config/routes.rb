@@ -1,5 +1,7 @@
 FastTrack::Application.routes.draw do  
 
+  resources :rules
+
   get "users/show"
   devise_for :users
   

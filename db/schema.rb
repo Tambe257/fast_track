@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140923174150) do
+ActiveRecord::Schema.define(version: 20140924172157) do
+
+  create_table "rules", force: true do |t|
+    t.string   "name"
+    t.string   "subject"
+    t.integer  "session_id"
+    t.integer  "hint_id"
+    t.integer  "question_id"
+    t.integer  "trigger_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "scores", force: true do |t|
     t.boolean  "test_type",  limit: 255
@@ -37,7 +48,10 @@ ActiveRecord::Schema.define(version: 20140923174150) do
     t.date     "date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
+
+  add_index "sittings", ["user_id"], name: "index_sittings_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
