@@ -1,5 +1,6 @@
 FastTrack::Application.routes.draw do  
 
+  resources :triggers
   resources :questions
   resources :hints
   resources :rules
@@ -36,6 +37,8 @@ FastTrack::Application.routes.draw do
   get 'about' => 'pages#about'
 
   get 'students' => 'pages#students'
+
+  get 'admin' => 'pages#admin'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

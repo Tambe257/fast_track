@@ -1,2 +1,14 @@
-<h1>Hints#show</h1>
-<p>Find me in app/views/hints/show.html.erb</p>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Hint:</strong>
+  <%= @hint.body %>
+</p>
+
+<p>
+  <strong>Explanation:</strong>
+  <%= @hint.explanation %>
+</p>
+
+<%= link_to 'Edit', edit_hint_path(@hint) %> |
+<%= link_to 'Back', hints_path %>
