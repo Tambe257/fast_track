@@ -10,5 +10,11 @@
   <%= @hint.explanation %>
 </p>
 
+<p>
+  <strong>Images:</strong>
+  <%= image_tag @hint.image.url(:medium) %>
+  <%= image_tag @hint.image2.url(:medium) %>
+</p>
+
 <%= link_to 'Edit', edit_hint_path(@hint) %> |
 <%= link_to 'Back', hints_path %>

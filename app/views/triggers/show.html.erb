@@ -10,5 +10,11 @@
   <%= @trigger.explanation %>
 </p>
 
+<p>
+  <strong>Images:</strong>
+  <%= image_tag @trigger.image.url(:medium) %>
+  <%= image_tag @trigger.image2.url(:medium) %>
+</p>
+
 <%= link_to 'Edit', edit_trigger_path(@trigger) %> |
 <%= link_to 'Back', triggers_path %>
