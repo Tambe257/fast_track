@@ -1,5 +1,6 @@
 FastTrack::Application.routes.draw do  
 
+  resources :questions
   resources :hints
   resources :rules
 
