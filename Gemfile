@@ -14,6 +14,7 @@ gem 'simple_form'
 gem 'chartkick'
 gem 'groupdate'
 gem 'paperclip', '~> 3.0'
+gem 'aws-sdk', '~> 1.53.0'
 
 group :development, :test do
 	gem 'sqlite3'
