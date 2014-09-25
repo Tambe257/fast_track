@@ -1,0 +1,19 @@
+<div class="well">
+  <div clas="panel-body">
+    <%= simple_form_for(@hint, html: { class: "form-horizontal"}) do |f| %>
+      <%= f.error_notification %>
+
+      Rule: <%= f.collection_select(:rule_id, Rule.all, :id, :name, :prompt => true) %>
+      <div class="form-group">
+        <%= f.input :body, as: :text, input_html: { rows: "2", :class => "form-control" }, label: "Hint:" %>
+      </div>
+      <div class="form-group">
+        <%= f.input :explanation, as: :text, input_html: { rows: "2", :class => "form-control" }, label: "Explanation " %>
+      </div>
+
+     
+         <%= f.button :submit, "Post Hint", class: "btn btn-primary" %>
+    
+    <% end %>
+  </div>  
+</div>

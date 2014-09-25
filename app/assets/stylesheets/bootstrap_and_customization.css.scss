@@ -22,7 +22,6 @@ body {
 }
 
 .container {
-  background: url('danimage_super_large.jpg') no-repeat fixed center center;
   padding: 0px;
   height: auto;
 }
@@ -115,6 +114,10 @@ body {
   -webkit-box-shadow: 0 0 5px#888;
   box-shadow: 0 0 5px #888;
   font-size: 18px;
+}
+
+.home-container {
+  background: url('danimage_super_large.jpg') no-repeat fixed center center;
 }
 
 hr {

@@ -1,5 +1,6 @@
 FastTrack::Application.routes.draw do  
 
+  resources :hints
   resources :rules
 
   get "users/show"

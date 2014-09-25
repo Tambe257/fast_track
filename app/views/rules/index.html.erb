@@ -1,35 +1,30 @@
 <h1>Listing rules</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Subject</th>
-      <th>Session</th>
-      <th>Hint</th>
-      <th>Question</th>
-      <th>Trigger</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @rules.each do |rule| %>
+<div class="score_table">
+  <table>
+    <thead>
       <tr>
-        <td><%= rule.subject %></td>
-        <td><%= rule.session_id %></td>
-        <td><%= rule.hint_id %></td>
-        <td><%= rule.question_id %></td>
-        <td><%= rule.trigger_id %></td>
-        <td><%= link_to 'Show', rule %></td>
-        <td><%= link_to 'Edit', edit_rule_path(rule) %></td>
-        <td><%= link_to 'Destroy', rule, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Name: </th>
+        <th>Subject: </th>
+        <th></th>
+        <th></th>
+        <th></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
+    <tbody>
+      <% @rules.each do |rule| %>
+        <tr>
+          <td><%= rule.name %></td>
+          <td><%= rule.subject %></td>
+          <td><%= link_to 'Show', rule %></td>
+          <td><%= link_to 'Edit', edit_rule_path(rule) %></td>
+          <td><%= link_to 'Destroy', rule, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 <br>
 
 <%= link_to 'New Rule', new_rule_path %>

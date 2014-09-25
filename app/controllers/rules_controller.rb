@@ -24,7 +24,7 @@ class RulesController < ApplicationController
   # POST /rules
   # POST /rules.json
   def create
-    @rule = Rule.new(rule_params)
+    @rule = Rule.new(params[:rule])
 
     respond_to do |format|
       if @rule.save
@@ -41,7 +41,7 @@ class RulesController < ApplicationController
   # PATCH/PUT /rules/1.json
   def update
     respond_to do |format|
-      if @rule.update(rule_params)
+      if @rule.update(params[:rule])
         format.html { redirect_to @rule, notice: 'Rule was successfully updated.' }
         format.json { head :no_content }
       else
