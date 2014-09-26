@@ -6,6 +6,6 @@ class Sitting < ActiveRecord::Base
 
 	belongs_to :user
 
-	has_many :rules
+	has_many :rules, :through => :combos
 	
 end

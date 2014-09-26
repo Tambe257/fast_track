@@ -8,5 +8,6 @@ class Rule < ActiveRecord::Base
 	has_many :questions
 	has_many :triggers
 	has_many :hints
+	has_many :sittings, :through => :combos
 
 end
