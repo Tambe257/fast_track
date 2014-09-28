@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   		@score_act = @scores.where(:name => 'ACT')
   		@score_sat = @scores.where(:name => 'SAT')
   		@score_psat = @scores.where(:name => 'PSAT')
+      @sittings = @user.sittings
   	else
   		redirect_to root_path
   	end	

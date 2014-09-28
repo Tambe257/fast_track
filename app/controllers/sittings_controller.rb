@@ -69,6 +69,6 @@ class SittingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def sitting_params
-      params.require(:sitting).permit(:comment, :date)
+      params.require(:sitting).permit(:comment, :date, :user_id, :rule_ids => [])
     end
 end

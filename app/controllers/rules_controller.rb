@@ -24,7 +24,7 @@ class RulesController < ApplicationController
   # POST /rules
   # POST /rules.json
   def create
-    @rule = Rule.new(params[:rule])
+    @rule = Rule.new(rule_params)
 
     respond_to do |format|
       if @rule.save
@@ -41,7 +41,7 @@ class RulesController < ApplicationController
   # PATCH/PUT /rules/1.json
   def update
     respond_to do |format|
-      if @rule.update(params[:rule])
+      if @rule.update(rule_params)
         format.html { redirect_to @rule, notice: 'Rule was successfully updated.' }
         format.json { head :no_content }
       else
@@ -69,6 +69,6 @@ class RulesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def rule_params
-      params.require(:rule).permit(:subject, :session_id, :hint_id, :question_id, :trigger_id)
+      params.require(:rule).permit(:name, :subject, :session_id, :hint_id, :question_id, :trigger_id)
     end
 end

@@ -1,7 +1,7 @@
 <div class="well user_show">
 	<h3 class="center"><%= @user.firstname%> <%= @user.lastname%>'s scores</h3>
 	<hr>
-	
+
 	<% if @scores.where(:name => 'SAT').count > 0 || @scores.where(:name => 'PSAT').count > 0 %>
 		<div class="score_table">
 			<h4 class="center">S.A.T. & P.S.A.T.</h4>

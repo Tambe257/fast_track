@@ -1,23 +1,20 @@
-<%= form_for(@sitting) do |f| %>
-  <% if @sitting.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@sitting.errors.count, "error") %> prohibited this sitting from being saved:</h2>
+<%= simple_form_for(@sitting, html: { class: "form-horizontal"}) do |f| %>
+  <%= f.error_notification %>
 
-      <ul>
-      <% @sitting.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
+  <% Rule.all.each do |rule| %>
+        <%= check_box_tag "sitting[rule_ids][]", rule.id, @sitting.rule_ids.include?(rule.id) %> <%= rule.id %>
   <% end %>
-
-  <div class="field">
-    <%= f.label :comment %><br>
-    <%= f.text_area :comment %>
+  
+  <% if current_user.admin? %>
+      Student: <%= f.collection_select(:user_id, User.all, :id, :full_name, :prompt => true) %>
+    <% else %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+  <% end %>
+  <div class="form-group">
+    <%= f.input :comment, as: :text, input_html: { rows: "2", :class => "form-control" }, label: "Comments:" %>
   </div>
-  <div class="field">
-    <%= f.label :date %><br>
-    <%= f.date_select :date %>
+  <div class="form-group"> 
+    <%= f.date_select :date, as: :date, label: "Taken Date:" %>
   </div>
   <div class="actions">
     <%= f.submit %>

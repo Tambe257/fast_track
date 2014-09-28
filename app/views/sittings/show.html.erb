@@ -1,5 +1,13 @@
 <p id="notice"><%= notice %></p>
 
+	<h2><%= @sitting.user.firstname %> <%= @sitting.user.lastname %></h2>
+<p>
+  <strong>Rule:</strong>
+  <% @sitting.rules.each do |rule| %>
+  	<%= rule.name %>
+  <% end %>	
+</p>
+
 <p>
   <strong>Comment:</strong>
   <%= @sitting.comment %>
