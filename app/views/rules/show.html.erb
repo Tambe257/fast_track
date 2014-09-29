@@ -10,25 +10,5 @@
   <%= @rule.subject %>
 </p>
 
-<p>
-  <strong>Session:</strong>
-  <%= @rule.session_id %>
-</p>
-
-<p>
-  <strong>Hint:</strong>
-  <%= @rule.hint_id %>
-</p>
-
-<p>
-  <strong>Question:</strong>
-  <%= @rule.question_id %>
-</p>
-
-<p>
-  <strong>Trigger:</strong>
-  <%= @rule.trigger_id %>
-</p>
-
 <%= link_to 'Edit', edit_rule_path(@rule) %> |
 <%= link_to 'Back', rules_path %>

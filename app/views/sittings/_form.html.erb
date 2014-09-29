@@ -1,22 +1,32 @@
-<%= simple_form_for(@sitting, html: { class: "form-horizontal"}) do |f| %>
-  <%= f.error_notification %>
+<div class="well">
+  <div class="panel-body">
+    <%= simple_form_for(@sitting, html: { class: "form-horizontal"}) do |f| %>
+      <%= f.error_notification %>
+      
+      <div class="form-group">
+        <% if current_user.admin? %>
+          Student: <%= f.collection_select(:user_id, User.all, :id, :full_name, :prompt => true) %>
+        <% else %>
+          <%= f.hidden_field :user_id, value: current_user.id %>
+        <% end %> <strong>|</strong> 
+        Date: <%= f.date_select :date, as: :date, label: "Taken Date:" %>
+      </div>  
 
-  <% Rule.all.each do |rule| %>
-        <%= check_box_tag "sitting[rule_ids][]", rule.id, @sitting.rule_ids.include?(rule.id) %> <%= rule.name %>
-  <% end %>
-  
-  <% if current_user.admin? %>
-      Student: <%= f.collection_select(:user_id, User.all, :id, :full_name, :prompt => true) %>
-    <% else %>
-      <%= f.hidden_field :user_id, value: current_user.id %>
-  <% end %>
-  <div class="form-group">
-    <%= f.input :comment, as: :text, input_html: { rows: "2", :class => "form-control" }, label: "Comments:" %>
-  </div>
-  <div class="form-group"> 
-    <%= f.date_select :date, as: :date, label: "Taken Date:" %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+      <div class="form-group">
+        <% Rule.all.each do |rule| %>
+          <%= check_box_tag "sitting[rule_ids][]", rule.id, @sitting.rule_ids.include?(rule.id) %> <%= rule.name %>      
+        <% end %>
+      </div>
+     
+      <div class="form-group">
+        <%= f.input :comment, as: :text, input_html: { rows: "2", :class => "form-control" }, label: "Comments:" %>
+      </div>
+      <div class="form-group"> 
+        
+      </div>
+      <div class="actions">
+        <%= f.button :submit, "Post Session", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>  
+</div>  

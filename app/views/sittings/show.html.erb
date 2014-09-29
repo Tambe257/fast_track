@@ -11,37 +11,77 @@
 	  <tbody>
 			<% @rules.each do |rule| %>
 				<tr>
-					<th>Rule: <%= rule.name %></th>
-					<th></th>
-					<th></th>
+					<th colspan="2" >Rule: <%= rule.name %></th>
 					<th></th>
 				</tr>	  
-				
+<!-- Triggers -->				
 				<% rule.triggers.each do |trigger| %>
 					<tr>
+						<td>T</td>
 						<td><%= trigger.body %></td>
 						<td><%= trigger.explanation %></td>
-						<td><%= image_tag trigger.image.url(:thumb) %></td>
-  					<td><%= image_tag trigger.image2.url(:thumb) %></td>
-					</tr>	
+					</tr>
+					<% if trigger.image? || trigger.image2? %>
+						<tr>	
+							<td></td>
+							<% if trigger.image? %>
+								<td><%= image_tag trigger.image.url(:thumb) %></td>
+							<% else %>
+								<td></td>
+							<% end %>	
+							<% if trigger.image2? %>	
+	  						<td><%= image_tag trigger.image2.url(:thumb) %></td>
+	  					<% else %>
+	  						<td></td>	
+	  					<% end %>	
+						</tr>	
+					<% end %>	
 				<% end %>	
-
+<!-- Questions -->	
 				<% rule.questions.each do |question| %>
 					<tr>
+						<td>Q</td>
 						<td><%= question.body %></td>
 						<td><%= question.answer %></td>
-						<td><%= image_tag question.image.url(:thumb) %></td>
-  					<td><%= image_tag question.image2.url(:thumb) %></td>
-					</tr>	
+					</tr>
+					<% if question.image? || question.image2? %>
+						<tr>	
+							<td></td>
+							<% if question.image? %>
+								<td><%= image_tag question.image.url(:thumb) %></td>
+							<% else %>
+								<td></td>
+							<% end %>
+							<% if question.image2? %>		
+	  						<td><%= image_tag question.image2.url(:thumb) %></td>
+	  					<% else %>
+	  						<td></td>
+	  					<% end %>		
+						</tr>	
+					<% end %>	
 				<% end %>	
-
+<!-- Hints -->	
 				<% rule.hints.each do |hint| %>
 					<tr>
+						<td>H</td>
 						<td><%= hint.body %></td>
 						<td><%= hint.explanation %></td>
-						<td><%= image_tag hint.image.url(:thumb) %></td>
-  					<td><%= image_tag hint.image2.url(:thumb) %></td>
-					</tr>	
+					</tr>
+					<% if hint.image? || hint.image2? %>
+						<tr>	
+							<td></td>
+							<% if question.image? %>
+								<td><%= image_tag hint.image.url(:thumb) %></td>
+							<% else %>	
+								<td></td>
+							<% end %>	
+							<% if question.image? %>
+	  						<td><%= image_tag hint.image2.url(:thumb) %></td>
+	  					<% else %>	
+	  						<td></td>
+	  					<% end %>	
+						</tr>	
+					<% end %>	
 				<% end %>	
 			<% end %>
 
