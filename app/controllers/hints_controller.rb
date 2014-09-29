@@ -16,7 +16,7 @@ class HintsController < ApplicationController
   end
 
   def create
-    @hint = Hint.new(params[:hint])
+    @hint = Hint.new(hint_params)
 
     respond_to do |format|
       if @hint.save
@@ -31,7 +31,7 @@ class HintsController < ApplicationController
 
   def update
     respond_to do |format|
-      if @hint.update(params[:hint])
+      if @hint.update(hint_params)
         format.html { redirect_to @hint, notice: 'Hint was successfully updated.' }
         format.json { head :no_content }
       else
@@ -57,7 +57,7 @@ class HintsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hint_params
-      params.require(:hint).permit(:body, :explanation, :rule_id)
+      params.require(:hint).permit(:body, :explanation, :rule_id, :image, :image2)
     end
 end
 

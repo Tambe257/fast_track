@@ -16,7 +16,7 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @question = Question.new(params[:question])
+    @question = Question.new(question_params)
 
     respond_to do |format|
       if @question.save
@@ -31,7 +31,7 @@ class QuestionsController < ApplicationController
 
   def update
     respond_to do |format|
-      if @question.update(params[:question])
+      if @question.update(question_params)
         format.html { redirect_to @question, notice: 'Question was successfully updated.' }
         format.json { head :no_content }
       else
@@ -57,6 +57,6 @@ class QuestionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def question_params
-      params.require(:question).permit(:body, :answer, :rule_id)
+      params.require(:question).permit(:body, :answer, :rule_id, :image, :image2)
     end
 end

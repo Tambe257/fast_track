@@ -2,7 +2,7 @@
   <%= f.error_notification %>
 
   <% Rule.all.each do |rule| %>
-        <%= check_box_tag "sitting[rule_ids][]", rule.id, @sitting.rule_ids.include?(rule.id) %> <%= rule.id %>
+        <%= check_box_tag "sitting[rule_ids][]", rule.id, @sitting.rule_ids.include?(rule.id) %> <%= rule.name %>
   <% end %>
   
   <% if current_user.admin? %>

@@ -16,7 +16,7 @@ class TriggersController < ApplicationController
   end
 
   def create
-    @trigger = Trigger.new(params[:trigger])
+    @trigger = Trigger.new(trigger_params)
 
     respond_to do |format|
       if @trigger.save
@@ -31,7 +31,7 @@ class TriggersController < ApplicationController
 
   def update
     respond_to do |format|
-      if @trigger.update(params[:trigger])
+      if @trigger.update(trigger_params)
         format.html { redirect_to @trigger, notice: 'Trigger was successfully updated.' }
         format.json { head :no_content }
       else
@@ -57,6 +57,6 @@ class TriggersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def trigger_params
-      params.require(:trigger).permit(:body, :explanation, :rule_id)
+      params.require(:trigger).permit(:body, :explanation, :rule_id, :image, :image2)
     end
 end

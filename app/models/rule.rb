@@ -9,4 +9,6 @@ class Rule < ActiveRecord::Base
 	has_many :combos
 	has_many :sittings, :through => :combos
 
+	accepts_nested_attributes_for :questions, :triggers, :hints
+
 end

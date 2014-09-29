@@ -10,6 +10,14 @@ class SittingsController < ApplicationController
   # GET /sittings/1
   # GET /sittings/1.json
   def show
+    @sitting = Sitting.find(params[:id])
+    @rules = @sitting.rules
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @sitting }
+      format.js
+    end
   end
 
   # GET /sittings/new
