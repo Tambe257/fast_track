@@ -125,11 +125,26 @@ body {
 }
 
 .home-container {
-  background: url('danimage_super_large.jpg') no-repeat fixed center center;
+  background: url('booksopaque.jpg') no-repeat fixed center center;
 }
 
 hr {
   border-top: 1px solid #888;
+}
+
+.inner-wrapper {
+  background: rgba(0,0,0,0.3);
+  box-shadow: 0 6px 6px rgba(0,0,0,0.3);
+  border-radius: 3px;
+  overflow: hidden;
+  zoom: 1;
+  width: 375px;
+  height: 250px;
+  z-index: 999999999;
+  padding: 0 10px 0 10px;
+  margin: 100px auto;
+  width: 50%;
+
 }
 
 .item {
@@ -159,6 +174,10 @@ hr {
 
 .next-section {
   
+}
+
+.outer-wrapper {
+  position: relative;
 }
 
 .profile_panel {
@@ -397,7 +416,7 @@ hr {
 }
 
 .welcome_text {
-	text-align: right;
+	text-align: center;
 }
 
 

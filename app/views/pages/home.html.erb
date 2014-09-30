@@ -1,23 +1,25 @@
 <div class="home-container">
   <div class="row welcome_section">
-	  <div class="container">
-	    <div class="col-sm-12">
-	    	<div class="welcome_text">
-		      <h3 class="emphasis">Welcome!</h3>
-		      <p class="landing-divider-subtitle">This is the home of Fast Track Tutoring LLC.</p>
+  	<div class="outer-wrapper">
+  		<div class="inner-wrapper">
+  			<div class="logo-container">
+		    	<div class="welcome_text">
+			      <h3 class="emphasis">Welcome!</h3>
+			      <p class="landing-divider-subtitle">This is the home of Fast Track Tutoring LLC.</p>
 
-		      <% if user_signed_in? %>
-		          # do something
-		     	<% else %>
-		       <p>
-		         <%= link_to "Click Here To Email F.A.S.T Track Tutoring", "mailto:info@fasttracktutoringllc.com", class: "btn btn-primary" %>
-		       </p>
+			      <% if user_signed_in? %>
+			          # do something
+			     	<% else %>
+			       <p>
+			         <%= link_to "Click Here To Email F.A.S.T Track Tutoring", "mailto:info@fasttracktutoringllc.com", class: "btn btn-primary" %>
+			       </p>
 
-		       <%= link_to "Sign Up", new_user_registration_path %>
-		  		<% end %>  
-		  	</div>	
-	    </div>
-	  </div>
+			       <%= link_to "Sign Up", new_user_registration_path %>
+			  		<% end %>  
+			  	</div>	
+			  </div>	
+		  </div>	
+	  </div>	
 	</div>
 
 	<!-- Testimonial Section below -->

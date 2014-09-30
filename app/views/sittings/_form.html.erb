@@ -5,7 +5,7 @@
       
       <div class="form-group">
         <% if current_user.admin? %>
-          Student: <%= f.collection_select(:user_id, User.all, :id, :full_name, :prompt => true) %>
+          Student: <%= f.collection_select(:user_id, User.where(:admin => [nil, false]).order(:lastname), :id, :full_name, :prompt => true) %>
         <% else %>
           <%= f.hidden_field :user_id, value: current_user.id %>
         <% end %> <strong>|</strong> 
