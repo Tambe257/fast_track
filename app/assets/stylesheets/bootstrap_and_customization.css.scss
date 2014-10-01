@@ -13,7 +13,7 @@
   height: 0;     
   border-left: 15px solid transparent;     
   border-right: 15px solid transparent;     
-  border-top: 15px solid #B7EDFF;     
+  border-top: 15px solid #3276b1;     
   margin: 0 0 0 25px; 
 } 
 
@@ -32,6 +32,8 @@ body {
 .container {
   padding: 0px;
   height: auto;
+  width: auto;
+  margin: 0px;
 }
 
 .dropdown {
@@ -111,8 +113,8 @@ body {
 
 .header_logo {
   float:left;
-	width: auto;
-	position: relative;
+  width: auto;
+  position: relative;
   margin-top: 9px;
 }
 
@@ -126,6 +128,10 @@ body {
 
 .home-container {
   background: url('booksopaque.jpg') no-repeat fixed center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 hr {
@@ -149,8 +155,20 @@ hr {
 
 .item {
   height: 275px;
+  width: 275px;
+  background-color: white;
+  margin: 0 25px 25px 50px;
+  padding: 10px;
+}
+
+.item:hover {
+  background-color: #428BCA;
+}
+
+.item-inner {
+  height: 235px;
+  width: 255px;
   background-color: #EEEEEE;
-  margin: 25px 25px 25px 50px;
 }
 
 .left {
@@ -158,7 +176,7 @@ hr {
 }
 
 .navbar {
-	margin-bottom: 5px;
+  margin-bottom: 5px;
   background-color: white;
 }
 
@@ -173,7 +191,10 @@ hr {
 }
 
 .next-section {
-  
+  text-align: center;
+  height: 310px;
+  overflow: hidden;
+  padding: 0 0 10px 50px;
 }
 
 .outer-wrapper {
@@ -324,17 +345,21 @@ hr {
   border-width:0px 0px 1px 1px;
 }
 
+.signin-container {
+  text-align: center;
+}
+
 .testimonial { 
-  margin: 0; 
-  background: #B7EDFF;     
+  margin: 0;     
   padding: 10px 50px;     
   position: relative;     
   font-family: Georgia, serif;     
-  color: #666;     
+  color: #FFFFFF;     
   border-radius: 5px;     
   font-style: italic;     
-  text-shadow: 0 1px 0 #ECFBFF;     
-  background-image: linear-gradient(#CEF3FF, #B7EDFF); 
+  text-shadow: 0 1px 0 black;     
+  background-color: #3276b1; 
+  max-width: 470px;
 } 
 
 .testimonial:before, .testimonial:after {     
@@ -342,7 +367,7 @@ hr {
   position: absolute;     
   font-size: 80px;     
   line-height: 1;     
-  color: #999;     
+  color: #FFFFFF;     
   font-style: normal; 
 } 
 
@@ -360,7 +385,7 @@ hr {
 .testimonial-author {     
   margin: 0 0 10px 25px;     
   font-family: Arial, Helvetica, sans-serif;     
-  color: #999;     
+  color: #666;     
   text-align:left; 
 } 
 
@@ -369,14 +394,18 @@ hr {
   color: #666; 
 }
 
+.testimonial-box {
+  background-color: rgba(255, 255, 255, 0.8);
+  height: 140px;
+  padding: 10px;
+}
+
 .testimonial-section {
-  margin-left: 75px;
   text-align: center;
-  background-color: white;
-  height: 100%;
-  width: 1000px;
+  height: 180px;
   overflow: hidden;
-  padding-top: 25px;
+  padding: 25px 0 0 80px;
+  margin-bottom: 10px;
 }
 
 .user_show {
@@ -410,13 +439,13 @@ hr {
 }
 
 .welcome_section {
-	height: 450px;
+  height: 450px;
   
   position: relative;
 }
 
 .welcome_text {
-	text-align: center;
+  text-align: center;
 }
 
 
