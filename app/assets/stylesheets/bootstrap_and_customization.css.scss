@@ -17,6 +17,11 @@
   margin: 0 0 0 25px; 
 } 
 
+blockquote {
+  font-size: 17.5px;
+  border: none;
+}
+
 body {
   padding-top: 75px;
 }
@@ -31,7 +36,6 @@ body {
 
 .container {
   padding: 0px;
-  height: auto;
   width: auto;
   margin: 0px;
 }
@@ -162,7 +166,7 @@ hr {
 .item {
   height: 275px;
   width: 275px;
-  background-color: white;
+  background-color: rgba(178,178,178, 0.8);
   margin: 0 25px 25px 50px;
   padding: 10px;
 }
@@ -192,7 +196,6 @@ hr {
 
 .next-section {
   text-align: center;
-  height: 310px;
   overflow: hidden;
   padding: 0 0 10px 50px;
 }
@@ -351,6 +354,12 @@ hr {
   color: white;
 }
 
+.signin-form {
+  width: 250px;
+  margin: 0 auto;
+  text-align: left;
+}
+
 .testimonial { 
   margin: 0;     
   padding: 10px 50px;     
@@ -397,7 +406,7 @@ hr {
 }
 
 .testimonial-box {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(178,178,178, 0.8);
   height: auto;
   padding: 10px;
 }
@@ -447,7 +456,7 @@ hr {
 
 .welcome-box {
   text-align: center;
-  height: 250px;
+  height: 300px;
 }
 
 .welcome-box-header {
@@ -477,6 +486,13 @@ hr {
   overflow: hidden;
   padding: 25px 0 0 80px;
   margin-bottom: 10px;
+  }
+
+  .welcome-box-header {
+  background-color: black;
+  height: auto;
+  padding: 6px 0 6px 0;
+  color: white;
   }
 }
 
