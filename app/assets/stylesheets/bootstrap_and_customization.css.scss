@@ -36,6 +36,10 @@ body {
   margin: 0px;
 }
 
+.copywrite {
+  font-size: 18px;
+}
+
 .dropdown {
   height: 50px;
 }
@@ -84,6 +88,10 @@ body {
 .footer_info {
   list-style-type: none;
   float: left;
+}
+
+.footer_info a {
+  color: white;
 }
 
 .footer_list {
@@ -142,12 +150,10 @@ hr {
   background: rgba(0,0,0,0.3);
   box-shadow: 0 6px 6px rgba(0,0,0,0.3);
   border-radius: 3px;
-  overflow: hidden;
   zoom: 1;
   width: 375px;
   height: 250px;
   z-index: 999999999;
-  padding: 0 10px 0 10px;
   margin: 100px auto;
   width: 50%;
 
@@ -184,12 +190,6 @@ hr {
   margin-top: 10px;
 }
 
-@media (max-width:767px) {
-  .nav_clear {
-    clear:both;
-  }
-}
-
 .next-section {
   text-align: center;
   height: 310px;
@@ -199,6 +199,7 @@ hr {
 
 .outer-wrapper {
   position: relative;
+  padding: 0px;
 }
 
 .profile_panel {
@@ -347,6 +348,7 @@ hr {
 
 .signin-container {
   text-align: center;
+  color: white;
 }
 
 .testimonial { 
@@ -396,13 +398,13 @@ hr {
 
 .testimonial-box {
   background-color: rgba(255, 255, 255, 0.8);
-  height: 140px;
+  height: auto;
   padding: 10px;
 }
 
 .testimonial-section {
   text-align: center;
-  height: 180px;
+  height: auto;
   overflow: hidden;
   padding: 25px 0 0 80px;
   margin-bottom: 10px;
@@ -440,13 +442,41 @@ hr {
 
 .welcome_section {
   height: 450px;
-  
   position: relative;
 }
 
-.welcome_text {
+.welcome-box {
   text-align: center;
+  height: 250px;
 }
 
+.welcome-box-header {
+  background-color: black;
+  height: 75px;
+  padding-top: 6px;
+  color: white;
+}
 
+@media (max-width:767px) {
+  .nav_clear {
+    clear:both;
+  }
+  
+  .testimonial-box {
+  background-color: rgba(255, 255, 255, 0.8);
+  height: auto;
+  max-width: 370px;
+  padding: 10px;
+  margin-bottom: 10px;
+  }
+
+  .testimonial-section {
+  text-align: center;
+  height: auto;
+  width: auto;
+  overflow: hidden;
+  padding: 25px 0 0 80px;
+  margin-bottom: 10px;
+  }
+}
 
