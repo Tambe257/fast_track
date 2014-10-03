@@ -15,5 +15,9 @@ class PagesController < ApplicationController
   
   def admin
   end
+
+  def guide
+    @chapters = Chapter.all
+  end  
     
 end

@@ -30,6 +30,10 @@ body {
   text-align: center;
 }
 
+.chapter-rules ul {
+  list-style-type: none;
+}
+
 .chart-margin {
   margin-right: 30px;
 }
@@ -347,6 +351,17 @@ hr {
 }
 .score_table tr:first-child td:last-child th{
   border-width:0px 0px 1px 1px;
+}
+
+.show-box {
+  margin: 0 auto;
+  width: 700px;
+}
+
+p.show-box-heading {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .signin-container {

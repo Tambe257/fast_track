@@ -4,7 +4,6 @@
   <table>
     <thead>
       <tr>
-      	<th>Rule: </th>
         <th>Chapter: </th>
         <th></th>
         <th></th>
@@ -15,7 +14,6 @@
     <tbody>
       <% @chapters.each do |chapter| %>
         <tr>
-        	<td><%= chapter.rule_id %></td>
           <td><%= chapter.name %></td>
           <td><%= link_to 'Show', chapter %></td>
           <td><%= link_to 'Edit', edit_chapter_path(chapter) %></td>

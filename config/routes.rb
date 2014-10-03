@@ -41,6 +41,8 @@ FastTrack::Application.routes.draw do
 
   get 'admin' => 'pages#admin'
 
+  get 'guide' => 'pages#guide'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

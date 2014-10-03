@@ -6,6 +6,7 @@ class ChaptersController < ApplicationController
   end
 
   def show
+    @chapter = Chapter.find(params[:id])
   end
 
   def new
@@ -57,6 +58,6 @@ class ChaptersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def chapter_params
-      params.require(:chapter).permit(:name, :rule_id,)
+      params.require(:chapter).permit(:name, :rule_id)
     end
 end

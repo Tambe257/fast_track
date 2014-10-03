@@ -1,10 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Chapter:</strong>
-  <%= @chapter.name %>
-</p>
+<div class="well show-box">
+	<p class="show-box-heading"><%= @chapter.name %></p>
 
+	<div class="chapter-rules">
+		<h4>Rules:</h4>
+		<% @chapter.rules.each do |rule| %>
+			<ul>
+				<li><%= link_to rule.name, rule, class: "btn btn-primary" %></li>
+			</ul>	
+		<% end %>	
+	</div>	
 
-<%= link_to 'Edit', edit_chapter_path(@chapter) %> |
-<%= link_to 'Back', chapters_path %>
+	<%= link_to 'Edit', edit_chapter_path(@chapter) %> |
+	<%= link_to 'Back', chapters_path %>
+</div>	

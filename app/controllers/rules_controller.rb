@@ -69,6 +69,6 @@ class RulesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def rule_params
-      params.require(:rule).permit(:name, :subject, :session_id, :hint_id, :question_id, :trigger_id)
+      params.require(:rule).permit(:name, :subject, :session_id, :hint_id, :question_id, :trigger_id, :chapter_id)
     end
 end
