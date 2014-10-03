@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140926010450) do
+ActiveRecord::Schema.define(version: 20141003175130) do
+
+  create_table "chapters", force: true do |t|
+    t.string   "name"
+    t.integer  "rule_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "combos", force: true do |t|
     t.integer  "sitting_id"
@@ -61,6 +68,7 @@ ActiveRecord::Schema.define(version: 20140926010450) do
     t.integer  "trigger_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "chapter_id"
   end
 
   create_table "scores", force: true do |t|

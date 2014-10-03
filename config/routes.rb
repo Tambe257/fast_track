@@ -4,6 +4,7 @@ FastTrack::Application.routes.draw do
   resources :questions
   resources :hints
   resources :rules
+  resources :chapters
 
   get "users/show"
   devise_for :users
