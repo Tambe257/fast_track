@@ -21,5 +21,8 @@ module FastTrack
     # config.i18n.default_locale = :de
 
     config.assets.initialize_on_precompile = false
+
+    require 'pdfkit'
+    config.middleware.use PDFKit::Middleware
   end
 end

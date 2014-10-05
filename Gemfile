@@ -14,6 +14,9 @@ gem 'chartkick'
 gem 'groupdate'
 gem 'paperclip', '~> 3.0'
 gem 'aws-sdk', '~> 1.53.0'
+gem 'wkhtmltopdf', '~> 0.1.2'
+gem 'pdfkit', '~> 0.6.2'
+gem 'unicorn', '~> 4.8.3'
 
 group :development, :test do
 	gem 'sqlite3'
