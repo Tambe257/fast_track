@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   has_many :sittings
 
   def full_name
-		"#{firstname} #{lastname}"
-	end	
+    "#{firstname} #{lastname}"
+  end	
 
 end
