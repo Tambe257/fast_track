@@ -23,6 +23,7 @@ class SittingsController < ApplicationController
   # GET /sittings/new
   def new
     @sitting = Sitting.new
+    @chapters = Chapter.all
   end
 
   # GET /sittings/1/edit

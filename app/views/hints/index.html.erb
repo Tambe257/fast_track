@@ -1,33 +1,35 @@
-<h1>Listing Hints</h1>
+<div class="form-container">
+  <h1>Listing Hints</h1>
 
-<div class="score_table">
-  <table>
-    <thead>
-      <tr>
-      	<th>Rule: </th>
-        <th>Hint: </th>
-        <th>Explanation: </th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @hints.each do |hint| %>
+  <div class="score_table">
+    <table>
+      <thead>
         <tr>
-        	<td><%= hint.rule_id %></td>
-          <td><%= hint.body %></td>
-          <td><%= hint.explanation %></td>
-          <td><%= link_to 'Show', hint %></td>
-          <td><%= link_to 'Edit', edit_hint_path(hint) %></td>
-          <td><%= link_to 'Destroy', hint, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        	<th>Rule: </th>
+          <th>Hint: </th>
+          <th>Explanation: </th>
+          <th></th>
+          <th></th>
+          <th></th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
-<br>
+      </thead>
 
-<%= link_to 'New hint', new_hint_path %>
+      <tbody>
+        <% @hints.each do |hint| %>
+          <tr>
+          	<td><%= hint.rule_id %></td>
+            <td><%= hint.body %></td>
+            <td><%= hint.explanation %></td>
+            <td><%= link_to 'Show', hint %></td>
+            <td><%= link_to 'Edit', edit_hint_path(hint) %></td>
+            <td><%= link_to 'Destroy', hint, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <br>
+
+  <%= link_to 'New hint', new_hint_path %>
+</div>  
 

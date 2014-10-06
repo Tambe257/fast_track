@@ -3,7 +3,6 @@
     <%= simple_form_for(@chapter, html: { class: "form-horizontal"}) do |f| %>
       <%= f.error_notification %>
 
-      Rule: <%= f.collection_select(:rule_id, Rule.all, :id, :name, :prompt => true) %>
       <div class="form-group">
         <%= f.input :name, as: :text, input_html: { rows: "2", :class => "form-control" }, label: "Chapter:" %>
       </div>

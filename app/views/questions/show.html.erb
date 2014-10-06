@@ -1,20 +1,22 @@
-<p id="notice"><%= notice %></p>
+<div class="form-container">
+	<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Question:</strong>
-  <%= @question.body %>
-</p>
+	<p>
+	  <strong>Question:</strong>
+	  <%= @question.body %>
+	</p>
 
-<p>
-  <strong>Answer:</strong>
-  <%= @question.answer %>
-</p>
+	<p>
+	  <strong>Answer:</strong>
+	  <%= @question.answer %>
+	</p>
 
-<p>
-  <strong>Images:</strong>
-  <%= image_tag @question.image.url(:medium) %>
-  <%= image_tag @question.image2.url(:medium) %>
-</p>
+	<p>
+	  <strong>Images:</strong>
+	  <%= image_tag @question.image.url(:medium) %>
+	  <%= image_tag @question.image2.url(:medium) %>
+	</p>
 
-<%= link_to 'Edit', edit_question_path(@question) %> |
-<%= link_to 'Back', questions_path %>
+	<%= link_to 'Edit', edit_question_path(@question) %> |
+	<%= link_to 'Back', questions_path %>
+</div>

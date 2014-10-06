@@ -1,6 +1,7 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
+require 'pdfkit'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -22,7 +23,17 @@ module FastTrack
 
     config.assets.initialize_on_precompile = false
 
-    require 'pdfkit'
+    # Or you can have different hosts for development (local) and production (CDN):
+    # In `config/environments/development.rb`
+    config.action_controller.asset_host = "http://localhost"
+    # In `config/environments/production.rb`
+    config.action_controller.asset_host = "http://polar-thicket-3667.herokuapp.com/"
+
     config.middleware.use PDFKit::Middleware
+
+    config.cache_classes = true
+
+    config.eager_load = true
+
   end
 end

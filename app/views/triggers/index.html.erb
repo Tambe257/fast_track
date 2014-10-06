@@ -1,34 +1,35 @@
-<h1>Listing Triggers</h1>
+<div class="form-container">
+  <h1>Listing Triggers</h1>
 
-<div class="score_table">
-  <table>
-    <thead>
-      <tr>
-      	<th>Rule: </th>
-        <th>Trigger: </th>
-        <th>Explanation: </th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @triggers.each do |trigger| %>
+  <div class="score_table">
+    <table>
+      <thead>
         <tr>
-        	<td><%= trigger.rule_id %></td>
-          <td><%= trigger.body %></td>
-          <td><%= trigger.explanation %></td>
-          <td><%= link_to 'Show', trigger %></td>
-          <td><%= link_to 'Edit', edit_trigger_path(trigger) %></td>
-          <td><%= link_to 'Destroy', trigger, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        	<th>Rule: </th>
+          <th>Trigger: </th>
+          <th>Explanation: </th>
+          <th></th>
+          <th></th>
+          <th></th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
+
+      <tbody>
+        <% @triggers.each do |trigger| %>
+          <tr>
+          	<td><%= trigger.rule_id %></td>
+            <td><%= trigger.body %></td>
+            <td><%= trigger.explanation %></td>
+            <td><%= link_to 'Show', trigger %></td>
+            <td><%= link_to 'Edit', edit_trigger_path(trigger) %></td>
+            <td><%= link_to 'Destroy', trigger, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <br>
+
+  <%= link_to 'New Trigger', new_trigger_path %>
 </div>
-<br>
-
-<%= link_to 'New Trigger', new_trigger_path %>
-
 

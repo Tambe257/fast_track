@@ -41,6 +41,7 @@ body {
 .container {
   padding: 0px;
   width: auto;
+  min-height: 500px;
   margin: 0px;
 }
 
@@ -106,6 +107,10 @@ body {
   list-style-type: none;
   font-size: 20px;
   float: right;
+}
+
+.form-container {
+  padding: 10px 15px 10px 15px;
 }
 
 .form_heading {

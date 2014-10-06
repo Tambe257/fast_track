@@ -1,29 +1,31 @@
-<h1>Listing sittings</h1>
+<div class="form-container">
+  <h1>Listing sittings</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Comment</th>
-      <th>Date</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @sittings.each do |sitting| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= sitting.comment %></td>
-        <td><%= sitting.date %></td>
-        <td><%= link_to 'Show', sitting %></td>
-        <td><%= link_to 'Edit', edit_sitting_path(sitting) %></td>
-        <td><%= link_to 'Destroy', sitting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Comment</th>
+        <th>Date</th>
+        <th></th>
+        <th></th>
+        <th></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @sittings.each do |sitting| %>
+        <tr>
+          <td><%= sitting.comment %></td>
+          <td><%= sitting.date %></td>
+          <td><%= link_to 'Show', sitting %></td>
+          <td><%= link_to 'Edit', edit_sitting_path(sitting) %></td>
+          <td><%= link_to 'Destroy', sitting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Sitting', new_sitting_path %>
+  <br>
+
+  <%= link_to 'New Sitting', new_sitting_path %>
+</div>  
