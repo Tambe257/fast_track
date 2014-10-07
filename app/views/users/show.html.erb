@@ -1,7 +1,18 @@
 <div class="well user_show">
-	<h3 class="center"><%= @user.firstname%> <%= @user.lastname%>'s scores</h3>
+	<h3 class="center"><%= @user.firstname%> <%= @user.lastname%>'s Profile</h3>
 	<hr>
 
+	<div class="session-list">
+		<h4>Sessions:</h4>
+		<table>
+			<th>Date:</th>
+			<% @sittings.reverse.each do |sitting| %>
+				<tr>
+					<td><%= link_to sitting.date, sitting %> </td>
+				</tr>
+			<% end %>
+		</table>
+	</div>	
 	<% if @scores.where(:name => 'SAT').count > 0 || @scores.where(:name => 'PSAT').count > 0 %>
 		<div class="score_table">
 			<h4 class="center">S.A.T. & P.S.A.T.</h4>

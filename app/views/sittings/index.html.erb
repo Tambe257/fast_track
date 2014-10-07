@@ -16,7 +16,7 @@
       <tbody>
         <% @sittings.each do |sitting| %>
           <tr>
-            <td><%= sitting.user.full_name %></td>
+            <td><%= link_to sitting.user.full_name, sitting.user %></td>
             <td><%= sitting.date %></td>
             <td><%= sitting.comment %></td>
             <td><%= link_to 'Show', sitting %></td>

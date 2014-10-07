@@ -28,6 +28,7 @@ class SittingsController < ApplicationController
 
   # GET /sittings/1/edit
   def edit
+    @chapters = Chapter.all
   end
 
   # POST /sittings

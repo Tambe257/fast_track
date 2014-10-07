@@ -6,7 +6,7 @@ class PagesController < ApplicationController
   end
 
   def students
-  	if current_user.admin?
+  	if user_signed_in? && current_user.admin? 
   		@users = User.all
   	else
   		redirect_to root_path
@@ -14,6 +14,11 @@ class PagesController < ApplicationController
   end	 
   
   def admin
+    if user_signed_in? && current_user.admin?
+      @users = User.all
+    else
+      redirect_to root_path
+    end   
   end
 
   def guide
