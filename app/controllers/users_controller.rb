@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+ class UsersController < ApplicationController
 
   def show
   	if User.find(params[:id]) == current_user || current_user.admin?

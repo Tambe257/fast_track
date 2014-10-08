@@ -16,6 +16,7 @@ gem 'paperclip', '~> 3.0'
 gem 'aws-sdk', '~> 1.53.0'
 gem 'pdfkit', '~> 0.6.2'
 gem 'wkhtmltopdf-binary'
+gem 'jquery-datatables-rails', '~> 2.2.3'
 
 group :development, :test do
 	gem 'sqlite3'

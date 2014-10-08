@@ -2,17 +2,37 @@
 	<h3 class="center"><%= @user.firstname%> <%= @user.lastname%>'s Profile</h3>
 	<hr>
 
-	<div class="session-list">
+	<div class="session-list col-sm-6">
 		<h4>Sessions:</h4>
-		<table>
-			<th>Date:</th>
-			<% @sittings.reverse.each do |sitting| %>
-				<tr>
-					<td><%= link_to sitting.date, sitting %> </td>
-				</tr>
-			<% end %>
+		<table id="sessions">
+			<thead>
+				<th>Date:</th>
+			</thead>
+			<tbody>	
+				<% @sittings.reverse.each do |sitting| %>
+					<tr>
+						<td><%= link_to sitting.date, sitting %> </td>
+					</tr>
+				<% end %>
+			</tbody>	
 		</table>
 	</div>	
+
+	<div class="test-list col-sm-6">
+		<h4>Tests:</h4>
+		<table id="tests">
+			<thead>
+				<th>Date:</th>
+			</thead>
+			<tbody>	
+				<% @scores.each do |score| %>
+					<tr>
+						<td><%= link_to score.taken_date, score %> </td>
+					</tr>
+				<% end %>
+			</tbody>	
+		</table>
+	</div>
 	<% if @scores.where(:name => 'SAT').count > 0 || @scores.where(:name => 'PSAT').count > 0 %>
 		<div class="score_table">
 			<h4 class="center">S.A.T. & P.S.A.T.</h4>
