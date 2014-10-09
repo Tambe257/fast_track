@@ -2,37 +2,48 @@
 	<h3 class="center"><%= @user.firstname%> <%= @user.lastname%>'s Profile</h3>
 	<hr>
 
-	<div class="session-list col-sm-6">
+	<div class="session-list well col-sm-5">
 		<h4>Sessions:</h4>
-		<table id="sessions">
+		<table id="sessions" class="display">
 			<thead>
 				<th>Date:</th>
 			</thead>
 			<tbody>	
 				<% @sittings.reverse.each do |sitting| %>
 					<tr>
-						<td><%= link_to sitting.date, sitting %> </td>
+						<td><%= link_to sitting.date.strftime("%A %b %d"), sitting %> </td>
 					</tr>
 				<% end %>
 			</tbody>	
 		</table>
 	</div>	
 
-	<div class="test-list col-sm-6">
+	<div class="test-list well col-sm-5 col-sm-offset-1">
 		<h4>Tests:</h4>
-		<table id="tests">
+		<table id="tests" class="display">
 			<thead>
 				<th>Date:</th>
+				<th>Type:</th>
+				<th>Name:</th>
 			</thead>
 			<tbody>	
 				<% @scores.each do |score| %>
 					<tr>
-						<td><%= link_to score.taken_date, score %> </td>
+						<td><%= link_to score.taken_date.strftime("%A %b %d"), score %> </td>
+						<td>
+			      	<% if score.test_type == true %>
+			      		<%= 'Practice' %>
+			      	<% else %>
+			      		<%= 'Actual' %>
+			      	<% end %>		
+			    	</td>
+						<td><%= score.name %> </td>
 					</tr>
 				<% end %>
 			</tbody>	
 		</table>
 	</div>
+	
 	<% if @scores.where(:name => 'SAT').count > 0 || @scores.where(:name => 'PSAT').count > 0 %>
 		<div class="score_table">
 			<h4 class="center">S.A.T. & P.S.A.T.</h4>
@@ -99,7 +110,10 @@
 				    	</td>
 				    	
 				    	<td>
-				      	<%= link_to 'Edit', edit_score_path(score) %> | <%= link_to 'Show', score %> 
+				    		<% if current_user.admin? %>
+				      		<%= link_to 'Edit', edit_score_path(score) %> |
+				      	<% end %>	
+				      		 <%= link_to 'Show', score %> 
 				    	</td>
 
 				    </tr>	    

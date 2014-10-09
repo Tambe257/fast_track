@@ -17,15 +17,16 @@ gem 'aws-sdk', '~> 1.53.0'
 gem 'pdfkit', '~> 0.6.2'
 gem 'wkhtmltopdf-binary'
 gem 'jquery-datatables-rails', '~> 2.2.3'
+gem 'jquery-ui-rails', '~> 5.0.0'
 
 group :development, :test do
-	gem 'sqlite3'
+  gem 'sqlite3'
 end
 
 group :production do
-	gem 'pg', '~> 0.17.1'
-	gem 'rails_12factor'
-end	
+  gem 'pg', '~> 0.17.1'
+  gem 'rails_12factor'
+end 
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

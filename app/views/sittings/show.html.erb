@@ -4,7 +4,7 @@
 		<h2><%= @sitting.user.firstname %> <%= @sitting.user.lastname %></h2>
 
 	<p>
-	  <h4>Session Date: <%= @sitting.date %> </h4>
+	  <h4>Session Date: <%= @sitting.date.strftime("%A %b %d") %> </h4>
 	</p>
 
 	<div class="score_table">
