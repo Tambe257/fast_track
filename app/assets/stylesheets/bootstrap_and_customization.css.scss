@@ -13,7 +13,7 @@
   height: 0;     
   border-left: 15px solid transparent;     
   border-right: 15px solid transparent;     
-  border-top: 15px solid #3276b1;     
+  border-top: 15px solid #428BCA;     
   margin: 0 0 0 25px; 
 } 
 
@@ -183,10 +183,11 @@ hr {
 
 .item {
   height: 275px;
-  width: 275px;
+  width: 30%;
   background-color: rgba(178,178,178, 0.8);
-  margin: 0 25px 25px 50px;
   padding: 10px;
+  margin: 10px;
+  float: left;
 }
 
 .item:hover {
@@ -194,8 +195,8 @@ hr {
 }
 
 .item-inner {
-  height: 235px;
-  width: 255px;
+  margin: 10px;
+  padding: 20px;
   background-color: #EEEEEE;
 }
 
@@ -407,7 +408,7 @@ p.show-box-heading {
   border-radius: 5px;     
   font-style: italic;     
   text-shadow: 0 1px 0 black;     
-  background-color: #3276b1; 
+  background-color: #428BCA; 
   max-width: 470px;
 } 
 
