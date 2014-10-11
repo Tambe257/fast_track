@@ -5,10 +5,16 @@
 
 jQuery ->
         $('#sessions').dataTable({
-
+          "aLengthMenu": [
+            [5, 10, -1],
+            [5, 10, "All"]
+          ]
         });
 
         $('#tests').dataTable({
-
+          "aLengthMenu": [
+            [5, 10, -1],
+            [5, 10, "All"]
+          ]
         });
 
