@@ -2,7 +2,7 @@ class ChaptersController < ApplicationController
   before_action :set_chapter, only: [:show, :edit, :update, :destroy]
 
   def index
-    @chapters = Chapter.all
+    @chapters = Chapter.order('chOrder asc')
   end
 
   def show
@@ -58,6 +58,6 @@ class ChaptersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def chapter_params
-      params.require(:chapter).permit(:name, :rule_id)
+      params.require(:chapter).permit(:name, :rule_id, :chOrder)
     end
 end

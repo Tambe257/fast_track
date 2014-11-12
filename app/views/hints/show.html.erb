@@ -1,22 +1,24 @@
-<div class="form-container">
-	<p id="notice"><%= notice %></p>
+<div class="show-box well">
+	<div class="form-container">
+		<p id="notice"><%= notice %></p>
 
-	<p>
-	  <strong>Hint:</strong>
-	  <%= @hint.body %>
-	</p>
+		<p>
+		  <strong>Hint:</strong>
+		  <%= @hint.body %>
+		</p>
 
-	<p>
-	  <strong>Explanation:</strong>
-	  <%= @hint.explanation %>
-	</p>
+		<p>
+		  <strong>Explanation:</strong>
+		  <%= @hint.explanation %>
+		</p>
 
-	<p>
-	  <strong>Images:</strong>
-	  <%= image_tag @hint.image.url(:medium) %>
-	  <%= image_tag @hint.image2.url(:medium) %>
-	</p>
+		<p>
+		  <strong>Images:</strong>
+		  <%= image_tag @hint.image.url(:medium) %>
+		  <%= image_tag @hint.image2.url(:medium) %>
+		</p>
 
-	<%= link_to 'Edit', edit_hint_path(@hint) %> |
-	<%= link_to 'Back', hints_path %>
-</div>
+		<%= link_to 'Edit', edit_hint_path(@hint) %> |
+		<%= link_to 'Back', hints_path %>
+	</div>
+</div>	

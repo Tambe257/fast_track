@@ -6,10 +6,9 @@
 	    		<div class="welcome-box-header">
 		      	<h3 class="emphasis">Welcome To F.A.S.T. Track Tutoring!</h3>
 		      </div>	
-		      <p class="landing-divider-subtitle">This is the home of Fast Track Tutoring LLC.</p>
 
 		      <% if user_signed_in? %>
-		          # do something
+		        <div class="welcome-box-content">Now registering for spring lessons!</div>
 		     	<% else %>
 		       <p>
 		         <%= link_to "Click Here To Email F.A.S.T Track Tutoring", "mailto:info@fasttracktutoringllc.com", class: "btn btn-primary" %>
@@ -37,7 +36,13 @@
 	<div class="next-section">
 		<div class="item">
 			<div class="item-inner">
-				<h3>Stuff</h3>
+				<h3>Upcoming Test Dates</h3>
+
+				<ul class="home-list">
+					<li>SAT: 1/1/15</li>
+					<li>ACT: 1/1/15</li>
+					<li>PSAT: 1/1/15</li>
+				</ul>	
 			</div>	
 		</div>	
 

@@ -1,16 +1,18 @@
-<div class="form-container">
-	<p id="notice"><%= notice %></p>
+<div class="show-box well">
+	<div class="form-container">
+		<p id="notice"><%= notice %></p>
 
-	<p>
-	  <strong>Name:</strong>
-	  <%= @rule.name %>
-	</p>
+		<p>
+		  <strong>Name:</strong>
+		  <%= @rule.name %>
+		</p>
 
-	<p>
-	  <strong>Subject:</strong>
-	  <%= @rule.subject %>
-	</p>
+		<p>
+		  <strong>Subject:</strong>
+		  <%= @rule.subject %>
+		</p>
 
-	<%= link_to 'Edit', edit_rule_path(@rule) %> |
-	<%= link_to 'Back', rules_path %>
-</div>
+		<%= link_to 'Edit', edit_rule_path(@rule) %> |
+		<%= link_to 'Back', rules_path %>
+	</div>
+</div>	

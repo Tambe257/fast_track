@@ -164,6 +164,17 @@ body {
   background-size: cover;
 }
 
+.home-list {
+  list-style: none;
+}
+
+.home-list li {
+  font-weight: bold;
+  text-align: left;
+  font-size: 18px;
+  margin: 5px 0 5px 0;
+}
+
 hr {
   border-top: 1px solid #888;
 }
@@ -188,6 +199,8 @@ hr {
   padding: 10px;
   margin: 10px;
   float: left;
+  -webkit-transition: all 0.3s;
+  transition: all 0.5s;
 }
 
 .item:hover {
@@ -497,6 +510,11 @@ p.show-box-heading {
 .welcome-box {
   text-align: center;
   height: 300px;
+}
+
+.welcome-box-content {
+  color: white;
+  font-size: 18px;
 }
 
 .welcome-box-header {
