@@ -1,0 +1,181 @@
+  [1m[36m (9.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (2.1ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DeviseCreateUsers (20140812171356)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (1.5ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.2ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140812171356"]]
+  [1m[36m (2.7ms)[0m  [1mcommit transaction[0m
+Migrating to AddFirstNameToUsers (20140814174407)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "users" ADD "firstname" varchar(255)[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140814174407"]]
+  [1m[36m (2.0ms)[0m  [1mcommit transaction[0m
+Migrating to AddLastNameToUsers (20140814174911)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "users" ADD "lastname" varchar(255)[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140814174911"]]
+  [1m[36m (2.0ms)[0m  [1mcommit transaction[0m
+Migrating to CreateScores (20140815213612)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "scores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "type" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140815213612"]]
+  [1m[36m (2.3ms)[0m  [1mcommit transaction[0m
+Migrating to ChangeColumnName (20140816125502)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TEMPORARY TABLE "ascores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "test_type" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "scores"
+  [1m[36m (0.3ms)[0m  [1mDROP TABLE "scores"[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "scores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "test_type" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.0ms)[0m  [1mSELECT * FROM "ascores"[0m
+  [1m[35m (0.4ms)[0m  DROP TABLE "ascores"
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140816125502"]]
+  [1m[35m (1.9ms)[0m  commit transaction
+Migrating to AddUserIdToScores (20140816130429)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "scores" ADD "user_id" integer
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140816130429"]]
+  [1m[35m (2.0ms)[0m  commit transaction
+Migrating to AddMonthToScores (20140816175843)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  ALTER TABLE "scores" ADD "month" varchar(255)
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140816175843"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+Migrating to AddYearToScores (20140816175928)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "scores" ADD "year" varchar(255)
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140816175928"]]
+  [1m[35m (1.7ms)[0m  commit transaction
+Migrating to ChangeTestTypeInScores (20140816222003)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TEMPORARY TABLE "ascores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "test_type" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "user_id" integer, "month" varchar(255), "year" varchar(255)) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "scores"[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "scores"
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "scores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "test_type" boolean USING CAST(test_type AS boolean), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "user_id" integer, "month" varchar(255), "year" varchar(255)) [0m
+SQLite3::SQLException: near "USING": syntax error: CREATE TABLE "scores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "test_type" boolean USING CAST(test_type AS boolean), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "user_id" integer, "month" varchar(255), "year" varchar(255)) 
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to ChangeTestTypeInScores (20140816222003)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.3ms)[0m  [1mCREATE TEMPORARY TABLE "ascores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "test_type" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "user_id" integer, "month" varchar(255), "year" varchar(255)) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "scores"
+  [1m[36m (0.3ms)[0m  [1mDROP TABLE "scores"[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "scores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "test_type" boolean USING CAST(test_type AS boolean), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "user_id" integer, "month" varchar(255), "year" varchar(255)) 
+SQLite3::SQLException: near "USING": syntax error: CREATE TABLE "scores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "test_type" boolean USING CAST(test_type AS boolean), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "user_id" integer, "month" varchar(255), "year" varchar(255)) 
+  [1m[36m (2.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to ChangeTestTypeInScores (20140816222003)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.3ms)[0m  [1mCREATE TEMPORARY TABLE "ascores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "test_type" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "user_id" integer, "month" varchar(255), "year" varchar(255)) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "scores"
+  [1m[36m (0.9ms)[0m  [1mDROP TABLE "scores"[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "scores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "test_type" boolean USING CAST(test_type AS boolean), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "user_id" integer, "month" varchar(255), "year" varchar(255)) 
+SQLite3::SQLException: near "USING": syntax error: CREATE TABLE "scores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "test_type" boolean USING CAST(test_type AS boolean), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "user_id" integer, "month" varchar(255), "year" varchar(255)) 
+  [1m[36m (25.9ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to ChangeTestTypeInScores (20140816222003)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.1ms)[0m  [1mCREATE TEMPORARY TABLE "ascores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "test_type" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "user_id" integer, "month" varchar(255), "year" varchar(255)) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "scores"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "scores"[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "scores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "test_type" boolean USING CAST(test_type AS boolean), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "user_id" integer, "month" varchar(255), "year" varchar(255)) 
+SQLite3::SQLException: near "USING": syntax error: CREATE TABLE "scores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "test_type" boolean USING CAST(test_type AS boolean), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "user_id" integer, "month" varchar(255), "year" varchar(255)) 
+  [1m[36m (32.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to ChangeTestTypeInScores (20140816222003)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (1.4ms)[0m  [1mCREATE TEMPORARY TABLE "ascores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "test_type" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "user_id" integer, "month" varchar(255), "year" varchar(255)) [0m
+  [1m[35m (17.5ms)[0m  SELECT * FROM "scores"
+  [1m[36m (4.8ms)[0m  [1mDROP TABLE "scores"[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "scores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "test_type" boolean USING CAST(test_type AS boolean), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "user_id" integer, "month" varchar(255), "year" varchar(255)) 
+SQLite3::SQLException: near "USING": syntax error: CREATE TABLE "scores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "test_type" boolean USING CAST(test_type AS boolean), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "user_id" integer, "month" varchar(255), "year" varchar(255)) 
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by PagesController#students as HTML
+Completed 500 Internal Server Error in 25ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by PagesController#students as HTML
+Completed 500 Internal Server Error in 3ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (5.1ms)
+Completed 500 Internal Server Error in 28ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 15ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (20.1ms)
+Completed 500 Internal Server Error in 124ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (15.1ms)
+Completed 500 Internal Server Error in 87ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (3.4ms)
+Completed 500 Internal Server Error in 12ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (3.3ms)
+Completed 500 Internal Server Error in 12ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by PagesController#about as HTML
+  Rendered pages/about.html.erb within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 3050ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by PagesController#about as HTML
+  Rendered pages/about.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_header.html.erb (26.7ms)
+Completed 500 Internal Server Error in 10179ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
