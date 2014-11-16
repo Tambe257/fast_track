@@ -18,8 +18,8 @@
         <% @hints.each do |hint| %>
           <tr>
           	<td><%= hint.rule_id %></td>
-            <td><%= hint.body %></td>
-            <td><%= hint.explanation %></td>
+            <td><%= markdown(hint.body) %></td>
+            <td><%= markdown(hint.explanation) %></td>
             <td><%= link_to 'Show', hint %></td>
             <td><%= link_to 'Edit', edit_hint_path(hint) %></td>
             <td><%= link_to 'Destroy', hint, method: :delete, data: { confirm: 'Are you sure?' } %></td>

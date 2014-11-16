@@ -14,8 +14,8 @@
 					<% rule.triggers.each do |trigger| %>
 						<tr>
 							<td>T</td>
-							<td><%= trigger.body %></td>
-							<td><%= trigger.explanation %></td>
+							<td><%= markdown(trigger.body) %></td>
+							<td><%= markdown(trigger.explanation) %></td>
 						</tr>
 						<% if trigger.image? || trigger.image2? %>
 							<tr>	
@@ -37,8 +37,8 @@
 					<% rule.questions.each do |question| %>
 						<tr>
 							<td>Q</td>
-							<td><%= question.body %></td>
-							<td><%= question.answer %></td>
+							<td><%= markdown(question.body) %></td>
+							<td><%= markdown(question.answer) %></td>
 						</tr>
 						<% if question.image? || question.image2? %>
 							<tr>	
@@ -60,8 +60,8 @@
 					<% rule.hints.each do |hint| %>
 						<tr>
 							<td>H</td>
-							<td><%= hint.body %></td>
-							<td><%= hint.explanation %></td>
+							<td><%= markdown(hint.body) %></td>
+							<td><%= markdown(hint.explanation) %></td>
 						</tr>
 						<% if hint.image? || hint.image2? %>
 							<tr>	

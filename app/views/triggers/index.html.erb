@@ -18,8 +18,8 @@
         <% @triggers.each do |trigger| %>
           <tr>
           	<td><%= trigger.rule_id %></td>
-            <td><%= trigger.body %></td>
-            <td><%= trigger.explanation %></td>
+            <td><%= markdown(trigger.body) %></td>
+            <td><%= markdown(trigger.explanation) %></td>
             <td><%= link_to 'Show', trigger %></td>
             <td><%= link_to 'Edit', edit_trigger_path(trigger) %></td>
             <td><%= link_to 'Destroy', trigger, method: :delete, data: { confirm: 'Are you sure?' } %></td>
