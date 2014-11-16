@@ -5,10 +5,10 @@
 
       Rule: <%= f.collection_select(:rule_id, Rule.all, :id, :name, :prompt => true) %>
       <div class="form-group">
-        <%= f.input :body, as: :text, input_html: { rows: "2", :class => "form-control" }, label: "Trigger:" %>
+        <%= f.input :body, as: :text, input_html: { rows: "6", :class => "form-control" }, label: "Trigger:" %>
       </div>
       <div class="form-group">
-        <%= f.input :explanation, as: :text, input_html: { rows: "2", :class => "form-control" }, label: "Explanation " %>
+        <%= f.input :explanation, as: :text, input_html: { rows: "6", :class => "form-control" }, label: "Explanation " %>
       </div>
       
       <div class="form-group">
