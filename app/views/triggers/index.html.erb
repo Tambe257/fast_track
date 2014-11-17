@@ -17,7 +17,7 @@
       <tbody>
         <% @triggers.each do |trigger| %>
           <tr>
-          	<td><%= trigger.rule_id %></td>
+          	<td><%= trigger.rule.name %></td>
             <td><%= markdown(trigger.body) %></td>
             <td><%= markdown(trigger.explanation) %></td>
             <td><%= link_to 'Show', trigger %></td>

@@ -17,7 +17,7 @@
       <tbody>
         <% @questions.each do |question| %>
           <tr>
-          	<td><%= question.rule_id %></td>
+          	<td><%= question.rule.name %></td>
             <td><%= markdown(question.body) %></td>
             <td><%= markdown(question.answer) %></td>
             <td><%= link_to 'Show', question %></td>

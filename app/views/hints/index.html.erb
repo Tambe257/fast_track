@@ -17,7 +17,7 @@
       <tbody>
         <% @hints.each do |hint| %>
           <tr>
-          	<td><%= hint.rule_id %></td>
+          	<td><%= hint.rule.name %></td>
             <td><%= markdown(hint.body) %></td>
             <td><%= markdown(hint.explanation) %></td>
             <td><%= link_to 'Show', hint %></td>
