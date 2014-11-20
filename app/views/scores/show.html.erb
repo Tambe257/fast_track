@@ -48,7 +48,7 @@
 							<td><%= @score.reading %></td>
 							<td><%= @score.math %></td>
 							<td><%= @score.writing %></td>
-							<td><%= @score.math + @score.reading + @score.writing %></td>
+							<td><%= @score.math.to_i + @score.reading.to_i + @score.writing.to_i %></td>
 							<td><%= @score.essay %></td>	
 						</tr>	
 					</table>	
@@ -106,7 +106,7 @@
 							<td><%= @score.math %></td>
 							<td><%= @score.reading %></td>
 							<td><%= @score.writing %></td>
-							<td><%= @score.math + @score.reading + @score.writing %></td>	
+							<td><%= @score.math.to_i + @score.reading.to_i + @score.writing.to_i %></td>	
 						</tr>	
 					</table>	
 				</div>		
@@ -165,7 +165,7 @@
 							<td><%= @score.reading %></td>
 							<td><%= @score.english %></td>
 							<td><%= @score.science %></td>
-							<td><%= (@score.math + @score.reading + @score.english + @score.science)/4 %></td>
+							<td><%= (@score.math.to_i + @score.reading.to_i + @score.english.to_i + @score.science.to_i)/4 %></td>
 							<td><%= @score.essay %></td>	
 						</tr>	
 					</table>	
