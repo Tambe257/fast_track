@@ -201,6 +201,7 @@ hr {
   float: left;
   -webkit-transition: all 0.3s;
   transition: all 0.5s;
+  border-radius: 3px;
 }
 
 .item:hover {
@@ -465,6 +466,7 @@ p.show-box-heading {
   background-color: black;
   height: auto;
   padding: 10px;
+  border-radius: 3px;
 }
 
 .testimonial-section {

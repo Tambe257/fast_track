@@ -53,7 +53,7 @@ class ScoresController < ApplicationController
   end
   	
   def edit
-  	@score = Score.find(score_params)
+  	
   end
 
   def destroy
