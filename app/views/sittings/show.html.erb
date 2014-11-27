@@ -71,12 +71,12 @@
 						<% if hint.image? || hint.image2? %>
 							<tr>	
 								<td></td>
-								<% if question.image? %>
+								<% if hint.image? %>
 									<td><%= image_tag hint.image.url(:thumb) %></td>
 								<% else %>	
 									<td></td>
 								<% end %>	
-								<% if question.image? %>
+								<% if hint.image2? %>
 		  						<td><%= image_tag hint.image2.url(:thumb) %></td>
 		  					<% else %>	
 		  						<td></td>

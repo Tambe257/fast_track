@@ -29,7 +29,7 @@ module FastTrack
     # In `config/environments/production.rb`
     config.action_controller.asset_host = "http://polar-thicket-3667.herokuapp.com/"
 
-    config.middleware.use PDFKit::Middleware
+    config.middleware.use PDFKit::Middleware, :print_media_type => true
 
     config.cache_classes = true
 
