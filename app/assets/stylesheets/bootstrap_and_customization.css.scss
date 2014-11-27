@@ -575,7 +575,11 @@ p.show-box-heading {
     padding: 0;
     border: none;
   }
-
+  
+  table.print-friendly tr td, table.print-friendly tr th {
+    page-break-inside: avoid;
+  }
+  
   table { 
     page-break-after:auto;
   }
