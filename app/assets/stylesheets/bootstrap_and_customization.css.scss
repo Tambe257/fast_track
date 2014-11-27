@@ -575,6 +575,20 @@ p.show-box-heading {
     padding: 0;
     border: none;
   }
+
+  table { 
+    page-break-after:auto;
+  }
+  
+  tr    { 
+    page-break-inside:avoid;
+    page-break-after:auto;
+  }
+  
+  td {
+    page-break-inside:avoid;
+    page-break-after:auto;    
+  }
   
   #line_items {
     page-break-before: always;
