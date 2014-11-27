@@ -238,6 +238,10 @@ hr {
   padding: 0px;
 }
 
+#pdf_link {
+  margin-top: 20px;
+}
+
 .profile_panel {
   margin-top: 10px;
 }
@@ -580,25 +584,12 @@ p.show-box-heading {
     page-break-inside: avoid;
   }
   
-  table { 
-    page-break-after:auto;
-  }
-  
-  tr    { 
-    page-break-inside:avoid;
-    page-break-after:auto;
-  }
-  
-  td {
-    page-break-inside:avoid;
-    page-break-after:auto;    
-  }
-  
-  #line_items {
-    page-break-before: always;
+  table, tr, td, th, tbody, thead, tfoot {
+    page-break-inside: avoid !important;
   }
   
   #pdf_link {
+    margin-top: 200px;
     display: none;
   }
 }
