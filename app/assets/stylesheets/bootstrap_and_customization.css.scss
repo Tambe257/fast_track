@@ -580,8 +580,8 @@ p.show-box-heading {
     border: none;
   }
   
-  table.print-friendly tr td, table.print-friendly tr th {
-    page-break-inside: avoid;
+  #scores table tr td, #scores table tr th {
+    page-break-inside: avoid !important;
   }
   
   table, tr, td, th, tbody, thead, tfoot {
