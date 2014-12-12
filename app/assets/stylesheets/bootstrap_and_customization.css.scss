@@ -579,7 +579,11 @@ p.show-box-heading {
     padding: 0;
     border: none;
   }
-  
+
+  #scores {
+      page-break-before: always;
+    }
+  /*
   #scores table tr td, #scores table tr th {
     page-break-inside: avoid !important;
   }
@@ -587,7 +591,7 @@ p.show-box-heading {
   table, tr, td, th, tbody, thead, tfoot {
     page-break-inside: avoid !important;
   }
-  
+  */
   #pdf_link {
     margin-top: 200px;
     display: none;
