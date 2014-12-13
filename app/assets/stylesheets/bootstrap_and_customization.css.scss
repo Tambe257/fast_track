@@ -567,3 +567,33 @@ p.show-box-heading {
     color: white;
   }
 }
+
+@media print {
+  body {
+    background-color: green;
+  }
+
+  #container {
+    width: auto;
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+
+  #scores {
+    page-break-before: always;
+  }
+  
+  #scores table tr td, #scores table tr th {
+    page-break-inside: avoid !important;
+  }
+  
+  table, tr, td, th, tbody, thead, tfoot {
+    page-break-inside: avoid !important;
+  }
+  
+  #pdf_link {
+    margin-top: 200px;
+    display: none;
+  }
+}
