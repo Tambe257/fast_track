@@ -572,6 +572,19 @@ p.show-box-heading {
   }
 }
 
+#scores {
+    page-break-before: always;
+  }
+  
+  #scores table tr td, #scores table tr th {
+    page-break-inside: avoid !important;
+  }
+  
+  table, tr, td, th, tbody, thead, tfoot {
+    page-break-inside: avoid !important;
+  }
+  
+
 @media print {
   body {
     background-color: green;
