@@ -386,6 +386,10 @@ hr {
   border-width:0px 0px 1px 1px;
 }
 
+table, tr, td, th, tbody, thead, tfoot {
+  page-break-inside: avoid !important; 
+}
+
 .session-list {
   background-color: white;
   margin-left: 40px;
