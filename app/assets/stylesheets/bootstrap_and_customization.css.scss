@@ -287,7 +287,7 @@ hr {
 
 .score_table table tr td {
   page-break-inside: avoid !important; 
-  color: green;
+  page-break-before: always;
 }  
 
 .score_table {
