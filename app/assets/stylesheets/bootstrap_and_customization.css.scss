@@ -284,6 +284,11 @@ hr {
 .score_show_table table {
  
 }
+
+.score_table {
+  page-break-inside: avoid !important; 
+}  
+
 .score_table {
   margin: 15px 0 15px 0;
   padding:0px;
@@ -306,7 +311,9 @@ hr {
   -moz-border-radius-topleft:5px;
   -webkit-border-top-left-radius:5px;
   border-top-left-radius:5px;
-}.score_table table{
+}
+
+.score_table table{
     border-collapse: collapse;
         border-spacing: 0;
   width:100%;
@@ -582,7 +589,6 @@ p.show-box-heading {
   
 table, tr, td, th, tbody, thead, tfoot {
   page-break-inside: avoid !important;
-  color: green;
 }
 
 
