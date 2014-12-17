@@ -1,88 +1,91 @@
 <p id="pdf_link"><%= link_to "Right Click Here And 'Save As' To Download This Guide", "http://polar-thicket-3667.herokuapp.com/guide.pdf", :target => "_blank" %></p>
 
-<div class="score_table">
-	<table id="scores" class="print-friendly">
-	  <tbody>
-			<% @chapters.each do |chapter| %>
-				<tr>
-					<th colspan="3" ><%= chapter.name %></th>
-				</tr>	
-				<% chapter.rules.each do |rule| %>
-					<tr>
-						<th colspan="2" >Rule: <%= rule.name %></th>
-						<th></th>
-					</tr>	  
-	<!-- Triggers -->				
-					<% rule.triggers.each do |trigger| %>
-						<tr>
-							<td>T</td>
-							<td><%= markdown(trigger.body) %></td>
-							<td><%= markdown(trigger.explanation) %></td>
-						</tr>
-						<% if trigger.image? || trigger.image2? %>
-							<tr>	
-								<td></td>
-								<% if trigger.image? %>
-									<td><%= image_tag trigger.image.url(:thumb) %></td>
-								<% else %>
-									<td></td>
-								<% end %>	
-								<% if trigger.image2? %>	
-		  						<td><%= image_tag trigger.image2.url(:thumb) %></td>
-		  					<% else %>
-		  						<td></td>	
-		  					<% end %>	
-							</tr>	
-						<% end %>	
-					<% end %>	
-	<!-- Questions -->	
-					<% rule.questions.each do |question| %>
-						<tr>
-							<td>Q</td>
-							<td><%= markdown(question.body) %></td>
-							<td><%= markdown(question.answer) %></td>
-						</tr>
-						<% if question.image? || question.image2? %>
-							<tr>	
-								<td></td>
-								<% if question.image? %>
-									<td><%= image_tag question.image.url(:thumb) %></td>
-								<% else %>
-									<td></td>
-								<% end %>
-								<% if question.image2? %>		
-		  						<td><%= image_tag question.image2.url(:thumb) %></td>
-		  					<% else %>
-		  						<td></td>
-		  					<% end %>		
-							</tr>	
-						<% end %>	
-					<% end %>	
-	<!-- Hints -->	
-					<% rule.hints.each do |hint| %>
-						<tr>
-							<td>H</td>
-							<td><%= markdown(hint.body) %></td>
-							<td><%= markdown(hint.explanation) %></td>
-						</tr>
-						<% if hint.image? || hint.image2? %>
-							<tr>	
-								<td></td>
-								<% if hint.image? %>
-									<td><%= image_tag hint.image.url(:thumb) %></td>
-								<% else %>	
-									<td></td>
-								<% end %>	
-								<% if hint.image2? %>
-		  						<td><%= image_tag hint.image2.url(:thumb) %></td>
-		  					<% else %>	
-		  						<td></td>
-		  					<% end %>	
-							</tr>	
-						<% end %>	
-					<% end %>	
-				<% end %>
-			<% end %>
-  	</tbody>
-	</table>
-</div>
+<% @chapters.each do |chapter| %>
+  <div class="score_table">
+    <table id="scores" class="print-friendly">
+      <tbody>
+        <tr>
+          <th colspan="3" ><%= chapter.name %></th>
+        </tr> 
+  <!-- Rule-->        
+        <% chapter.rules.each do |rule| %>
+          <div class="table_rule">
+            <tr>
+              <th colspan="2" >Rule: <%= rule.name %></th>
+              <th></th>
+            </tr>   
+    <!-- Triggers -->       
+            <% rule.triggers.each do |trigger| %>
+              <tr>
+                <td>T</td>
+                <td><%= markdown(trigger.body) %></td>
+                <td><%= markdown(trigger.explanation) %></td>
+              </tr>
+              <% if trigger.image? || trigger.image2? %>
+                <tr>  
+                  <td></td>
+                  <% if trigger.image? %>
+                    <td><%= image_tag trigger.image.url(:thumb) %></td>
+                  <% else %>
+                    <td></td>
+                  <% end %> 
+                  <% if trigger.image2? %>  
+                    <td><%= image_tag trigger.image2.url(:thumb) %></td>
+                  <% else %>
+                    <td></td> 
+                  <% end %> 
+                </tr> 
+              <% end %> 
+            <% end %> 
+    <!-- Questions -->  
+            <% rule.questions.each do |question| %>
+              <tr>
+                <td>Q</td>
+                <td><%= markdown(question.body) %></td>
+                <td><%= markdown(question.answer) %></td>
+              </tr>
+              <% if question.image? || question.image2? %>
+                <tr>  
+                  <td></td>
+                  <% if question.image? %>
+                    <td><%= image_tag question.image.url(:thumb) %></td>
+                  <% else %>
+                    <td></td>
+                  <% end %>
+                  <% if question.image2? %>   
+                    <td><%= image_tag question.image2.url(:thumb) %></td>
+                  <% else %>
+                    <td></td>
+                  <% end %>   
+                </tr> 
+              <% end %> 
+            <% end %> 
+    <!-- Hints -->  
+            <% rule.hints.each do |hint| %>
+              <tr>
+                <td>H</td>
+                <td><%= markdown(hint.body) %></td>
+                <td><%= markdown(hint.explanation) %></td>
+              </tr>
+              <% if hint.image? || hint.image2? %>
+                <tr>  
+                  <td></td>
+                  <% if hint.image? %>
+                    <td><%= image_tag hint.image.url(:thumb) %></td>
+                  <% else %>  
+                    <td></td>
+                  <% end %> 
+                  <% if hint.image2? %>
+                    <td><%= image_tag hint.image2.url(:thumb) %></td>
+                  <% else %>  
+                    <td></td>
+                  <% end %> 
+                </tr> 
+              <% end %> 
+            <% end %> 
+          </div>
+        <% end %><!-- Rule -->
+      </tbody>
+    </table>
+  </div>
+<% end %>

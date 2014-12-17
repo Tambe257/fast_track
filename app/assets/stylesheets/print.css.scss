@@ -9,19 +9,38 @@
     padding: 0;
     border: none;
   }
+  
+  .footer {
+    display: none;
+  }
+  .score_table {
+    margin: 15px 0 15px 0;
+    padding: 10px;
+    width:100%;
+    box-shadow: 10px 10px 5px #888888;
+    border:1px solid #000000;
+    overflow: hidden;
+    -moz-border-radius-bottomleft:5px;
+    -webkit-border-bottom-left-radius:5px;
+    border-bottom-left-radius:5px;
+    
+    -moz-border-radius-bottomright:5px;
+    -webkit-border-bottom-right-radius:5px;
+    border-bottom-right-radius:5px;
+    
+    -moz-border-radius-topright:5px;
+    -webkit-border-top-right-radius:5px;
+    border-top-right-radius:5px;
+    
+    -moz-border-radius-topleft:5px;
+    -webkit-border-top-left-radius:5px;
+    border-top-left-radius:5px;
+  }
 
-  #scores {
-    page-break-before: always;
-  }
-  
-  #scores table tr td, #scores table tr th {
+  table {
     page-break-inside: avoid !important;
   }
-  
-  table, tr, td, th, tbody, thead, tfoot {
-    page-break-inside: avoid !important;
-  }
-  
+
   #pdf_link {
     margin-top: 200px;
     display: none;
