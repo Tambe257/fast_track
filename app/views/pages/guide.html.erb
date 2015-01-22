@@ -1,7 +1,7 @@
-<p id="pdf_link"><%= link_to "Right Click Here And 'Save As' To Download This Guide", "http://polar-thicket-3667.herokuapp.com/guide.pdf", :target => "_blank" %></p>
+<p id="pdf_link"><%= link_to "Right Click Here And 'Save As' To Download This Guide", "localhost:3000/guide.export", :target => "_blank" %></p>
 
 <% @chapters.each do |chapter| %>
-  <div class="score_table">
+  <!-- <div class="score_table"> -->
     <table id="scores" class="print-friendly">
       <tbody>
         <tr>
@@ -87,5 +87,5 @@
         <% end %><!-- Rule -->
       </tbody>
     </table>
-  </div>
+  <!-- </div> -->
 <% end %>

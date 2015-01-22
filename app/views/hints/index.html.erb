@@ -1,6 +1,9 @@
 <div class="form-container">
-  <h1>Listing Hints</h1>
+  <div class="hint-title">
+    Listing Hints
 
+    <%= link_to 'New Hint', new_hint_path, class: 'btn btn-primary right' %>
+  </div>
   <div class="score_table">
     <table>
       <thead>
@@ -30,6 +33,5 @@
   </div>
   <br>
 
-  <%= link_to 'New hint', new_hint_path, class: "btn btn-primary" %>
 </div>  
 

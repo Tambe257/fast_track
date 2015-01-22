@@ -24,5 +24,5 @@ class PagesController < ApplicationController
   def guide
     @chapters = Chapter.order('ch_order asc')
   end  
-    
+     
 end

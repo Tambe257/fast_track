@@ -156,6 +156,14 @@ body {
   font-size: 18px;
 }
 
+.hint-title {
+  font-size: 35px;
+}
+
+.hint-title a {
+  margin: 5px 5px 0 0;
+}
+
 .home-container {
   background: url('female-draws-maths-and-science-formula.gif') no-repeat fixed center center;
   -webkit-background-size: cover;
@@ -285,12 +293,12 @@ hr {
  
 }
 
-.score_table table tr td {
+#scores table tr td {
   page-break-inside: avoid !important; 
   page-break-before: always;
 }  
 
-.score_table {
+#scores {
   margin: 15px 0 15px 0;
   padding:0px;
   width:100%;
@@ -314,31 +322,31 @@ hr {
   border-top-left-radius:5px;
 }
 
-.score_table table {
+#scores table {
   border-collapse: collapse;
   border-spacing: 0;
   width:100%;
   height:100%;
   margin:0px;padding:0px;
-}.score_table tr:last-child td:last-child {
+}#scores tr:last-child td:last-child {
   -moz-border-radius-bottomright:5px;
   -webkit-border-bottom-right-radius:5px;
   border-bottom-right-radius:5px;
 }
-.score_table table tr:first-child td:first-child {
+#scores table tr:first-child td:first-child {
   -moz-border-radius-topleft:5px;
   -webkit-border-top-left-radius:5px;
   border-top-left-radius:5px;
 }
-.score_table table tr:first-child td:last-child {
+#scores table tr:first-child td:last-child {
   -moz-border-radius-topright:5px;
   -webkit-border-top-right-radius:5px;
   border-top-right-radius:5px;
-}.score_table tr:last-child td:first-child{
+}#scores tr:last-child td:first-child{
   -moz-border-radius-bottomleft:5px;
   -webkit-border-bottom-left-radius:5px;
   border-bottom-left-radius:5px;
-}.score_table tr:hover td{
+}#scores tr:hover td{
   
 }
 
@@ -348,7 +356,7 @@ hr {
 .score_table_color {
   background-color: #c4e3f3;
 }
-.score_table td{
+#scores td{
   vertical-align:middle;
   border:1px solid #000000;
   border-width:0px 1px 1px 0px;
@@ -358,14 +366,14 @@ hr {
   font-family:Arial;
   font-weight:normal;
   color:#000000;
-}.score_table tr:last-child td{
+}#scores tr:last-child td{
   border-width:0px 1px 0px 0px;
-}.score_table tr td:last-child{
+}#scores tr td:last-child{
   border-width:0px 0px 1px 0px;
-}.score_table tr:last-child td:last-child{
+}#scores tr:last-child td:last-child{
   border-width:0px 0px 0px 0px;
 }
-.score_table th {
+#scores th {
   padding: 5px 0 5px 0;
   background-color:#726f6d;
   border:0px solid #000000;
@@ -375,10 +383,10 @@ hr {
   font-family:Arial;
 }
 
-.score_table th {
+#scores th {
   border-width:0px 0px 1px 0px;
 }
-.score_table tr:first-child td:last-child th{
+#scores tr:first-child td:last-child th{
   border-width:0px 0px 1px 1px;
 }
 
