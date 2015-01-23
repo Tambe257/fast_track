@@ -1,18 +1,15 @@
-<p id="pdf_link"><%= link_to "Right Click Here And 'Save As' To Download This Guide", "localhost:3000/guide.export", :target => "_blank" %></p>
+<p id="pdf_link"><%= link_to "Right Click Here And 'Save As' To Download This Guide", "http://polar-thicket-3667.herokuapp.com/guide.pdf", :target => "_blank" %></p>
 
 <% @chapters.each do |chapter| %>
+  <div class="chapter-titles"><%= chapter.name %></div>
   <!-- <div class="score_table"> -->
     <table id="scores" class="print-friendly">
       <tbody>
-        <tr>
-          <th colspan="3" ><%= chapter.name %></th>
-        </tr> 
   <!-- Rule-->        
         <% chapter.rules.each do |rule| %>
           <div class="table_rule">
             <tr>
-              <th colspan="2" >Rule: <%= rule.name %></th>
-              <th></th>
+              <th colspan="3" >Rule: <%= rule.name %></th>
             </tr>   
     <!-- Triggers -->       
             <% rule.triggers.each do |trigger| %>

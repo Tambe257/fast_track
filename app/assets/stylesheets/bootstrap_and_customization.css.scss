@@ -34,6 +34,12 @@ body {
   list-style-type: none;
 }
 
+.chapter-titles {
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+}
+
 .chart-margin {
   margin-right: 30px;
 }
@@ -293,12 +299,12 @@ hr {
  
 }
 
-#scores table tr td {
+.score_table table tr td {
   page-break-inside: avoid !important; 
   page-break-before: always;
 }  
 
-#scores {
+.score_table {
   margin: 15px 0 15px 0;
   padding:0px;
   width:100%;
@@ -322,31 +328,31 @@ hr {
   border-top-left-radius:5px;
 }
 
-#scores table {
+.score_table table {
   border-collapse: collapse;
   border-spacing: 0;
   width:100%;
   height:100%;
   margin:0px;padding:0px;
-}#scores tr:last-child td:last-child {
+}.score_table tr:last-child td:last-child {
   -moz-border-radius-bottomright:5px;
   -webkit-border-bottom-right-radius:5px;
   border-bottom-right-radius:5px;
 }
-#scores table tr:first-child td:first-child {
+.score_table table tr:first-child td:first-child {
   -moz-border-radius-topleft:5px;
   -webkit-border-top-left-radius:5px;
   border-top-left-radius:5px;
 }
-#scores table tr:first-child td:last-child {
+.score_table table tr:first-child td:last-child {
   -moz-border-radius-topright:5px;
   -webkit-border-top-right-radius:5px;
   border-top-right-radius:5px;
-}#scores tr:last-child td:first-child{
+}.score_table tr:last-child td:first-child{
   -moz-border-radius-bottomleft:5px;
   -webkit-border-bottom-left-radius:5px;
   border-bottom-left-radius:5px;
-}#scores tr:hover td{
+}.score_table tr:hover td{
   
 }
 
@@ -355,39 +361,6 @@ hr {
 */
 .score_table_color {
   background-color: #c4e3f3;
-}
-#scores td{
-  vertical-align:middle;
-  border:1px solid #000000;
-  border-width:0px 1px 1px 0px;
-  text-align:center;
-  padding:10px;
-  font-size:13px;
-  font-family:Arial;
-  font-weight:normal;
-  color:#000000;
-}#scores tr:last-child td{
-  border-width:0px 1px 0px 0px;
-}#scores tr td:last-child{
-  border-width:0px 0px 1px 0px;
-}#scores tr:last-child td:last-child{
-  border-width:0px 0px 0px 0px;
-}
-#scores th {
-  padding: 5px 0 5px 0;
-  background-color:#726f6d;
-  border:0px solid #000000;
-  text-align:center;
-  border-width:0px 0px 1px 1px;
-  font-size:16px;
-  font-family:Arial;
-}
-
-#scores th {
-  border-width:0px 0px 1px 0px;
-}
-#scores tr:first-child td:last-child th{
-  border-width:0px 0px 1px 1px;
 }
 
 table, tr, td, th, tbody, thead, tfoot {

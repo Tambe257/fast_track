@@ -1,0 +1,81 @@
+#scores table tr td {
+  page-break-inside: avoid !important; 
+  page-break-before: always;
+}  
+
+#scores {
+  margin: 15px 0 15px 0;
+  padding:0px;
+  width:100%;
+  box-shadow: 10px 10px 5px #888888;
+  border:1px solid #000000;
+  overflow: hidden;
+  -moz-border-radius-bottomleft:5px;
+  -webkit-border-bottom-left-radius:5px;
+  border-bottom-left-radius:5px;
+  
+  -moz-border-radius-bottomright:5px;
+  -webkit-border-bottom-right-radius:5px;
+  border-bottom-right-radius:5px;
+  
+  -moz-border-radius-topright:5px;
+  -webkit-border-top-right-radius:5px;
+  border-top-right-radius:5px;
+  
+  -moz-border-radius-topleft:5px;
+  -webkit-border-top-left-radius:5px;
+  border-top-left-radius:5px;
+}
+
+#scores table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width:100%;
+  height:100%;
+  margin:0px;padding:0px;
+}#scores tr:last-child td:last-child {
+  -moz-border-radius-bottomright:5px;
+  -webkit-border-bottom-right-radius:5px;
+  border-bottom-right-radius:5px;
+}
+#scores table tr:first-child td:first-child {
+  -moz-border-radius-topleft:5px;
+  -webkit-border-top-left-radius:5px;
+  border-top-left-radius:5px;
+}
+#scores table tr:first-child td:last-child {
+  -moz-border-radius-topright:5px;
+  -webkit-border-top-right-radius:5px;
+  border-top-right-radius:5px;
+}#scores tr:last-child td:first-child{
+  -moz-border-radius-bottomleft:5px;
+  -webkit-border-bottom-left-radius:5px;
+  border-bottom-left-radius:5px;
+}#scores tr:hover td{
+  
+}
+
+#scores td {
+  vertical-align: middle;
+  border: 1px solid #000000;
+  border-width: 0px 1px 1px 0px;
+  text-align: center;
+  padding: 10px;
+  font-size: 13px;
+  font-family: arial;
+  font-weight: normal;
+  color: #000000;
+}
+
+#scores th {
+  padding: 5px 0 5px 0;
+  background-color: #726f6d;
+  border: 0px solid #000000;
+  text-align: center;
+  border-width: 0px 0px 1px 1px;
+  font-size: 16px;
+  font-family: Arial;
+}
+/*.score_table tr:nth-child(odd){ background-color:#c4e3f3; }
+.score_table tr:nth-child(even)    { background-color:#ffffff; }
+*/

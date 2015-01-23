@@ -2,7 +2,14 @@
   body {
     background-color: green;
   }
-
+  
+  .chapter-titles {
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    page-break-before: always;
+  }
+  
   #container {
     width: auto;
     margin: 0;
@@ -13,7 +20,8 @@
   .footer {
     display: none;
   }
-  .score_table {
+  
+  #scores {
     margin: 15px 0 15px 0;
     padding: 10px;
     width:100%;
@@ -36,8 +44,18 @@
     -webkit-border-top-left-radius:5px;
     border-top-left-radius:5px;
   }
+  
+  #scores th {
+    padding: 5px 0 5px 0;
+    background-color: #726f6d;
+    border: 0px solid #000000;
+    text-align: center;
+    border-width: 0px 0px 1px 1px;
+    font-size: 16px;
+    font-family: Arial;
+  }
 
-  table {
+  table#scores td {
     page-break-inside: avoid !important;
   }
 
