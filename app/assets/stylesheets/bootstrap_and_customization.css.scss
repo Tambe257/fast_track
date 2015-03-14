@@ -207,7 +207,7 @@ hr {
 }
 
 .item {
-  height: 275px;
+  height: 500px;
   width: 30%;
   background-color: rgba(178,178,178, 0.8);
   padding: 10px;
@@ -356,6 +356,27 @@ hr {
   
 }
 
+.score_table td {
+  vertical-align: middle;
+  border: 1px solid #000000;
+  border-width: 0px 1px 1px 0px;
+  text-align: center;
+  padding: 10px;
+  font-size: 13px;
+  font-family: arial;
+  font-weight: normal;
+  color: #000000;
+}
+
+.score_table th {
+  padding: 5px 0 5px 0;
+  background-color: #726f6d;
+  border: 0px solid #000000;
+  text-align: center;
+  border-width: 0px 0px 1px 1px;
+  font-size: 16px;
+  font-family: Arial;
+}
 /*.score_table tr:nth-child(odd){ background-color:#c4e3f3; }
 .score_table tr:nth-child(even)    { background-color:#ffffff; }
 */
