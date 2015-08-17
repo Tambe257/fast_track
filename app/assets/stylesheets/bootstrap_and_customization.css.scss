@@ -207,12 +207,9 @@ hr {
 }
 
 .item {
-  height: 500px;
-  width: 30%;
   background-color: rgba(178,178,178, 0.8);
   padding: 10px;
-  margin: 10px;
-  float: left;
+  margin-top: 10px;
   -webkit-transition: all 0.3s;
   transition: all 0.5s;
   border-radius: 3px;
@@ -480,7 +477,7 @@ p.show-box-heading {
   height: auto;
   overflow: hidden;
   padding: 25px 0 0 80px;
-  margin-bottom: 10px;
+  margin-bottom: 50px;
 }
 
 .user_show {
