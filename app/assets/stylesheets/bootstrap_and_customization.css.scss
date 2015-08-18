@@ -24,6 +24,7 @@ blockquote {
 
 body {
   padding-top: 55px;
+  width: 100%;
 }
 
 .center {
@@ -45,15 +46,31 @@ body {
 }
 
 .container {
+  background: url('female-draws-maths-and-science-formula.gif') no-repeat fixed center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   padding: 0px;
   width: auto;
   min-height: 550px;
   margin: 0px;
+  overflow: hidden;
 }
 
-.copywrite {
+#copyright {
+  position: relative;
+  padding: 5px 0px 5px 0px;
+  text-align: center;
+  color: rgba(255,255,255,.2);
+  background: black;
   font-size: 18px;
 }
+
+#copyright a {
+  text-decoration: none;
+  color: rgba(255,255,255,.3);
+}  
 
 .dataTable-style {
   background-color: white;
@@ -92,7 +109,7 @@ body {
   left: 0px;
   width: auto;
   height: 50px;
-  padding: 20px 10px 0px 0px;
+  padding: 11px 10px 0px 0px;
   clear: both;
   font-size: 150%;
   font-family: 'MuseoSans_Fat';
@@ -154,14 +171,6 @@ body {
   margin-top: 9px;
 }
 
-.header_row2 {
-  border-bottom: #888 1px solid;
-  -moz-box-shadow: 0 0 5px #888;
-  -webkit-box-shadow: 0 0 5px#888;
-  box-shadow: 0 0 5px #888;
-  font-size: 18px;
-}
-
 .hint-title {
   font-size: 35px;
 }
@@ -171,11 +180,7 @@ body {
 }
 
 .home-container {
-  background: url('female-draws-maths-and-science-formula.gif') no-repeat fixed center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+ 
 }
 
 .home-list {
@@ -232,6 +237,10 @@ hr {
 .navbar {
   margin-bottom: 5px;
   background-color: white;
+  border-bottom: #888 1px solid;
+  -moz-box-shadow: 0 0 5px #888;
+  -webkit-box-shadow: 0 0 5px#888;
+  box-shadow: 0 0 5px #888;
 }
 
 .navbar li {
@@ -474,8 +483,6 @@ p.show-box-heading {
 
 .testimonial-section {
   text-align: center;
-  height: auto;
-  overflow: hidden;
   padding: 25px 0 0 80px;
   margin-bottom: 50px;
 }
