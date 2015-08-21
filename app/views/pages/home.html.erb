@@ -2,20 +2,23 @@
   <div class="row welcome_section">
   	<div class="outer-wrapper">
   		<div class="inner-wrapper">
+	    	
 	    	<div class="welcome-box">
 	    		<div class="welcome-box-header">
 		      	<h3 class="emphasis">Welcome To F.A.S.T. Track Tutoring!</h3>
 		      </div>	
 
-		      <% if user_signed_in? %>
-		        <div class="welcome-box-content">Now registering for spring lessons!</div>
-		     	<% else %>
-		       <p>
-		         <%= link_to "Click Here To Email F.A.S.T Track Tutoring", "mailto:info@fasttracktutoringllc.com", class: "btn btn-primary" %>
-		       </p>
+		        <div class="welcome-box-content">
+							
+							<h3>Personal One On One Lessons For The</h3>
+							<h3>S.A.T. & A.C.T.</h3>
+		        	
+		        	<h3>Now registering for spring lessons!</h3>
+						
+							<h4>Call or email Daniel today!</h4>
 
-		       <%= link_to "Sign Up", new_user_registration_path %>
-		  		<% end %>  
+		      		<h4>T: 516-376-0469 | <%= link_to image_tag("Email_Icon.png"), "mailto:info@fasttracktutoringllc.com" %> info@fasttracktutoringllc.com</h4>
+					</div>
 		  	</div>		
 		  </div>	
 	  </div>	

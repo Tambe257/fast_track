@@ -62,14 +62,14 @@ body {
   position: relative;
   padding: 5px 0px 5px 0px;
   text-align: center;
-  color: rgba(255,255,255,.2);
+  color: rgba(173,166,166,.74);
   background: black;
   font-size: 18px;
 }
 
 #copyright a {
   text-decoration: none;
-  color: rgba(255,255,255,.3);
+  color: rgba(173,166,166,.74);
 }  
 
 .dataTable-style {
@@ -111,9 +111,9 @@ body {
   padding: 11px 10px 0px 15px;
   clear: both;
   font-size: 150%;
-  font-family: 'MuseoSans_Fat';
+  font-family: "brandon-grotesque", sans-serif;
   background-color: white;
-  border-top: #323232 1px solid;
+  box-shadow: 0 0 5px #888;
   color: #323232;
   a{
       color: black;
@@ -125,8 +125,13 @@ body {
   float: left;
 }
 
+.footer img {
+  margin-bottom: 5px;
+}
+
 .footer_info {
   list-style-type: none;
+  display: inline-block;
   float: left;
 }
 
@@ -518,18 +523,23 @@ p.show-box-heading {
 }
 
 .welcome_section {
-  height: 450px;
   position: relative;
 }
 
 .welcome-box {
   text-align: center;
-  height: 300px;
+  height: auto;
+  padding-bottom: 1px;
 }
 
 .welcome-box-content {
   color: white;
   font-size: 18px;
+  background-color: black;
+  padding: 10px 0px 10px 0px;
+  margin: 30px;
+  text-align: center;
+  font-family: "brandon-grotesque",sans-serif;
 }
 
 .welcome-box-header {
