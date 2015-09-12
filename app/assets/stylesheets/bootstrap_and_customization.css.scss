@@ -164,7 +164,7 @@ body {
 }
 
 .header_container {
-  width: 1170px;
+  max-width: 1170px;
   padding-left: 55px;
 }
 
@@ -544,9 +544,13 @@ p.show-box-heading {
 
 .welcome-box-header {
   background-color: black;
-  height: 75px;
-  padding-top: 6px;
+  height: auto;
+  padding: 1% 0px;
   color: white;
+}
+
+.welcome-box-header p {
+  font-size: 2.5rem;
 }
 
 @media (max-width:767px) {

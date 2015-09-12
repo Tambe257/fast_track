@@ -1,3 +1,41 @@
+@media (max-width: 320px) {
+  .header_container {
+    padding-left: 30px;
+  }
+
+  .inner-wrapper{
+    width: 77%;
+  }
+
+  .welcome-box-content {
+    margin: 5%;
+  }
+
+  .welcome-box-content h3 {
+    font-size: 2rem;
+  }
+
+  .welcome-box-content h4 {
+    font-size: 1.8rem;
+  }
+
+  .welcome-box-header p {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 481px ) AND (max-width: 640px) {
+
+}
+
+@media only screen and (min-width: 40.0625em) {
+
+}
+
+@media(max-width: 667px) and (orientation: landscape) {
+
+}
+
 @media (max-width: 989px) {
   .item {
     margin-top: 45px;
