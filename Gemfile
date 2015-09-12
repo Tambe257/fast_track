@@ -19,6 +19,7 @@ gem 'jquery-datatables-rails', '~> 2.2.3'
 gem 'jquery-ui-rails', '~> 5.0.0'
 gem 'jquery-turbolinks', '~> 0.2.1'
 gem 'redcarpet', '~> 3.2.0'
+gem 'font-awesome-rails'
 
 
 group :development, :test do

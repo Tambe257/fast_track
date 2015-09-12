@@ -13,4 +13,5 @@
  *= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
  *= require jquery-ui
  *= require_tree .
+ *= require font-awesome
  */

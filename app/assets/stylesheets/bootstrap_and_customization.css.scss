@@ -133,8 +133,9 @@ body {
 
 }
 
-.footer_info a {
-  color: white;
+.footer_info a, a:visited {
+  color: Black;
+  text-decoration: none;
 }
 
 .footer_list {
