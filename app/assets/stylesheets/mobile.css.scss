@@ -26,7 +26,27 @@
 
 @media (min-width: 321px ) AND (max-width: 640px) {
   .header_container {
-    padding-left: 25px;
+    padding: 0 2% 0 6%;
+  }
+
+  .inner-wrapper {
+    width: 85%;
+  }
+
+  .next-section {
+    padding: 0 7%;
+  }
+
+  .testimonial-box {
+    max-width: 345px;
+  }
+
+  .testimonial-section {
+    padding: 25px 0 0 30px;
+  }
+
+  .welcome-box-content {
+    margin: 4%;
   }
 }
 
@@ -35,7 +55,9 @@
 }
 
 @media(max-width: 667px) and (orientation: landscape) {
-
+  .inner-wrapper {
+    width: 75%;
+  }
 }
 
 @media (max-width: 989px) {
@@ -44,7 +66,7 @@
   }
 
   .next-section {
-    padding: 0 81px;
+    padding: 0 7%;
     margin-bottom: 40px;
   }
 }
