@@ -1,3 +1,4 @@
+/* iPhone 5 */
 @media (max-width: 320px) {
   .footer p {
     margin: 1% 6%;
@@ -49,6 +50,7 @@
   }
 }
 
+/* ex. iPhone 6 */
 @media (min-width: 321px ) AND (max-width: 640px) {
   .footer_list {
     float: none;
@@ -96,6 +98,8 @@
 
 }
 
+/* ex. iPhone 6 landscape */
+
 @media(max-width: 667px) and (orientation: landscape) {
   .footer p {
     margin: 1% 6%;
@@ -128,11 +132,24 @@
   }
 }
 
+/* ex. iPads */
+
 @media (max-width: 989px) {
+  .footer {
+    text-align: center;
+  }
+
+  .footer_list {
+    float: none;
+  }
+
   .item {
     margin-top: 45px;
   }
-
+  
+  .navbar-nav.navbar-right:last-child {
+    margin-right: 0px;
+  }
   .next-section {
     padding: 0 7%;
     margin-bottom: 40px;
