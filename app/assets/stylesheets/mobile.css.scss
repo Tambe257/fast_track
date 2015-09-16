@@ -33,6 +33,10 @@
     padding: 5% 8%;
   }
 
+  .testimonial-box {
+    margin: 10px auto;
+  }
+
   .welcome-box-content {
     margin: 5%;
   }
@@ -83,6 +87,7 @@
 
   .testimonial-box {
     max-width: 345px;
+    margin: 10px auto;
   }
 
   .testimonial-section {
@@ -135,6 +140,10 @@
 /* ex. iPads */
 
 @media (max-width: 989px) {
+  .box2 {
+    margin-left: 2%;
+  }
+
   .footer {
     text-align: center;
   }
@@ -150,8 +159,17 @@
   .navbar-nav.navbar-right:last-child {
     margin-right: 0px;
   }
+  
   .next-section {
     padding: 0 7%;
     margin-bottom: 40px;
+  }
+  
+  .testimonial-box {
+    margin: 10px auto;
+  }
+  
+  .testimonial-section {
+    padding: 0px;
   }
 }
