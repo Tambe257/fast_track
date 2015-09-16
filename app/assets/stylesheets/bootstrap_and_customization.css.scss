@@ -110,7 +110,7 @@ body {
 }
 
 #fasttracknav ul {
-  height: 61px;
+  margin: 2px 2px 0 0;
 }
 
 .footer {
@@ -206,9 +206,12 @@ body {
 
 .home-list li {
   font-weight: bold;
-  text-align: left;
   font-size: 18px;
   margin: 5px 0 5px 0;
+}
+
+ul.home-list {
+  padding: 0px;
 }
 
 hr {
@@ -223,7 +226,7 @@ hr {
   width: 375px;
   height: auto;
   z-index: 999999999;
-  margin: 75px auto;
+  margin: 70px auto;
   width: 50%;
 
 }
@@ -241,10 +244,22 @@ hr {
   background-color: rgba(178,178,178, 0.8);
 }
 
+.item-container {
+  padding: 3%;
+}
+
 .item-inner {
-  margin: 10px;
-  padding: 20px;
+  margin: 5px;
+  padding: 1%;
   background-color: #EEEEEE;
+}
+
+.item-inner hr {
+  margin: 10px;
+}
+
+h3.item-heading {
+  margin-top: 7px;
 }
 
 .left {
@@ -278,7 +293,7 @@ hr {
 .next-section {
   text-align: center;
   overflow: hidden;
-  padding: 0 0 10px 50px;
+  padding: 0 0 10px 0px;
 }
 
 .outer-wrapper {
