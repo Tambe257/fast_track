@@ -13,7 +13,7 @@
   height: 0;     
   border-left: 15px solid transparent;     
   border-right: 15px solid transparent;     
-  border-top: 15px solid #428BCA;     
+  border-top: 15px solid #4DB1E5;     
   margin: 0 0 0 25px; 
 } 
 
@@ -50,7 +50,7 @@ body {
 }
 
 .container {
-  background: url('female-draws-maths-and-science-formula.gif') no-repeat fixed center center;
+  /*background: url('female-draws-maths-and-science-formula.gif') no-repeat fixed center center;*/
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -226,22 +226,18 @@ hr {
   width: 375px;
   height: auto;
   z-index: 999999999;
-  margin: 70px auto;
+  margin: 7% auto;
   width: 50%;
 
 }
 
 .item {
-  background-color: #428BCA;
-  padding: 10px;
+  background-color: #4DB1E5;
+  padding: 1px;
   margin-top: 10px;
   -webkit-transition: all 0.3s;
   transition: all 0.5s;
   border-radius: 3px;
-}
-
-.item:hover {
-  background-color: rgba(178,178,178, 0.8);
 }
 
 .item-container {
@@ -251,7 +247,7 @@ hr {
 .item-inner {
   margin: 5px;
   padding: 1%;
-  background-color: #EEEEEE;
+  background-color: #EFEFEF;
 }
 
 .item-inner hr {
@@ -295,6 +291,15 @@ h3.item-heading {
   text-align: center;
   overflow: hidden;
   padding: 0 0 10px 0px;
+  /*border-top: solid 1px #000;*/
+}
+
+.next-section2 {
+  text-align: center;
+  overflow: hidden;
+  padding: 0 0 10px 0px;
+  /*border-top: solid 1px #000;*/
+  background-color: #4DB1E5;
 }
 
 .outer-wrapper {
@@ -482,7 +487,7 @@ p.show-box-heading {
   border-radius: 5px;     
   font-style: italic;     
   text-shadow: 0 1px 0 black;     
-  background-color: #428BCA; 
+  background-color: #4DB1E5; 
   max-width: 470px;
 } 
 
@@ -509,26 +514,39 @@ p.show-box-heading {
 .testimonial-author {     
   margin: 0 0 10px 25px;     
   font-family: Arial, Helvetica, sans-serif;     
-  color: white;     
+  color: black;     
   text-align:left; 
+  font-size: 1.7rem;
 } 
 
-.testimonial-author span {     
-  font-size: 12px;     
-  color: white; 
+.testimonial-author span {         
+  
 }
 
 .testimonial-box {
-  background-color: black;
   height: auto;
   padding: 10px;
   border-radius: 3px;
+  box-shadow: 0 6px 6px rgba(0,0,0,0.3);
+  background-color: ghostwhite;
 }
 
 .testimonial-section {
   text-align: center;
-  padding: 0px 0px 0px 0px;
-  margin-bottom: 50px;
+  background-color: #EFEFEF;
+  padding-bottom: 5%;
+}
+
+p.testimonial-section-title {
+  font-size: 4.0rem;
+  margin: 5% 1% auto;
+  color: black;
+}
+
+hr.testimonial-section-title {
+  border-top: 1px solid black;
+  width: 80%;
+  margin-bottom: 3%;
 }
 
 .user_show {
@@ -564,6 +582,9 @@ p.show-box-heading {
 
 .welcome_section {
   position: relative;
+  background: url('female-draws-maths-and-science-formula.gif') no-repeat center center;
+  background-size: cover;
+  overflow: hidden;
 }
 
 .welcome-box {
@@ -574,9 +595,11 @@ p.show-box-heading {
 }
 
 .welcome-box-content {
-  color: white;
+  color: ghostwhite;
   font-size: 18px;
-  background-color: black;
+  font-variant: small-caps;
+  text-shadow: 1px 2px 2px rgba(0,0,0,0.5);
+  background-color: #4DB1E5;
   padding: 10px 0px 10px 0px;
   margin: 30px;
   text-align: center;
@@ -588,45 +611,14 @@ p.show-box-heading {
 }
 
 .welcome-box-header {
-  background-color: black;
+  background-color: #4DB1E5;
   height: auto;
   padding: 1% 0px;
-  color: white;
+  color: ghostwhite;
+  font-variant: small-caps;
+  text-shadow: 1px 2px 2px rgba(0,0,0,0.5);
 }
 
 .welcome-box-header p {
-  font-size: 2.5rem;
-}
-
-@media (max-width:767px) {
-  .nav_clear {
-    clear:both;
-  }
-  
-  .session-list {
-    background-color: white;
-    margin-left: 0px;
-  }
-  .testimonial-box {
-    height: auto;
-    max-width: 370px;
-    padding: 10px;
-    margin: 0 0 10px 0px;
-  }
-
-  .testimonial-section {
-    text-align: center;
-    height: auto;
-    width: auto;
-    overflow: hidden;
-    padding: 25px 0 0 80px;
-    margin-bottom: 10px;
-  }
-
-  .welcome-box-header {
-    background-color: black;
-    height: auto;
-    padding: 6px 0 6px 0;
-    color: white;
-  }
+  font-size: 3.5rem;
 }
