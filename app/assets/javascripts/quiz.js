@@ -36,7 +36,7 @@ function renderQuestion(){
   test.innerHTML += "<input type='radio' name='choices' value='C'> "+chC+"<br>";
   test.innerHTML += "<input type='radio' name='choices' value='D'> "+chD+"<br>";
   test.innerHTML += "<input type='radio' name='choices' value='E'> "+chE+"<br><br>";
-  test.innerHTML += "<button onclick='checkAnswer()'>Submit Answer</button>";
+  test.innerHTML += "<button onclick='checkAnswer()' class='btn'>Submit Answer</button>";
 }
 function checkAnswer(){
   choices = document.getElementsByName("choices");

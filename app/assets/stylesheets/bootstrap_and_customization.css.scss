@@ -247,7 +247,8 @@ hr {
 .item-inner {
   margin: 5px;
   padding: 1%;
-  background-color: #EFEFEF;
+  background-color: white;
+  box-shadow: 1px 2px 2px rgba(0,0,0,0.5);
 }
 
 .item-inner hr {
@@ -313,6 +314,13 @@ h3.item-heading {
 
 .profile_panel {
   margin-top: 10px;
+}
+
+p.quiz-title {
+  color: ghostwhite;
+  font-variant: small-caps;
+  text-shadow: 1px 2px 2px rgba(0,0,0,0.5);
+  font-size: 3.8rem;
 }
 
 .right {
@@ -474,6 +482,18 @@ p.show-box-heading {
   padding: 10px 0 10px 0;
 }
 
+#test button {
+  color: white;
+  background-color: red;
+}
+
+#test button:hover {
+  color: white;
+  background-color: lightred;
+  -webkit-box-shadow: 0 0 5px #000;
+        box-shadow: 0 0 5px #000;
+}
+
 .test-list {
   background-color: white;
 }
@@ -533,7 +553,7 @@ p.show-box-heading {
 
 .testimonial-section {
   text-align: center;
-  background-color: #EFEFEF;
+  background-color: #BDBABA;
   padding-bottom: 5%;
 }
 
