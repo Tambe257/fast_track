@@ -295,10 +295,22 @@ h3.item-heading {
   /*border-top: solid 1px #000;*/
 }
 
+p.next-section-title {
+  font-size: 4.0rem;
+  margin: 5% 1% auto;
+  color: black;
+}
+
+hr.next-section-title {
+  border-top: 1px solid black;
+  width: 80%;
+  margin-bottom: 3%;
+}
+
 .next-section2 {
   text-align: center;
   overflow: hidden;
-  padding: 0 0 10px 0px;
+  padding: 0 0 4% 0;
   /*border-top: solid 1px #000;*/
   background-color: #4DB1E5;
 }
@@ -482,6 +494,10 @@ p.show-box-heading {
   padding: 10px 0 10px 0;
 }
 
+#test {
+  padding: 1%;
+}
+
 #test button {
   color: white;
   background-color: red;
@@ -558,15 +574,17 @@ p.show-box-heading {
 }
 
 p.testimonial-section-title {
-  font-size: 4.0rem;
-  margin: 5% 1% auto;
-  color: black;
+  color: ghostwhite;
+  font-variant: small-caps;
+  text-shadow: 1px 2px 2px rgba(0,0,0,0.5);
+  font-size: 3.8rem;
+  margin: 3% 1% auto;
 }
 
 hr.testimonial-section-title {
-  border-top: 1px solid black;
+  border-top: 1px solid ghostwhite;
   width: 80%;
-  margin-bottom: 3%;
+  margin-bottom: 4%;
 }
 
 .user_show {
@@ -624,6 +642,10 @@ hr.testimonial-section-title {
   margin: 30px;
   text-align: center;
 }
+
+.welcome-box-content h2 {
+  font-size: 3rem;
+} 
 
 .welcome-box-content a {
   color: white;

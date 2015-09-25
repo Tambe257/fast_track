@@ -1,5 +1,9 @@
 /* iPhone 5 */
 @media (max-width: 320px) {
+  .footer {
+    padding: 0;
+  }
+
   .footer p {
     margin: 1% 6%;
   }
@@ -43,6 +47,10 @@
 
   .testimonial-box {
     margin: 10px auto;
+  }
+
+  p.testimonial-section-title {
+    font-size: 3.3rem;
   }
 
   .welcome-box-content {
