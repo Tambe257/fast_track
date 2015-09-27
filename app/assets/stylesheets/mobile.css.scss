@@ -1,5 +1,18 @@
 /* iPhone 5 */
 @media (max-width: 320px) {
+  
+  p.about-testimonial-section-title {
+    color: black;
+    font-variant: small-caps;
+    font-size: 3.5rem;
+    padding: 0% 2%;
+    margin: 3% 1% auto;
+  }
+
+  .bio {
+    padding: 0% 7%;
+  }
+
   .footer {
     padding: 0;
   }
@@ -46,6 +59,10 @@
     margin: 5% 0;
     font-size: 1.8rem;
   }
+  
+  .logo a {
+    font-size: 1.9rem;
+  }
 
   .testimonial {
     padding: 4% 13%;
@@ -82,6 +99,23 @@
 
 /* ex. iPhone 6 */
 @media (min-width: 321px ) AND (max-width: 640px) {
+  
+  p.about-testimonial-section-title {
+    color: black;
+    font-variant: small-caps;
+    font-size: 3.5rem;
+    padding: 0% 2%;
+    margin: 3% 1% auto;
+  }
+
+  .bio {
+    padding: 0% 7%;
+  }
+
+  .footer {
+    padding: 0;
+  }
+
   .footer_list {
     float: none;
     font-size: 1.7rem;
@@ -116,8 +150,12 @@
   }
 
  .logo {
-  margin: 5% 0;
-  font-size: 2.1rem;
+    margin: 5% 0;
+    font-size: 2.1rem;
+  }
+
+  .logo a {
+    font-size: 2.1rem;
   }
 
   .next-section {
