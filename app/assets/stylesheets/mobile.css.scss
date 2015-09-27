@@ -100,6 +100,10 @@
 /* ex. iPhone 6 */
 @media (min-width: 321px ) AND (max-width: 640px) {
   
+  .about-testimonial-container {
+    margin-left: 0;
+  }
+
   p.about-testimonial-section-title {
     color: black;
     font-variant: small-caps;
@@ -180,8 +184,10 @@
   }
 }
 
-@media only screen and (min-width: 40.0625em) {
-
+@media only screen and (min-width: 992px) {
+  .about-testimonial-container {
+    margin: 2% auto; 
+  }
 }
 
 /* ex. iPhone 6 landscape */
@@ -247,9 +253,6 @@
 /* ex. iPads */
 
 @media (max-width: 989px) {
-  .about-testimonial-container {
-    margin-left: 8.3333%;
-  }
 
   .avatar {
     margin-top: 8%;
@@ -290,6 +293,7 @@
 }
 
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+
   .avatar {
     margin-top: 1%;
   }
