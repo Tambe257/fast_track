@@ -251,6 +251,10 @@
     margin-left: 8.3333%;
   }
 
+  .avatar {
+    margin-top: 8%;
+  }
+
   .box2 {
     margin-left: 2%;
   }
@@ -282,5 +286,11 @@
 
   .testimonial-section {
     padding-bottom: 8%;
+  }
+}
+
+@media only screen and (orientation: landscape) {
+  .avatar {
+    margin-top: 4%;
   }
 }
