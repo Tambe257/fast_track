@@ -1,5 +1,37 @@
 @import 'bootstrap';
 
+.about-testimonial-section {
+  text-align: center;
+  background-color: #CED7DE;
+  padding: 0% 2% 5% 2%;
+}
+
+p.about-testimonial-section-title {
+  color: black;
+  font-variant: small-caps;
+  font-size: 3.8rem;
+  margin: 3% 1% auto;
+}
+
+hr.about-testimonial-section-title {
+  border-top: 1px solid black;
+  width: 80%;
+  margin-bottom: 4%;
+}
+
+.about-testimonial-container {
+  margin: 2% 0%;
+}
+
+.about-arrow-down {
+  width: 0;     
+  height: 0;     
+  border-left: 15px solid transparent;     
+  border-right: 15px solid transparent;     
+  border-top: 15px solid #4DB1E5;     
+  margin: 0 0 0 70px; 
+}
+
 .admin-sections {
   float: left;
   height: 150px;
@@ -16,6 +48,37 @@
   border-top: 15px solid #4DB1E5;     
   margin: 0 0 0 25px; 
 } 
+
+.avatar {
+  text-align: center;
+}
+
+.bio {
+  margin: 1% 0% 3% 0%;
+  padding: 0 2%;
+  border-left: 1px solid black;
+}
+
+.bio-section {
+  padding: 9% 0%;
+  background: url(gradient.jpg) repeat-x;
+}
+
+.bio-section img {
+  height: 18rem;
+  width: 18rem;
+  border-radius: 400px;
+  margin: 4% 2%;
+}
+
+.bio-title {
+  font-size: 5rem;
+  font-weight: bold
+}
+
+.bio p {
+  font-size: 2rem;
+}
 
 blockquote {
   font-size: 17.5px;
@@ -273,7 +336,14 @@ h3.item-heading-test {
   font-family: 'Raleway', sans-serif;
   float: left;
   margin: 3% 0;
+}
+
+.logo a {
   font-size: 2.8rem;
+}
+
+.logo a:hover {
+  text-decoration: none;
 }
 
 .navbar {
@@ -574,20 +644,19 @@ p.show-box-heading {
 
 .testimonial-section {
   text-align: center;
-  background-color: #BDBABA;
+  background-color: #CED7DE;
   padding-bottom: 5%;
 }
 
 p.testimonial-section-title {
-  color: ghostwhite;
+  color: black;
   font-variant: small-caps;
-  text-shadow: 1px 2px 2px rgba(0,0,0,0.5);
   font-size: 3.8rem;
   margin: 3% 1% auto;
 }
 
 hr.testimonial-section-title {
-  border-top: 1px solid ghostwhite;
+  border-top: 1px solid black;
   width: 80%;
   margin-bottom: 4%;
 }
