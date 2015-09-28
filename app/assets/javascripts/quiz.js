@@ -7,8 +7,22 @@ var questions = [
       "14",
       "15",
       "E" ],
-  [ "What is 20 - 9?", "7", "13", "11", "25", "30", "C" ],
-  [ "What is 7 x 3?", "21", "24", "25", "10", "20", "A" ],
+  [ "In a survey of customers at a pizza restaurant, 24 people said that they enjoy 
+      pepperoni and 19 said that they enjoy sausage.  If 25 people answered that they  
+      only enjoy one topping, how many people responded that they enjoy both toppings?",
+      "9",
+      "10",
+      "11", 
+      "15", 
+      "18", 
+      "A" ],
+  [ "The amount of bacteria on a lake doubles every day.  If the amount of bacteria will grow to its full capacity on the 30th day, on which day will it reach half of that amount?", 
+      "10", 
+      "15", 
+      "20", 
+      "25", 
+      "29", 
+      "E" ],
   [ "What is 8 / 2?", "10", "2", "4", "7", "3", "C" ]
 ];
 function _(x){
