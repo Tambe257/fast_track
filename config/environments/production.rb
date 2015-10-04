@@ -90,5 +90,4 @@ FastTrack::Application.configure do
     }
   }
 
-  config.action_controller.asset_host = 'fasttracktutoringllc.com'
 end
