@@ -62,6 +62,10 @@ hr.about-testimonial-section-title {
   border-left: 1px solid black;
 }
 
+ul.biolist {
+  font-size: 1.6rem;
+}
+
 .bio-section {
   padding: 9% 0%;
   background: url(gradient.jpg) repeat-x;
@@ -600,8 +604,7 @@ p.show-box-heading {
   font-family: Georgia, serif;     
   color: #FFFFFF;     
   border-radius: 5px;     
-  font-style: italic;     
-  text-shadow: 0 1px 0 black;     
+  font-style: italic;         
   background-color: #4DB1E5; 
   max-width: 470px;
 } 

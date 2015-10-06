@@ -21,7 +21,13 @@ var questions = [
       "25", 
       "29", 
       "E" ],
-    [ "What is 8 / 2?", "10", "2", "4", "7", "3", "C" ]
+    [ "A store takes 10% off the price of a laptop.  No one buys it, so the store takes off another 10%.  The laptop now costs what percent of its original price?",
+      "75%",
+      "80%", 
+      "81%", 
+      "85%", 
+      "90%", 
+      "C" ]
 ];
 function _(x){
   return document.getElementById(x);
